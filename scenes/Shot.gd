@@ -19,7 +19,7 @@ func Shoot(damage, angle):
 		Line.points = [localPos, localPos]
 		var collider = raycast.get_collider()
 		if collider.has_method("Damage"):
-			collider.Damage(damage, angle)
+			collider.Damage(damage, hitPoint, direction)
 	else:
 		ShotEnd = to_local(raycast.cast_to)
 		Line.points = [localPos, localPos]
