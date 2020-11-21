@@ -20,17 +20,17 @@ func _ready():
 	AnimPlayer.play("Walk")
 
 func _physics_process(delta):
-	var moveDirection = Vector2(0.0, 0.0)
+	var moveDirection = Default.DirCenter
 	if Input.is_action_pressed("ui_left"):
-		moveDirection += Vector2(-1.0, 0.0)
+		moveDirection += Default.DirLeft
 	if Input.is_action_pressed("ui_right"):
-		moveDirection += Vector2(1.0, 0.0)
+		moveDirection += Default.DirRight
 	if Input.is_action_pressed("ui_up"):
-		moveDirection += Vector2(0.0, -1.0)
+		moveDirection += Default.DirUp
 	if Input.is_action_pressed("ui_down"):
-		moveDirection += Vector2(0.0, 1.0)
-	move_and_slide(moveDirection.normalized() * delta * 10000.0, Vector2(0.0, 0.0))
-	if moveDirection == Vector2(0.0, 0.0):
+		moveDirection += Default.DirDown
+	move_and_slide(moveDirection.normalized() * delta * 10000.0, Default.DirCenter)
+	if moveDirection == Default.DirCenter:
 		if PlayingWalkAnimation:
 			AnimPlayer.stop(false)
 			PlayingWalkAnimation = false
