@@ -22,9 +22,9 @@ config/icon="res://icon.png"
 [display]
 
 window/size/width=400
-window/size/height=225
+window/size/height=226
 window/size/test_width=1400
-window/size/test_height=788
+window/size/test_height=790
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
