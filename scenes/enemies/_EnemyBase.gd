@@ -13,9 +13,6 @@ func Activate():
 	Active = true
 	set_process(true)
 
-func _process(delta):
-	set_position(get_position() + Default.DirLeft * delta)
-
 func Damage(damage, hitPoint, direction):
 	if Active:
 		Health -= damage
