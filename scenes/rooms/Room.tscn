@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/rooms/Door.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/rooms/Room.gd" type="Script" id=3]
+[ext_resource path="res://graphics/homespun.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 150
+font_data = ExtResource( 4 )
 
 [node name="Room" type="Node2D"]
 script = ExtResource( 3 )
@@ -38,3 +43,14 @@ rotation = 1.5708
 
 [node name="RightWall" parent="Doors" instance=ExtResource( 1 )]
 tile_data = PoolIntArray( -65521, 4, 0, 15, 4, 0, 65551, 4, 0, 131087, 4, 0 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -160.0
+margin_top = -64.0
+margin_right = 155.0
+margin_bottom = 86.0
+custom_fonts/font = SubResource( 1 )
+text = "Test"
+__meta__ = {
+"_edit_use_anchors_": false
+}

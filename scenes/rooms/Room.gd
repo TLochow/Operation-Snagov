@@ -4,10 +4,25 @@ var GeneratedNeighbors = false
 var DistanceToStart = 0
 var GenerationCoords = Vector2(0, 0)
 
-var OpenTop
-var OpenBottom
-var OpenLeft
-var OpenRight
+var Type = Default.RoomTypes.Normal
+
+var OpenTop = false
+var OpenBottom = false
+var OpenLeft = false
+var OpenRight = false
+
+func _process(delta):
+	var brightness = 1.0 - (DistanceToStart * 0.1)
+	var color = Color.white
+	if Type == Default.RoomTypes.Boss:
+		color = Color.red
+	elif Type == Default.RoomTypes.Item:
+		color = Color.green
+	elif Type == Default.RoomTypes.Shop:
+		color = Color.blue
+	color *= brightness
+	$TileMap.modulate = color
+	$Label.text = str(DistanceToStart)
 
 func SetExits():
 	if OpenTop:
@@ -29,7 +44,7 @@ func SetExits():
 
 func GenerateNeighbors(roomsNode):
 	GeneratedNeighbors = true
-	var percentageForRoomGeneration = 1.0 - (DistanceToStart * 0.2)
+	var percentageForRoomGeneration = 1.0 - (DistanceToStart * 0.4)
 	var generateRoomUp = randf() < percentageForRoomGeneration
 	var generateRoomDown = randf() < percentageForRoomGeneration
 	var generateRoomLeft = randf() < percentageForRoomGeneration
@@ -75,6 +90,9 @@ func GenerateNewRoom(coords, direction, roomsNode):
 	newRoom.set_position(coords * Default.RoomSize)
 	roomsNode.add_child(newRoom)
 
+func GetNumberOfNeighbors():
+	return int(OpenTop) + int(OpenBottom) + int(OpenLeft) + int(OpenRight)
+
 func OpenDoors():
 	if OpenTop:
 		$Doors/Top.Open()
@@ -84,3 +102,13 @@ func OpenDoors():
 		$Doors/Left.Open()
 	if OpenRight:
 		$Doors/Right.Open()
+
+func CloseDoors():
+	if OpenTop:
+		$Doors/Top.Close()
+	if OpenBottom:
+		$Doors/Bottom.Close()
+	if OpenLeft:
+		$Doors/Left.Close()
+	if OpenRight:
+		$Doors/Right.Close()

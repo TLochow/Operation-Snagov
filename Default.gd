@@ -7,3 +7,10 @@ var DirLeft = Vector2(-1.0, 0.0)
 var DirRight = Vector2(1.0, 0.0)
 
 var RoomSize = Vector2(512.0, 256.0)
+
+enum RoomTypes {
+	Normal,
+	Boss,
+	Shop,
+	Item
+}
