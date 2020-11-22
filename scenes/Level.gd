@@ -7,6 +7,7 @@ func _input(event):
 		SceneChanger.ChangeScene("res://scenes/Level.tscn")
 
 func _ready():
+	Global.EffectsNode = $Effects
 	GenerateLevel()
 	$Rooms/StartRoom.OpenDoors()
 

@@ -11,6 +11,9 @@ var OpenBottom = false
 var OpenLeft = false
 var OpenRight = false
 
+var Activated = false
+var Cleared = false
+
 func SetExits():
 	if OpenTop:
 		$Doors/TopWall.queue_free()
@@ -102,3 +105,31 @@ func CloseDoors():
 		$Doors/Left.Close()
 	if OpenRight:
 		$Doors/Right.Close()
+
+func _on_PlayerDetector_body_entered(body):
+	if not Activated:
+		Activated = true
+		$Layout.get_children()[0].connect("Cleared", self, "RoomCleared")
+		ActivateNodes($Layout)
+	if not Cleared:
+		if Type == Default.RoomTypes.Normal or Type == Default.RoomTypes.Boss:
+			CloseDoors()
+		else:
+			Cleared = true
+
+func _on_PlayerDetector_body_exited(body):
+	if not Cleared:
+		OpenDoors()
+
+func ActivateNodes(startNode):
+	var nodes = [startNode]
+	for currentNode in nodes:
+		if currentNode.has_method("Activate"):
+			currentNode.Activate()
+		var children = currentNode.get_children()
+		for child in children:
+			nodes.append(child)
+
+func RoomCleared():
+	Cleared = true
+	OpenDoors()
