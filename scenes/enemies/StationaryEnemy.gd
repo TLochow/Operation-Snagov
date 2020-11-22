@@ -4,7 +4,7 @@ var SHOTSCENE = preload("res://scenes/Shot.tscn")
 
 onready var Player = get_tree().get_nodes_in_group("Player")[0]
 onready var ShotNode = get_tree().get_nodes_in_group("ShotsNode")[0]
-onready var Position = to_global(get_position())
+onready var Position = get_global_position()
 
 onready var SpriteNode = $Sprite
 
