@@ -11,6 +11,7 @@ func _ready():
 	$Rooms/StartRoom.OpenDoors()
 
 func GenerateLevel():
+	$Rooms/StartRoom.Type = Default.RoomTypes.Start
 	# Generate Rooms
 	var roomsNode = $Rooms
 	Global.LevelGenBlockedCoords = [Vector2(0, 0)]
