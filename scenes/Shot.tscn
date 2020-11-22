@@ -10,6 +10,7 @@ enabled = true
 collision_mask = 7
 
 [node name="Line2D" type="Line2D" parent="."]
+width = 1.0
 default_color = Color( 1, 1, 1, 0.588235 )
 
 [node name="ColorTween" type="Tween" parent="."]
