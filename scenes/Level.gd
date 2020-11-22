@@ -25,9 +25,6 @@ func GenerateLevel():
 			allRooms = roomsNode.get_children()
 			if roomIndex >= allRooms.size():
 				roomsLeftToGenerate = false
-
-	for room in allRooms:
-		room.SetExits()
 	
 	# Selecting Special Rooms
 	var numberOfRooms = allRooms.size()
@@ -41,3 +38,8 @@ func GenerateLevel():
 			else:
 				room.Type = Default.RoomTypes.Item
 				break
+	
+	# Load Layouts
+	for room in allRooms:
+		room.SetExits()
+		room.LoadLayout()

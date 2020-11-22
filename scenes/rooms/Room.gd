@@ -11,19 +11,6 @@ var OpenBottom = false
 var OpenLeft = false
 var OpenRight = false
 
-func _process(delta):
-	var brightness = 1.0 - (DistanceToStart * 0.1)
-	var color = Color.white
-	if Type == Default.RoomTypes.Boss:
-		color = Color.red
-	elif Type == Default.RoomTypes.Item:
-		color = Color.green
-	elif Type == Default.RoomTypes.Shop:
-		color = Color.blue
-	color *= brightness
-	$TileMap.modulate = color
-	$Label.text = str(DistanceToStart)
-
 func SetExits():
 	if OpenTop:
 		$Doors/TopWall.queue_free()
@@ -41,6 +28,9 @@ func SetExits():
 		$Doors/RightWall.queue_free()
 	else:
 		$Doors/Right.queue_free()
+
+func LoadLayout():
+	$Layout.add_child(LayoutLoader.LoadRandomLayout(Global.CurrentLevel, Type))
 
 func GenerateNeighbors(roomsNode):
 	GeneratedNeighbors = true
