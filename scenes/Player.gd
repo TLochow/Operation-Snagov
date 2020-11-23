@@ -29,7 +29,7 @@ func _physics_process(delta):
 		moveDirection += Default.DirUp
 	if Input.is_action_pressed("ui_down"):
 		moveDirection += Default.DirDown
-	move_and_slide(moveDirection.normalized() * delta * 10000.0, Default.DirCenter)
+	move_and_slide(moveDirection.normalized() * 100.0, Default.DirCenter)
 	if moveDirection == Default.DirCenter:
 		if PlayingWalkAnimation:
 			AnimPlayer.stop(false)

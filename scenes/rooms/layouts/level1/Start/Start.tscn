@@ -1,50 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scenes/rooms/layouts/LayoutBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/rooms/layouts/level1/Start/Start.gd" type="Script" id=2]
-[ext_resource path="res://scenes/objects/furniture/FilingCabinet.tscn" type="PackedScene" id=3]
 
 [node name="LayoutTemplate" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
 [node name="TileMap" parent="." index="0"]
 tile_data = PoolIntArray( -393231, 1, 0, -393230, 1, 0, -393229, 1, 0, -393228, 1, 0, -393227, 1, 0, -393226, 1, 0, -393225, 1, 0, -393224, 1, 0, -393223, 1, 0, -393222, 1, 0, -393221, 1, 0, -393220, 1, 0, -393219, 1, 0, -393218, 1, 0, -393217, 1, 0, -458752, 1, 0, -458751, 1, 0, -458750, 1, 0, -458749, 1, 0, -458748, 1, 0, -458747, 1, 0, -458746, 1, 0, -458745, 1, 0, -458744, 1, 0, -458743, 1, 0, -458742, 1, 0, -458741, 1, 0, -458740, 1, 0, -458739, 1, 0, -458738, 1, 0, -327695, 1, 0, -393202, 1, 0, -262159, 1, 0, -327666, 1, 0, -196623, 1, 0, -262130, 1, 0, -131087, 1, 0, -131073, 1, 0, -196608, 1, 0, -196594, 1, 0, -65551, 1, 0, -65538, 1, 0, -131071, 1, 0, -131058, 1, 0, -15, 1, 0, -2, 1, 0, -65522, 1, 0, 65521, 1, 0, 65535, 1, 0, 0, 1, 0, 14, 1, 0, 131057, 1, 0, 65537, 1, 0, 65550, 1, 0, 196593, 1, 0, 196606, 1, 0, 131073, 1, 0, 131086, 1, 0, 262129, 1, 0, 262143, 1, 0, 196608, 1, 0, 196622, 1, 0, 327665, 1, 0, 262158, 1, 0, 393201, 1, 0, 327694, 1, 0, 458737, 1, 0, 458738, 1, 0, 458739, 1, 0, 458740, 1, 0, 458741, 1, 0, 458742, 1, 0, 458743, 1, 0, 458744, 1, 0, 458745, 1, 0, 458746, 1, 0, 458747, 1, 0, 458748, 1, 0, 458749, 1, 0, 458750, 1, 0, 458751, 1, 0, 393216, 1, 0, 393217, 1, 0, 393218, 1, 0, 393219, 1, 0, 393220, 1, 0, 393221, 1, 0, 393222, 1, 0, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 1, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 1, 0 )
-
-[node name="FilingCabinet" parent="." index="2" instance=ExtResource( 3 )]
-position = Vector2( -176, -72 )
-
-[node name="FilingCabinet2" parent="." index="3" instance=ExtResource( 3 )]
-position = Vector2( -176, -32 )
-
-[node name="FilingCabinet3" parent="." index="4" instance=ExtResource( 3 )]
-position = Vector2( -184, 24 )
-
-[node name="FilingCabinet4" parent="." index="5" instance=ExtResource( 3 )]
-position = Vector2( -168, 64 )
-
-[node name="FilingCabinet5" parent="." index="6" instance=ExtResource( 3 )]
-position = Vector2( -104, 72 )
-
-[node name="FilingCabinet6" parent="." index="7" instance=ExtResource( 3 )]
-position = Vector2( -96, -8 )
-
-[node name="FilingCabinet7" parent="." index="8" instance=ExtResource( 3 )]
-position = Vector2( -80, -72 )
-
-[node name="FilingCabinet8" parent="." index="9" instance=ExtResource( 3 )]
-position = Vector2( 56, -72 )
-
-[node name="FilingCabinet9" parent="." index="10" instance=ExtResource( 3 )]
-position = Vector2( 152, -56 )
-
-[node name="FilingCabinet10" parent="." index="11" instance=ExtResource( 3 )]
-position = Vector2( 152, 8 )
-
-[node name="FilingCabinet11" parent="." index="12" instance=ExtResource( 3 )]
-position = Vector2( 80, 64 )
-
-[node name="FilingCabinet12" parent="." index="13" instance=ExtResource( 3 )]
-position = Vector2( 88, -16 )
-
-[node name="FilingCabinet13" parent="." index="14" instance=ExtResource( 3 )]
-position = Vector2( 152, 72 )

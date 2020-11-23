@@ -4,14 +4,37 @@ var SHOTSCENE = preload("res://scenes/Shot.tscn")
 
 onready var Player = get_tree().get_nodes_in_group("Player")[0]
 onready var ShotNode = get_tree().get_nodes_in_group("ShotsNode")[0]
-onready var Position = get_global_position()
+var Position
 
 onready var SpriteNode = $Sprite
 
 var ShootCooldown = 2.0
 var ShootCooldownReset = 2.0
 
-func _process(delta):
+export(bool) var HorizontalMovement = true
+var MovingNegative = false
+var BaseMovement
+
+func _ready():
+	._ready()
+	MovingNegative = randi() % 2 == 0
+	BaseMovement = Default.DirDown
+	if HorizontalMovement:
+		BaseMovement = Default.DirRight
+
+func Activate():
+	.Activate()
+	$AnimationPlayer.play("Walk")
+
+func _physics_process(delta):
+	var move = BaseMovement
+	if MovingNegative:
+		move *= -1.0
+	var collision = move_and_collide(move * delta * 50.0)
+	if collision:
+		MovingNegative = not MovingNegative
+	
+	Position = get_global_position()
 	var direction = Player.get_position() - Position
 	var angle = direction.angle()
 	SpriteNode.rotation = angle
