@@ -15,7 +15,7 @@ func Activate():
 	set_process(true)
 	set_physics_process(true)
 
-func Damage(damage, hitPoint, direction):
+func Damage(damage, hitPoint, direction, collisionNormal):
 	if Active:
 		Health -= damage
 		if Health <= 0.0:

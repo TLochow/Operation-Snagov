@@ -1,11 +1,17 @@
 extends StaticBody2D
 
 var DEBRISSCENE = preload("res://scenes/objects/Debris.tscn")
+var WALLHITSCENE = preload("res://scenes/effects/WallHit.tscn")
 
 export(float) var Health = 10.0
 var Destroyed = false
 
-func Damage(damage, hitPoint, direction):
+func Damage(damage, hitPoint, direction, collisionNormal):
+	var hitEffect = WALLHITSCENE.instance()
+	hitEffect.set_position(hitPoint)
+	hitEffect.rotation = collisionNormal.angle()
+	Global.EffectsNode.add_child(hitEffect)
+	
 	Health -= damage
 	if Health <= 0.0:
 		Destroy(direction)
