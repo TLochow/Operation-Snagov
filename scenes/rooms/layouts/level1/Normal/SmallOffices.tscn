@@ -1,0 +1,428 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/rooms/layouts/LayoutBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/objects/furniture/ThinWall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/objects/furniture/WasteBucket.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/objects/furniture/PottedPlant.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/objects/furniture/OfficeChair.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/objects/furniture/Desk.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/objects/furniture/FilingCabinet.tscn" type="PackedScene" id=7]
+
+[node name="SmallOffices" instance=ExtResource( 1 )]
+IsEnemyBased = true
+
+[node name="Walls" type="Node2D" parent="." index="1"]
+
+[node name="ThinWall" parent="Walls" index="0" instance=ExtResource( 2 )]
+position = Vector2( -224, -24 )
+
+[node name="ThinWall12" parent="Walls" index="1" instance=ExtResource( 2 )]
+position = Vector2( -224, 24 )
+
+[node name="ThinWall13" parent="Walls" index="2" instance=ExtResource( 2 )]
+position = Vector2( -144, 24 )
+
+[node name="ThinWall14" parent="Walls" index="3" instance=ExtResource( 2 )]
+position = Vector2( -96, 24 )
+
+[node name="ThinWall4" parent="Walls" index="4" instance=ExtResource( 2 )]
+position = Vector2( -144, -24 )
+
+[node name="ThinWall8" parent="Walls" index="5" instance=ExtResource( 2 )]
+position = Vector2( -96, -24 )
+
+[node name="ThinWall23" parent="Walls" index="6" instance=ExtResource( 2 )]
+position = Vector2( 224, -24 )
+
+[node name="ThinWall31" parent="Walls" index="7" instance=ExtResource( 2 )]
+position = Vector2( 224, 24 )
+
+[node name="ThinWall34" parent="Walls" index="8" instance=ExtResource( 2 )]
+position = Vector2( 144, 24 )
+
+[node name="ThinWall37" parent="Walls" index="9" instance=ExtResource( 2 )]
+position = Vector2( 96, 24 )
+
+[node name="ThinWall26" parent="Walls" index="10" instance=ExtResource( 2 )]
+position = Vector2( 144, -24 )
+
+[node name="ThinWall30" parent="Walls" index="11" instance=ExtResource( 2 )]
+position = Vector2( 96, -24 )
+
+[node name="ThinWall2" parent="Walls" index="12" instance=ExtResource( 2 )]
+position = Vector2( -200, -96 )
+rotation = 1.5708
+
+[node name="ThinWall3" parent="Walls" index="13" instance=ExtResource( 2 )]
+position = Vector2( -168, -96 )
+rotation = 1.5708
+
+[node name="ThinWall5" parent="Walls" index="14" instance=ExtResource( 2 )]
+position = Vector2( -120, -48 )
+rotation = 1.5708
+
+[node name="ThinWall6" parent="Walls" index="15" instance=ExtResource( 2 )]
+position = Vector2( -120, -96 )
+rotation = 1.5708
+
+[node name="ThinWall7" parent="Walls" index="16" instance=ExtResource( 2 )]
+position = Vector2( -72, -96 )
+rotation = 1.5708
+
+[node name="ThinWall9" parent="Walls" index="17" instance=ExtResource( 2 )]
+position = Vector2( -24, -96 )
+rotation = 1.5708
+
+[node name="ThinWall10" parent="Walls" index="18" instance=ExtResource( 2 )]
+position = Vector2( -24, -48 )
+rotation = 1.5708
+
+[node name="ThinWall21" parent="Walls" index="19" instance=ExtResource( 2 )]
+position = Vector2( 24, -96 )
+rotation = 1.5708
+
+[node name="ThinWall24" parent="Walls" index="20" instance=ExtResource( 2 )]
+position = Vector2( 200, -96 )
+rotation = 1.5708
+
+[node name="ThinWall32" parent="Walls" index="21" instance=ExtResource( 2 )]
+position = Vector2( 200, 96 )
+rotation = 1.5708
+
+[node name="ThinWall33" parent="Walls" index="22" instance=ExtResource( 2 )]
+position = Vector2( 168, 96 )
+rotation = 1.5708
+
+[node name="ThinWall38" parent="Walls" index="23" instance=ExtResource( 2 )]
+position = Vector2( 72, 96 )
+rotation = 1.5708
+
+[node name="ThinWall39" parent="Walls" index="24" instance=ExtResource( 2 )]
+position = Vector2( 24, 96 )
+rotation = 1.5708
+
+[node name="ThinWall40" parent="Walls" index="25" instance=ExtResource( 2 )]
+position = Vector2( 24, 48 )
+rotation = 1.5708
+
+[node name="ThinWall35" parent="Walls" index="26" instance=ExtResource( 2 )]
+position = Vector2( 120, 48 )
+rotation = 1.5708
+
+[node name="ThinWall36" parent="Walls" index="27" instance=ExtResource( 2 )]
+position = Vector2( 120, 96 )
+rotation = 1.5708
+
+[node name="ThinWall25" parent="Walls" index="28" instance=ExtResource( 2 )]
+position = Vector2( 168, -96 )
+rotation = 1.5708
+
+[node name="ThinWall27" parent="Walls" index="29" instance=ExtResource( 2 )]
+position = Vector2( 120, -48 )
+rotation = 1.5708
+
+[node name="ThinWall28" parent="Walls" index="30" instance=ExtResource( 2 )]
+position = Vector2( 120, -96 )
+rotation = 1.5708
+
+[node name="ThinWall29" parent="Walls" index="31" instance=ExtResource( 2 )]
+position = Vector2( 72, -96 )
+rotation = 1.5708
+
+[node name="ThinWall22" parent="Walls" index="32" instance=ExtResource( 2 )]
+position = Vector2( 24, -48 )
+rotation = 1.5708
+
+[node name="ThinWall11" parent="Walls" index="33" instance=ExtResource( 2 )]
+position = Vector2( -120, 48 )
+rotation = 1.5708
+
+[node name="ThinWall15" parent="Walls" index="34" instance=ExtResource( 2 )]
+position = Vector2( -120, 96 )
+rotation = 1.5708
+
+[node name="ThinWall16" parent="Walls" index="35" instance=ExtResource( 2 )]
+position = Vector2( -200, 96 )
+rotation = 1.5708
+
+[node name="ThinWall17" parent="Walls" index="36" instance=ExtResource( 2 )]
+position = Vector2( -168, 96 )
+rotation = 1.5708
+
+[node name="ThinWall18" parent="Walls" index="37" instance=ExtResource( 2 )]
+position = Vector2( -72, 96 )
+rotation = 1.5708
+
+[node name="ThinWall19" parent="Walls" index="38" instance=ExtResource( 2 )]
+position = Vector2( -24, 96 )
+rotation = 1.5708
+
+[node name="ThinWall20" parent="Walls" index="39" instance=ExtResource( 2 )]
+position = Vector2( -24, 48 )
+rotation = 1.5708
+
+[node name="Furniture" type="Node2D" parent="." index="2"]
+
+[node name="Desk" parent="Furniture" index="0" instance=ExtResource( 6 )]
+position = Vector2( -224, -112 )
+rotation = 1.5708
+
+[node name="Desk5" parent="Furniture" index="1" instance=ExtResource( 6 )]
+position = Vector2( -212, 104 )
+rotation = 3.14159
+
+[node name="Desk8" parent="Furniture" index="2" instance=ExtResource( 6 )]
+position = Vector2( -36, 104 )
+rotation = 3.14159
+
+[node name="Desk6" parent="Furniture" index="3" instance=ExtResource( 6 )]
+position = Vector2( -156, 104 )
+
+[node name="Desk7" parent="Furniture" index="4" instance=ExtResource( 6 )]
+position = Vector2( -108, 104 )
+
+[node name="Desk2" parent="Furniture" index="5" instance=ExtResource( 6 )]
+position = Vector2( -144, -112 )
+rotation = 1.5708
+
+[node name="Desk3" parent="Furniture" index="6" instance=ExtResource( 6 )]
+position = Vector2( -96, -112 )
+rotation = 1.5708
+
+[node name="Desk4" parent="Furniture" index="7" instance=ExtResource( 6 )]
+position = Vector2( -48, -112 )
+rotation = 1.5708
+
+[node name="Desk9" parent="Furniture" index="8" instance=ExtResource( 6 )]
+position = Vector2( 60, -100 )
+rotation = 3.14159
+
+[node name="Desk10" parent="Furniture" index="9" instance=ExtResource( 6 )]
+position = Vector2( 100, -36 )
+rotation = -1.5708
+
+[node name="Desk13" parent="Furniture" index="10" instance=ExtResource( 6 )]
+position = Vector2( 240, 44 )
+rotation = 3.14159
+
+[node name="Desk14" parent="Furniture" index="11" instance=ExtResource( 6 )]
+position = Vector2( 148, 112 )
+rotation = -1.5708
+
+[node name="Desk15" parent="Furniture" index="12" instance=ExtResource( 6 )]
+position = Vector2( 108, 104 )
+rotation = 3.14159
+
+[node name="Desk16" parent="Furniture" index="13" instance=ExtResource( 6 )]
+position = Vector2( 52, 112 )
+rotation = -1.5708
+
+[node name="Desk11" parent="Furniture" index="14" instance=ExtResource( 6 )]
+position = Vector2( 144, -36 )
+rotation = -1.5708
+
+[node name="Desk12" parent="Furniture" index="15" instance=ExtResource( 6 )]
+position = Vector2( 232, -80 )
+rotation = -1.5708
+
+[node name="OfficeChair" parent="Furniture" index="16" instance=ExtResource( 5 )]
+position = Vector2( -224, -96 )
+
+[node name="OfficeChair5" parent="Furniture" index="17" instance=ExtResource( 5 )]
+position = Vector2( -232, 112 )
+
+[node name="OfficeChair8" parent="Furniture" index="18" instance=ExtResource( 5 )]
+position = Vector2( -136, 100 )
+
+[node name="OfficeChair10" parent="Furniture" index="19" instance=ExtResource( 5 )]
+position = Vector2( -88, 104 )
+
+[node name="OfficeChair11" parent="Furniture" index="20" instance=ExtResource( 5 )]
+position = Vector2( -56, 88 )
+
+[node name="OfficeChair9" parent="Furniture" index="21" instance=ExtResource( 5 )]
+position = Vector2( -140, 80 )
+
+[node name="OfficeChair6" parent="Furniture" index="22" instance=ExtResource( 5 )]
+position = Vector2( -180, 96 )
+
+[node name="OfficeChair7" parent="Furniture" index="23" instance=ExtResource( 5 )]
+position = Vector2( -188, 112 )
+
+[node name="OfficeChair2" parent="Furniture" index="24" instance=ExtResource( 5 )]
+position = Vector2( -144, -96 )
+
+[node name="OfficeChair3" parent="Furniture" index="25" instance=ExtResource( 5 )]
+position = Vector2( -96, -96 )
+
+[node name="OfficeChair4" parent="Furniture" index="26" instance=ExtResource( 5 )]
+position = Vector2( -48, -96 )
+
+[node name="OfficeChair12" parent="Furniture" index="27" instance=ExtResource( 5 )]
+position = Vector2( 36, -104 )
+
+[node name="OfficeChair13" parent="Furniture" index="28" instance=ExtResource( 5 )]
+position = Vector2( 96, -56 )
+
+[node name="OfficeChair14" parent="Furniture" index="29" instance=ExtResource( 5 )]
+position = Vector2( 132, -56 )
+
+[node name="OfficeChair16" parent="Furniture" index="30" instance=ExtResource( 5 )]
+position = Vector2( 236, -60 )
+
+[node name="OfficeChair17" parent="Furniture" index="31" instance=ExtResource( 5 )]
+position = Vector2( 224, 36 )
+
+[node name="OfficeChair18" parent="Furniture" index="32" instance=ExtResource( 5 )]
+position = Vector2( 148, 96 )
+
+[node name="OfficeChair19" parent="Furniture" index="33" instance=ExtResource( 5 )]
+position = Vector2( 88, 104 )
+
+[node name="OfficeChair20" parent="Furniture" index="34" instance=ExtResource( 5 )]
+position = Vector2( 60, 96 )
+
+[node name="OfficeChair21" parent="Furniture" index="35" instance=ExtResource( 5 )]
+position = Vector2( 36, 96 )
+
+[node name="OfficeChair15" parent="Furniture" index="36" instance=ExtResource( 5 )]
+position = Vector2( 236, -96 )
+
+[node name="WasteBucket" parent="Furniture" index="37" instance=ExtResource( 3 )]
+position = Vector2( -132, -80 )
+
+[node name="WasteBucket3" parent="Furniture" index="38" instance=ExtResource( 3 )]
+position = Vector2( -72, -64 )
+
+[node name="WasteBucket8" parent="Furniture" index="39" instance=ExtResource( 3 )]
+position = Vector2( 72, -36 )
+
+[node name="WasteBucket9" parent="Furniture" index="40" instance=ExtResource( 3 )]
+position = Vector2( 212, -112 )
+
+[node name="WasteBucket11" parent="Furniture" index="41" instance=ExtResource( 3 )]
+position = Vector2( 240, 72 )
+
+[node name="WasteBucket12" parent="Furniture" index="42" instance=ExtResource( 3 )]
+position = Vector2( 180, 100 )
+
+[node name="WasteBucket13" parent="Furniture" index="43" instance=ExtResource( 3 )]
+position = Vector2( 108, 76 )
+
+[node name="WasteBucket14" parent="Furniture" index="44" instance=ExtResource( 3 )]
+position = Vector2( 36, 64 )
+
+[node name="WasteBucket10" parent="Furniture" index="45" instance=ExtResource( 3 )]
+position = Vector2( 156, -88 )
+
+[node name="WasteBucket2" parent="Furniture" index="46" instance=ExtResource( 3 )]
+position = Vector2( -240, -36 )
+
+[node name="WasteBucket4" parent="Furniture" index="47" instance=ExtResource( 3 )]
+position = Vector2( -212, 80 )
+
+[node name="WasteBucket5" parent="Furniture" index="48" instance=ExtResource( 3 )]
+position = Vector2( -160, 36 )
+
+[node name="WasteBucket6" parent="Furniture" index="49" instance=ExtResource( 3 )]
+position = Vector2( -56, 112 )
+
+[node name="WasteBucket7" parent="Furniture" index="50" instance=ExtResource( 3 )]
+position = Vector2( -108, 36 )
+
+[node name="PottedPlant" parent="Furniture" index="51" instance=ExtResource( 4 )]
+position = Vector2( -180, -112 )
+
+[node name="PottedPlant2" parent="Furniture" index="52" instance=ExtResource( 4 )]
+position = Vector2( -108, -36 )
+
+[node name="PottedPlant4" parent="Furniture" index="53" instance=ExtResource( 4 )]
+position = Vector2( 84, -108 )
+
+[node name="PottedPlant5" parent="Furniture" index="54" instance=ExtResource( 4 )]
+position = Vector2( 84, -88 )
+
+[node name="PottedPlant7" parent="Furniture" index="55" instance=ExtResource( 4 )]
+position = Vector2( 156, 76 )
+
+[node name="PottedPlant11" parent="Furniture" index="56" instance=ExtResource( 4 )]
+position = Vector2( 108, 36 )
+
+[node name="PottedPlant9" parent="Furniture" index="57" instance=ExtResource( 4 )]
+position = Vector2( 136, 36 )
+
+[node name="PottedPlant8" parent="Furniture" index="58" instance=ExtResource( 4 )]
+position = Vector2( 188, -92 )
+
+[node name="PottedPlant3" parent="Furniture" index="59" instance=ExtResource( 4 )]
+position = Vector2( -36, 76 )
+
+[node name="PottedPlant6" parent="Furniture" index="60" instance=ExtResource( 4 )]
+position = Vector2( -240, 52 )
+
+[node name="FilingCabinet" parent="Furniture" index="61" instance=ExtResource( 7 )]
+position = Vector2( 108, -112 )
+rotation = 1.5708
+
+[node name="FilingCabinet9" parent="Furniture" index="62" instance=ExtResource( 7 )]
+position = Vector2( 132, -112 )
+rotation = 1.5708
+
+[node name="FilingCabinet10" parent="Furniture" index="63" instance=ExtResource( 7 )]
+position = Vector2( 152, -112 )
+rotation = 1.5708
+
+[node name="FilingCabinet12" parent="Furniture" index="64" instance=ExtResource( 7 )]
+position = Vector2( 180, -112 )
+rotation = 1.5708
+
+[node name="FilingCabinet11" parent="Furniture" index="65" instance=ExtResource( 7 )]
+position = Vector2( 220, -36 )
+rotation = -1.5708
+
+[node name="FilingCabinet2" parent="Furniture" index="66" instance=ExtResource( 7 )]
+position = Vector2( -132, -36 )
+rotation = -1.5708
+
+[node name="FilingCabinet3" parent="Furniture" index="67" instance=ExtResource( 7 )]
+position = Vector2( -148, -36 )
+rotation = -1.5708
+
+[node name="FilingCabinet4" parent="Furniture" index="68" instance=ExtResource( 7 )]
+position = Vector2( -88, -36 )
+rotation = -1.5708
+
+[node name="FilingCabinet13" parent="Furniture" index="69" instance=ExtResource( 7 )]
+position = Vector2( 240, 112 )
+rotation = -1.5708
+
+[node name="FilingCabinet14" parent="Furniture" index="70" instance=ExtResource( 7 )]
+position = Vector2( 224, 112 )
+rotation = -1.5708
+
+[node name="FilingCabinet16" parent="Furniture" index="71" instance=ExtResource( 7 )]
+position = Vector2( 156, 36 )
+rotation = 1.5708
+
+[node name="FilingCabinet17" parent="Furniture" index="72" instance=ExtResource( 7 )]
+position = Vector2( 88, 36 )
+rotation = 1.5708
+
+[node name="FilingCabinet18" parent="Furniture" index="73" instance=ExtResource( 7 )]
+position = Vector2( 108, 56 )
+rotation = 3.14159
+
+[node name="FilingCabinet15" parent="Furniture" index="74" instance=ExtResource( 7 )]
+position = Vector2( 212, 92 )
+
+[node name="FilingCabinet5" parent="Furniture" index="75" instance=ExtResource( 7 )]
+position = Vector2( -240, 36 )
+
+[node name="FilingCabinet6" parent="Furniture" index="76" instance=ExtResource( 7 )]
+position = Vector2( -240, 68 )
+
+[node name="FilingCabinet7" parent="Furniture" index="77" instance=ExtResource( 7 )]
+position = Vector2( 36, -60 )
+
+[node name="FilingCabinet8" parent="Furniture" index="78" instance=ExtResource( 7 )]
+position = Vector2( 36, -44 )
