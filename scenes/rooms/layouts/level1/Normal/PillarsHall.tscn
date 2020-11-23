@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/rooms/layouts/LayoutBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/enemies/StationaryEnemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/objects/furniture/Bench.tscn" type="PackedScene" id=3]
+
+[node name="PillarsHall" instance=ExtResource( 1 )]
+IsEnemyBased = true
+
+[node name="TileMap" parent="." index="0"]
+tile_data = PoolIntArray( -458768, 7, 0, -458767, 3, 0, -458766, 3, 0, -458765, 3, 0, -458764, 3, 0, -458763, 3, 0, -458762, 3, 0, -458761, 3, 0, -458760, 3, 0, -458759, 3, 0, -458758, 3, 0, -458757, 3, 0, -458756, 3, 0, -458755, 3, 0, -524286, 3, 0, -524285, 3, 0, -524284, 3, 0, -524283, 3, 0, -524282, 3, 0, -524281, 3, 0, -524280, 3, 0, -524279, 3, 0, -524278, 3, 0, -524277, 3, 0, -524276, 3, 0, -524275, 3, 0, -524274, 3, 0, -524273, 8, 0, -393232, 5, 0, -458737, 4, 0, -327696, 5, 0, -393201, 4, 0, -262160, 5, 0, -327665, 4, 0, -196624, 5, 0, -196619, 19, 0, -196618, 6, 0, -196617, 20, 0, -196614, 19, 0, -196613, 6, 0, -196612, 20, 0, -262141, 19, 0, -262140, 6, 0, -262139, 20, 0, -262136, 19, 0, -262135, 6, 0, -262134, 20, 0, -262129, 4, 0, -131088, 5, 0, -131083, 4, 0, -131082, 0, 0, -131081, 5, 0, -131078, 4, 0, -131077, 0, 0, -131076, 5, 0, -196605, 4, 0, -196604, 0, 0, -196603, 5, 0, -196600, 4, 0, -196599, 0, 0, -196598, 5, 0, -196593, 4, 0, -65547, 21, 0, -65546, 3, 0, -65545, 22, 0, -65542, 21, 0, -65541, 3, 0, -65540, 22, 0, -131069, 21, 0, -131068, 3, 0, -131067, 22, 0, -131064, 21, 0, -131063, 3, 0, -131062, 22, 0, 131061, 19, 0, 131062, 6, 0, 131063, 20, 0, 131066, 19, 0, 131067, 6, 0, 131068, 20, 0, 65539, 19, 0, 65540, 6, 0, 65541, 20, 0, 65544, 19, 0, 65545, 6, 0, 65546, 20, 0, 196592, 5, 0, 196597, 4, 0, 196598, 0, 0, 196599, 5, 0, 196602, 4, 0, 196603, 0, 0, 196604, 5, 0, 131075, 4, 0, 131076, 0, 0, 131077, 5, 0, 131080, 4, 0, 131081, 0, 0, 131082, 5, 0, 131087, 4, 0, 262128, 5, 0, 262133, 21, 0, 262134, 3, 0, 262135, 22, 0, 262138, 21, 0, 262139, 3, 0, 262140, 22, 0, 196611, 21, 0, 196612, 3, 0, 196613, 22, 0, 196616, 21, 0, 196617, 3, 0, 196618, 22, 0, 196623, 4, 0, 327664, 5, 0, 262159, 4, 0, 393200, 5, 0, 327695, 4, 0, 458736, 5, 0, 393231, 4, 0, 524272, 9, 0, 524273, 6, 0, 524274, 6, 0, 524275, 6, 0, 524276, 6, 0, 524277, 6, 0, 524278, 6, 0, 524279, 6, 0, 524280, 6, 0, 524281, 6, 0, 524282, 6, 0, 524283, 6, 0, 524284, 6, 0, 524285, 6, 0, 458754, 6, 0, 458755, 6, 0, 458756, 6, 0, 458757, 6, 0, 458758, 6, 0, 458759, 6, 0, 458760, 6, 0, 458761, 6, 0, 458762, 6, 0, 458763, 6, 0, 458764, 6, 0, 458765, 6, 0, 458766, 6, 0, 458767, 10, 0 )
+
+[node name="StationaryEnemy" parent="Enemies" index="0" instance=ExtResource( 2 )]
+position = Vector2( -112, 40 )
+collision_layer = 4
+
+[node name="StationaryEnemy2" parent="Enemies" index="1" instance=ExtResource( 2 )]
+position = Vector2( -112, -40 )
+collision_layer = 4
+
+[node name="StationaryEnemy3" parent="Enemies" index="2" instance=ExtResource( 2 )]
+position = Vector2( 112, -40 )
+collision_layer = 4
+
+[node name="StationaryEnemy4" parent="Enemies" index="3" instance=ExtResource( 2 )]
+position = Vector2( 112, 40 )
+collision_layer = 4
+
+[node name="Bench" parent="." index="2" instance=ExtResource( 3 )]
+position = Vector2( -240, -80 )
+
+[node name="Bench2" parent="." index="3" instance=ExtResource( 3 )]
+position = Vector2( -240, 80 )
+
+[node name="Bench3" parent="." index="4" instance=ExtResource( 3 )]
+position = Vector2( 240, 80 )
+rotation = 3.14159
+
+[node name="Bench4" parent="." index="5" instance=ExtResource( 3 )]
+position = Vector2( 240, -80 )
+rotation = 3.14159
+
+[node name="Bench5" parent="." index="6" instance=ExtResource( 3 )]
+position = Vector2( 128, -40 )
+rotation = 3.14159
+
+[node name="Bench6" parent="." index="7" instance=ExtResource( 3 )]
+position = Vector2( 128, 40 )
+rotation = 3.14159
+
+[node name="Bench7" parent="." index="8" instance=ExtResource( 3 )]
+position = Vector2( -128, 40 )
+
+[node name="Bench8" parent="." index="9" instance=ExtResource( 3 )]
+position = Vector2( -128, -40 )

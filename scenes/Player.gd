@@ -10,7 +10,7 @@ onready var PlayerSprite = $Sprite
 
 var LookDirection = Vector2(0.0, 0.0)
 
-var ShootCooldownTime = 0.5
+var ShootCooldownTime = 0.1
 var ShootCooldown = 0.0
 var ShotSpread = 0.1
 var ShotAmount = 1.0

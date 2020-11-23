@@ -8,7 +8,7 @@ onready var Position = get_global_position()
 
 onready var SpriteNode = $Sprite
 
-var ShootCooldown = 5.0
+var ShootCooldown = 2.0
 
 func _process(delta):
 	var direction = Player.get_position() - Position

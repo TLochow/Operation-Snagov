@@ -2,7 +2,7 @@ extends StaticBody2D
 
 var DEBRISSCENE = preload("res://scenes/objects/Debris.tscn")
 
-var Health = 1.0
+export(float) var Health = 10.0
 
 func Damage(damage, hitPoint, direction):
 	Health -= damage
