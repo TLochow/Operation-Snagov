@@ -11,5 +11,4 @@ func CutSprite(width, height, xIndex, yIndex):
 	spriteNode.region_rect = Rect2(Vector2(width * xIndex, height * yIndex) + Vector2(frameWidth * hFrameNumber, frameHeight * vFrameNumber), Vector2(width, height))
 	spriteNode.set_hframes(1)
 	spriteNode.set_vframes(1)
-	var maskSprite = $Mask
-	maskSprite.scale = Vector2(width / 64.0, height / 64.0)
+	spriteNode.frame = 0
