@@ -8,21 +8,26 @@ onready var Position = get_global_position()
 
 onready var SpriteNode = $Sprite
 
-var ShootCooldown = 2.0
-var ShootCooldownReset = 2.0
+onready var ShootCooldownCounter = ShootCooldown + rand_range(0.0, ShootCooldown)
+export(float) var ShootCooldown = 2.0
+export(float) var ShootAmount = 1.0
+export(float) var ShootDamage = 1.0
+export(float) var ShootSpread = 0.0
 
 func _process(delta):
 	var direction = Player.get_position() - Position
 	var angle = direction.angle()
 	SpriteNode.rotation = angle
-	ShootCooldown -= delta
-	if ShootCooldown <= 0.0:
+	ShootCooldownCounter -= delta
+	if ShootCooldownCounter <= 0.0:
 		Shoot(direction)
 
 func Shoot(direction):
-	ShootCooldown = ShootCooldownReset
+	ShootCooldownCounter = ShootCooldown
 	var shootPos = Position + (direction.normalized() * 6.0)
-	var shot = SHOTSCENE.instance()
-	ShotNode.add_child(shot)
-	shot.set_position(shootPos)
-	shot.Shoot(1.0, direction.angle())
+	for i in range(ShootAmount):
+		var shot = SHOTSCENE.instance()
+		ShotNode.add_child(shot)
+		shot.set_position(shootPos)
+		var shootAngle = direction.angle() + rand_range(-ShootSpread, ShootSpread)
+		shot.Shoot(ShootDamage, shootAngle)

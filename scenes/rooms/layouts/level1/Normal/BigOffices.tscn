@@ -10,7 +10,7 @@
 [ext_resource path="res://scenes/objects/furniture/PottedPlant.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/objects/furniture/FilingCabinet.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/objects/furniture/WasteBucket.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/enemies/SimpleMovingEnemy.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/enemies/RandomMoveEnemy.tscn" type="PackedScene" id=11]
 
 [node name="BigOffices" instance=ExtResource( 1 )]
 IsEnemyBased = true
@@ -220,14 +220,26 @@ rotation = 3.14159
 position = Vector2( 64, 64 )
 rotation = 1.5708
 
-[node name="SimpleMovingEnemy" parent="Enemies" index="0" instance=ExtResource( 11 )]
-position = Vector2( -96, -88 )
+[node name="RandomMoveEnemy" parent="Enemies" index="0" instance=ExtResource( 11 )]
+position = Vector2( -200, -80 )
 
-[node name="SimpleMovingEnemy2" parent="Enemies" index="1" instance=ExtResource( 11 )]
-position = Vector2( 120, -64 )
+[node name="RandomMoveEnemy2" parent="Enemies" index="1" instance=ExtResource( 11 )]
+position = Vector2( -88, -88 )
 
-[node name="SimpleMovingEnemy3" parent="Enemies" index="2" instance=ExtResource( 11 )]
-position = Vector2( 184, 80 )
+[node name="RandomMoveEnemy3" parent="Enemies" index="2" instance=ExtResource( 11 )]
+position = Vector2( 88, -80 )
 
-[node name="SimpleMovingEnemy4" parent="Enemies" index="3" instance=ExtResource( 11 )]
-position = Vector2( -136, 88 )
+[node name="RandomMoveEnemy4" parent="Enemies" index="3" instance=ExtResource( 11 )]
+position = Vector2( 208, -80 )
+
+[node name="RandomMoveEnemy5" parent="Enemies" index="4" instance=ExtResource( 11 )]
+position = Vector2( 216, 96 )
+
+[node name="RandomMoveEnemy6" parent="Enemies" index="5" instance=ExtResource( 11 )]
+position = Vector2( 104, 88 )
+
+[node name="RandomMoveEnemy7" parent="Enemies" index="6" instance=ExtResource( 11 )]
+position = Vector2( -88, 88 )
+
+[node name="RandomMoveEnemy8" parent="Enemies" index="7" instance=ExtResource( 11 )]
+position = Vector2( -168, 80 )

@@ -11,8 +11,8 @@ onready var PlayerSprite = $Sprite
 var LookDirection = Vector2(0.0, 0.0)
 var MoveDirection = Vector2(0.0, 0.0)
 
-var ShootCooldownTime = 0.1
-var ShootCooldown = 0.0
+var ShootCooldown = 0.1
+var ShootCooldownCounter = 0.0
 var ShotSpread = 0.1
 var ShotAmount = 1.0
 var ShotDamage = 1.0
@@ -45,13 +45,13 @@ func _physics_process(delta):
 	var lookAngle = LookDirection.angle()
 	PlayerSprite.rotation = lookAngle
 	
-	ShootCooldown -= delta
-	if Input.is_action_pressed("mouse_left") and ShootCooldown <= 0.0:
+	ShootCooldownCounter -= delta
+	if Input.is_action_pressed("mouse_left") and ShootCooldownCounter <= 0.0:
 		var shootPos = pos + (LookDirection * 6.0)
 		Shoot(lookAngle, shootPos)
 
 func Shoot(angle, pos):
-	ShootCooldown = ShootCooldownTime
+	ShootCooldownCounter = ShootCooldown
 	for i in range(ShotAmount):
 		var shot = SHOTSCENE.instance()
 		ShotNode.add_child(shot)

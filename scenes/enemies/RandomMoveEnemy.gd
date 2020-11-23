@@ -14,28 +14,26 @@ export(float) var ShootAmount = 1.0
 export(float) var ShootDamage = 1.0
 export(float) var ShootSpread = 0.0
 
-export(bool) var HorizontalMovement = true
-var MovingNegative = false
-var BaseMovement
-
-func _ready():
-	._ready()
-	MovingNegative = randi() % 2 == 0
-	BaseMovement = Default.DirDown
-	if HorizontalMovement:
-		BaseMovement = Default.DirRight
+var MoveDir
 
 func Activate():
 	.Activate()
 	$AnimationPlayer.play("Walk")
 
 func _physics_process(delta):
-	var move = BaseMovement
-	if MovingNegative:
-		move *= -1.0
-	var collision = move_and_collide(move * delta * 50.0)
+	if not MoveDir:
+		match randi() % 4:
+			0:
+				MoveDir = Default.DirUp
+			1:
+				MoveDir = Default.DirDown
+			2:
+				MoveDir = Default.DirLeft
+			3:
+				MoveDir = Default.DirRight
+	var collision = move_and_collide(MoveDir * delta * 50.0)
 	if collision:
-		MovingNegative = not MovingNegative
+		MoveDir = null
 	
 	Position = get_global_position()
 	var direction = Player.get_position() - Position

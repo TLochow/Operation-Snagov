@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/rooms/layouts/LayoutBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/enemies/StationaryEnemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/objects/furniture/Bench.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/enemies/SimpleMovingEnemy.tscn" type="PackedScene" id=4]
 
 [node name="PillarsHall" instance=ExtResource( 1 )]
 IsEnemyBased = true
@@ -25,6 +26,9 @@ collision_layer = 4
 [node name="StationaryEnemy4" parent="Enemies" index="3" instance=ExtResource( 2 )]
 position = Vector2( 112, 40 )
 collision_layer = 4
+
+[node name="SimpleMovingEnemy" parent="Enemies" index="4" instance=ExtResource( 4 )]
+HorizontalMovement = false
 
 [node name="Bench" parent="." index="2" instance=ExtResource( 3 )]
 position = Vector2( -240, -80 )

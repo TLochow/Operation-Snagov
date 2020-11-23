@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/rooms/layouts/LayoutBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/objects/furniture/ThinWall.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/objects/furniture/OfficeChair.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/objects/furniture/Desk.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/objects/furniture/FilingCabinet.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/enemies/StationaryEnemy.tscn" type="PackedScene" id=8]
 
 [node name="SmallOffices" instance=ExtResource( 1 )]
 IsEnemyBased = true
@@ -426,3 +427,23 @@ position = Vector2( 36, -60 )
 
 [node name="FilingCabinet8" parent="Furniture" index="78" instance=ExtResource( 7 )]
 position = Vector2( 36, -44 )
+
+[node name="StationaryEnemy" parent="Enemies" index="0" instance=ExtResource( 8 )]
+position = Vector2( -224, -72 )
+ShootAmount = 8.0
+ShootSpread = 0.2
+
+[node name="StationaryEnemy2" parent="Enemies" index="1" instance=ExtResource( 8 )]
+position = Vector2( 216, -60 )
+ShootAmount = 8.0
+ShootSpread = 0.2
+
+[node name="StationaryEnemy3" parent="Enemies" index="2" instance=ExtResource( 8 )]
+position = Vector2( 232, 92 )
+ShootAmount = 8.0
+ShootSpread = 0.2
+
+[node name="StationaryEnemy4" parent="Enemies" index="3" instance=ExtResource( 8 )]
+position = Vector2( -236, 92 )
+ShootAmount = 8.0
+ShootSpread = 0.2
