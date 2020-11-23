@@ -8,6 +8,7 @@ func _input(event):
 
 func _ready():
 	Global.EffectsNode = $Effects
+	Global.DebrisNode = $Debris
 	GenerateLevel()
 	$Rooms/StartRoom.OpenDoors()
 

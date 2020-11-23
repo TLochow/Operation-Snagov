@@ -6,3 +6,4 @@ var LevelGenBlockedCoords = []
 var CurrentLevel = 1
 
 var EffectsNode
+var DebrisNode
