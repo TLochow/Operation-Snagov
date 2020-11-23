@@ -9,6 +9,7 @@ var PlayingWalkAnimation = true
 onready var PlayerSprite = $Sprite
 
 var LookDirection = Vector2(0.0, 0.0)
+var MoveDirection = Vector2(0.0, 0.0)
 
 var ShootCooldownTime = 0.1
 var ShootCooldown = 0.0
@@ -20,17 +21,17 @@ func _ready():
 	AnimPlayer.play("Walk")
 
 func _physics_process(delta):
-	var moveDirection = Default.DirCenter
+	MoveDirection = Default.DirCenter
 	if Input.is_action_pressed("ui_left"):
-		moveDirection += Default.DirLeft
+		MoveDirection += Default.DirLeft
 	if Input.is_action_pressed("ui_right"):
-		moveDirection += Default.DirRight
+		MoveDirection += Default.DirRight
 	if Input.is_action_pressed("ui_up"):
-		moveDirection += Default.DirUp
+		MoveDirection += Default.DirUp
 	if Input.is_action_pressed("ui_down"):
-		moveDirection += Default.DirDown
-	move_and_slide(moveDirection.normalized() * 100.0, Default.DirCenter)
-	if moveDirection == Default.DirCenter:
+		MoveDirection += Default.DirDown
+	move_and_slide(MoveDirection.normalized() * 100.0, Default.DirCenter)
+	if MoveDirection == Default.DirCenter:
 		if PlayingWalkAnimation:
 			AnimPlayer.stop(false)
 			PlayingWalkAnimation = false
