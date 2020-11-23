@@ -23,8 +23,11 @@ func Destroy(forceDirection):
 			var debris = DEBRISSCENE.instance()
 			debris.add_child(spriteNode.duplicate())
 			debris.CutSprite(spriteWidthTileSize, spriteHeightTileSize, x, y)
+			debris.rotation = rotation
 			var spread = forceDirection.angle() + rand_range(-1.0, 1.0)
 			debris.linear_velocity = (forceDirection + (Vector2(cos(spread), sin(spread)) * 50.0)) * rand_range(1.0, 10.0)
-			debris.set_position(pos + Vector2(x * spriteWidthTileSize, y * spriteHeightTileSize) + Vector2(-spriteWidth * 0.5, -spriteHeight * 0.5))
+			var debrisPos = pos + Vector2(x * spriteWidthTileSize, y * spriteHeightTileSize) + Vector2(-spriteWidth * 0.5, -spriteHeight * 0.5)
+			debrisPos = pos + (debrisPos - pos).rotated(rotation)
+			debris.set_position(debrisPos)
 			Global.DebrisNode.add_child(debris)
 	queue_free()
