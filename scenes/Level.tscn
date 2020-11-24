@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Level.gd" type="Script" id=2]
@@ -7,6 +7,21 @@
 [ext_resource path="res://graphics/UI/UI-Background.png" type="Texture" id=5]
 [ext_resource path="res://scenes/BloodHandler.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/minimap/MiniMap.tscn" type="PackedScene" id=7]
+[ext_resource path="res://graphics/homespun.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+outline_size = 1
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 10
+outline_size = 1
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 8
+outline_size = 1
+font_data = ExtResource( 8 )
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
@@ -48,3 +63,73 @@ __meta__ = {
 
 [node name="MiniMap" parent="UI" instance=ExtResource( 7 )]
 position = Vector2( 30, 14 )
+
+[node name="Health" type="Label" parent="UI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -28.0
+margin_top = 4.0
+margin_right = 48.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+text = "10/10"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Grenades" type="Label" parent="UI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 70.0
+margin_top = 7.0
+margin_right = 92.0
+margin_bottom = 19.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+text = "3"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Keys" type="Label" parent="UI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 216.0
+margin_top = 4.0
+margin_right = 248.0
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+text = "0"
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Money" type="Label" parent="UI"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 216.0
+margin_top = 15.0
+margin_right = 248.0
+margin_bottom = 24.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
+text = "0"
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}

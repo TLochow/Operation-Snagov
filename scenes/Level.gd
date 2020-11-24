@@ -12,6 +12,12 @@ func _ready():
 	GenerateLevel()
 	PrepareBloodSprite()
 	$Rooms/StartRoom.OpenDoors()
+	
+	var player = $Player
+	player.connect("HealthChanged", self, "PlayerHealthChanged")
+	player.connect("GrenadesChanged", self, "PlayerGrenadesChanged")
+	player.connect("KeysChanged", self, "PlayerKeysChanged")
+	player.connect("MoneyChanged", self, "PlayerMoneyChanged")
 
 func GenerateLevel():
 	$Rooms/StartRoom.Type = Default.RoomTypes.Start
@@ -61,3 +67,15 @@ func PrepareBloodSprite():
 	var spriteSize = ((Vector2(max(-minX, maxX), max(-minY, maxY)) * Default.RoomSize) * 2.0) + Default.RoomSize
 	Global.BloodHandler = $BloodHandler
 	Global.BloodHandler.PrepareBloodSprite(spriteSize)
+
+func PlayerHealthChanged(health, maxHealth):
+	$UI/Health.text = str(health) + "/" + str(maxHealth)
+
+func PlayerGrenadesChanged(grenades):
+	$UI/Grenades.text = str(grenades)
+
+func PlayerKeysChanged(keys):
+	$UI/Keys.text = str(keys)
+
+func PlayerMoneyChanged(money):
+	$UI/Money.text = str(money)
