@@ -6,4 +6,4 @@ func Damage(damage, hitPoint, direction, collisionNormal):
 	var hitEffect = WALLHITSCENE.instance()
 	hitEffect.set_position(hitPoint)
 	hitEffect.rotation = collisionNormal.angle()
-	Global.EffectsNode.add_child(hitEffect)
+	Global.TopEffectsNode.add_child(hitEffect)

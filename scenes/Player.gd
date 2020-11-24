@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var SHOTSCENE = preload("res://scenes/Shot.tscn")
+var BLOODSCENE = preload("res://scenes/effects/Blood.tscn")
 
 onready var ShotNode = get_tree().get_nodes_in_group("ShotsNode")[0]
 
@@ -57,3 +58,15 @@ func Shoot(angle, pos):
 		ShotNode.add_child(shot)
 		shot.set_position(pos)
 		shot.Shoot(ShotDamage, angle + rand_range(-ShotSpread, ShotSpread))
+
+func Damage(damage, hitPoint, direction, collisionNormal):
+	Bleed(direction, damage)
+
+func Bleed(direction, damage):
+	var pos = get_global_position()
+	for i in range(10):
+		var blood = BLOODSCENE.instance()
+		blood.set_position(pos)
+		blood.Direction = direction.angle() + rand_range(-0.1, 0.1)
+		blood.Speed = damage * rand_range(0.8, 1.2)
+		Global.TopEffectsNode.add_child(blood)
