@@ -1,18 +1,23 @@
 extends Node2D
 
+signal Discovered
+
 var GeneratedNeighbors = false
 var DistanceToStart = 0
 var GenerationCoords = Vector2(0, 0)
 
 var Type = Default.RoomTypes.Normal
 
-var OpenTop = false
-var OpenBottom = false
-var OpenLeft = false
-var OpenRight = false
+export(bool) var OpenTop = false
+export(bool) var OpenBottom = false
+export(bool) var OpenLeft = false
+export(bool) var OpenRight = false
 
 var Activated = false
 var Cleared = false
+
+func _ready():
+	get_tree().get_nodes_in_group("MiniMap")[0].RegisterRoom(self)
 
 func SetExits():
 	if OpenTop:
@@ -109,6 +114,7 @@ func CloseDoors():
 func _on_PlayerDetector_body_entered(body):
 	if not Activated:
 		Activated = true
+		emit_signal("Discovered")
 		$Layout.get_children()[0].connect("Cleared", self, "RoomCleared")
 		ActivateNodes($Layout)
 	if not Cleared:

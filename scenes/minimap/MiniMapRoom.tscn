@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/minimap/MiniMapRoom.gd" type="Script" id=1]
+[ext_resource path="res://graphics/UI/minimap/undiscovered.png" type="Texture" id=2]
+
+[node name="MiniMapRoom" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="RoomSprite" type="Sprite" parent="."]
+
+[node name="UndiscoveredSprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )

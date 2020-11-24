@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Level.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenes/rooms/Room.tscn" type="PackedScene" id=4]
 [ext_resource path="res://graphics/UI/UI-Background.png" type="Texture" id=5]
 [ext_resource path="res://scenes/BloodHandler.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/minimap/MiniMap.tscn" type="PackedScene" id=7]
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
@@ -16,6 +17,10 @@ position = Vector2( 0, -16 )
 [node name="Rooms" type="Node2D" parent="."]
 
 [node name="StartRoom" parent="Rooms" instance=ExtResource( 4 )]
+OpenTop = true
+OpenBottom = true
+OpenLeft = true
+OpenRight = true
 
 [node name="BloodHandler" parent="." instance=ExtResource( 6 )]
 
@@ -39,3 +44,6 @@ texture = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MiniMap" parent="UI" instance=ExtResource( 7 )]
+position = Vector2( 30, 14 )
