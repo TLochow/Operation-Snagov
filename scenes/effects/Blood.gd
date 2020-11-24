@@ -12,7 +12,7 @@ func _ready():
 	raycast.force_raycast_update()
 	if raycast.is_colliding():
 		target = to_local(raycast.get_collision_point())
-	var maxLength = Speed * 50.0
+	var maxLength = Speed * rand_range(0.0, 50.0)
 	if target.length() > maxLength:
 		target = target.normalized() * maxLength
 	var tween = $Tween

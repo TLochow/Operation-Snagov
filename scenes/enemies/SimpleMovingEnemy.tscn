@@ -4,11 +4,10 @@
 [ext_resource path="res://scenes/enemies/SimpleMovingEnemy.gd" type="Script" id=2]
 [ext_resource path="res://graphics/enemies/simple enemy.png" type="Texture" id=3]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=1]
 radius = 7.0
 
-[sub_resource type="Animation" id=1]
-resource_name = "Walk"
+[sub_resource type="Animation" id=2]
 loop = true
 step = 0.25
 tracks/0/type = "value"
@@ -28,12 +27,12 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="." index="0"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+anims/Walk = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
 texture = ExtResource( 3 )
 hframes = 4
 frame = 3
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
-anims/Walk = SubResource( 1 )

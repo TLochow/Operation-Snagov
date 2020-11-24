@@ -60,13 +60,12 @@ func Shoot(angle, pos):
 		shot.Shoot(ShotDamage, angle + rand_range(-ShotSpread, ShotSpread))
 
 func Damage(damage, hitPoint, direction, collisionNormal):
-	Bleed(direction, damage)
+	Bleed(hitPoint, direction, damage)
 
-func Bleed(direction, damage):
-	var pos = get_global_position()
-	for i in range(10):
+func Bleed(pos, direction, damage):
+	for i in range(25):
 		var blood = BLOODSCENE.instance()
 		blood.set_position(pos)
-		blood.Direction = direction.angle() + rand_range(-0.1, 0.1)
+		blood.Direction = direction.angle() + rand_range(-0.2, 0.2)
 		blood.Speed = damage * rand_range(0.8, 1.2)
 		Global.TopEffectsNode.add_child(blood)

@@ -30,9 +30,9 @@ script = ExtResource( 3 )
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )
 
-[node name="Sprite" type="Sprite" parent="." index="1"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+anims/Walk = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
 texture = ExtResource( 2 )
 hframes = 4
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
-anims/Walk = SubResource( 2 )
