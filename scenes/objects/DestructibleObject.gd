@@ -16,6 +16,11 @@ func Damage(damage, hitPoint, direction, collisionNormal):
 	if Health <= 0.0:
 		Destroy(direction)
 
+func Explode(pos, strength):
+	Health -= strength
+	if Health <= 0.0:
+		Destroy((get_position() - pos).normalized())
+
 func Destroy(forceDirection):
 	if not Destroyed:
 		Destroyed = true
@@ -38,5 +43,5 @@ func Destroy(forceDirection):
 				var debrisPos = pos + Vector2(x * spriteWidthTileSize, y * spriteHeightTileSize) + Vector2(-spriteWidth * 0.5, -spriteHeight * 0.5)
 				debrisPos = pos + (debrisPos - pos).rotated(rotation)
 				debris.set_position(debrisPos)
-				Global.DebrisNode.add_child(debris)
+				Global.DebrisNode.call_deferred("add_child", debris)
 		call_deferred("queue_free")

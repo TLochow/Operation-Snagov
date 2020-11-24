@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 var SHOTSCENE = preload("res://scenes/Shot.tscn")
+var GRENADESCENE = preload("res://scenes/Grenade.tscn")
 var BLOODSCENE = preload("res://scenes/effects/Blood.tscn")
 
 onready var ShotNode = get_tree().get_nodes_in_group("ShotsNode")[0]
@@ -20,6 +21,10 @@ var ShotDamage = 1.0
 
 func _ready():
 	AnimPlayer.play("Walk")
+
+func _input(event):
+	if event.is_action_pressed("mouse_right"):
+		ThrowGrenade()
 
 func _physics_process(delta):
 	MoveDirection = Default.DirCenter
@@ -59,11 +64,19 @@ func Shoot(angle, pos):
 		shot.set_position(pos)
 		shot.Shoot(ShotDamage, angle + rand_range(-ShotSpread, ShotSpread))
 
+func ThrowGrenade():
+	var pos = get_position() + (LookDirection * 10.0)
+	var grenade = GRENADESCENE.instance()
+	grenade.set_position(pos)
+	grenade.linear_velocity = LookDirection * 500.0
+	grenade.angular_velocity = rand_range(-10.0, 10.0)
+	ShotNode.add_child(grenade)
+
 func Damage(damage, hitPoint, direction, collisionNormal):
 	Bleed(hitPoint, direction, damage)
 
 func Bleed(pos, direction, damage):
-	for i in range(25):
+	for i in range(10 * damage):
 		var blood = BLOODSCENE.instance()
 		blood.set_position(pos)
 		blood.Direction = direction.angle() + rand_range(-0.2, 0.2)

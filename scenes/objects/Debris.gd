@@ -12,3 +12,6 @@ func CutSprite(width, height, xIndex, yIndex):
 	spriteNode.set_hframes(1)
 	spriteNode.set_vframes(1)
 	spriteNode.frame = 0
+
+func Explode(pos, strength):
+	linear_velocity += (get_position() - pos).normalized() * strength * 3000.0
