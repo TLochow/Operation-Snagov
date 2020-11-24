@@ -21,5 +21,4 @@ func _ready():
 	tween.start()
 
 func _on_Tween_tween_all_completed():
-	Global.RegisterBlood(EndPos)
-	queue_free()
+	Global.BloodHandler.RegisterBlood(self)

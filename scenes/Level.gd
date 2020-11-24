@@ -59,4 +59,5 @@ func PrepareBloodSprite():
 		maxX = max(maxX, coord.x)
 		maxY = max(maxY, coord.y)
 	var spriteSize = ((Vector2(max(-minX, maxX), max(-minY, maxY)) * Default.RoomSize) * 2.0) + Default.RoomSize
-	Global.PrepareBloodSprite($BloodSprite, spriteSize)
+	Global.BloodHandler = $BloodHandler
+	Global.BloodHandler.PrepareBloodSprite(spriteSize)
