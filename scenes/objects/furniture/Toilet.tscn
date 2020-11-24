@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://graphics/map/toilet.png" type="Texture" id=1]
+[ext_resource path="res://scenes/objects/DestructibleObject.tscn" type="PackedScene" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 6.0
+height = 2.0
+
+[node name="Toilet" instance=ExtResource( 2 )]
+Health = 4.0
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 1 )
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 1 )

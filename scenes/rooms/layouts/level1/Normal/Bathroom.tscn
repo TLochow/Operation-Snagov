@@ -1,0 +1,455 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scenes/rooms/layouts/LayoutBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/objects/furniture/Toilet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/objects/furniture/ThinWall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/objects/furniture/ThinDoor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/objects/furniture/Sink.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/objects/furniture/Urinal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/objects/furniture/LargePlants.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/enemies/RandomMoveEnemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/objects/furniture/Bench.tscn" type="PackedScene" id=9]
+
+[node name="Bathroom" instance=ExtResource( 1 )]
+IsEnemyBased = true
+
+[node name="TileMap" parent="." index="0"]
+tile_data = PoolIntArray( -458768, 24, 0, -458767, 24, 0, -458766, 24, 0, -458765, 24, 0, -458764, 24, 0, -458763, 24, 0, -458762, 24, 0, -458761, 24, 0, -458760, 24, 0, -458759, 24, 0, -458758, 24, 0, -458757, 24, 0, -458756, 24, 0, -458755, 2, 0, -458754, 2, 0, -458753, 2, 0, -524288, 2, 0, -524287, 2, 0, -524286, 2, 0, -524285, 24, 0, -524284, 24, 0, -524283, 24, 0, -524282, 24, 0, -524281, 24, 0, -524280, 24, 0, -524279, 24, 0, -524278, 24, 0, -524277, 24, 0, -524276, 24, 0, -524275, 24, 0, -524274, 24, 0, -524273, 24, 0, -393232, 24, 0, -393231, 24, 0, -393230, 24, 0, -393229, 24, 0, -393228, 24, 0, -393227, 24, 0, -393226, 24, 0, -393225, 24, 0, -393224, 24, 0, -393223, 24, 0, -393222, 24, 0, -393221, 24, 0, -393220, 24, 0, -393219, 2, 0, -393218, 2, 0, -393217, 2, 0, -458752, 2, 0, -458751, 2, 0, -458750, 2, 0, -458749, 24, 0, -458748, 24, 0, -458747, 24, 0, -458746, 24, 0, -458745, 24, 0, -458744, 24, 0, -458743, 24, 0, -458742, 24, 0, -458741, 24, 0, -458740, 24, 0, -458739, 24, 0, -458738, 24, 0, -458737, 24, 0, -327696, 24, 0, -327695, 24, 0, -327694, 24, 0, -327693, 24, 0, -327692, 24, 0, -327691, 24, 0, -327690, 24, 0, -327689, 24, 0, -327688, 24, 0, -327687, 24, 0, -327686, 24, 0, -327685, 24, 0, -327684, 24, 0, -327683, 2, 0, -327682, 2, 0, -327681, 2, 0, -393216, 2, 0, -393215, 2, 0, -393214, 2, 0, -393213, 24, 0, -393212, 24, 0, -393211, 24, 0, -393210, 24, 0, -393209, 24, 0, -393208, 24, 0, -393207, 24, 0, -393206, 24, 0, -393205, 24, 0, -393204, 24, 0, -393203, 24, 0, -393202, 24, 0, -393201, 24, 0, -262160, 24, 0, -262159, 24, 0, -262158, 24, 0, -262157, 24, 0, -262156, 24, 0, -262155, 24, 0, -262154, 24, 0, -262153, 24, 0, -262152, 24, 0, -262151, 24, 0, -262150, 24, 0, -262149, 24, 0, -262148, 24, 0, -262147, 2, 0, -262146, 2, 0, -262145, 2, 0, -327680, 2, 0, -327679, 2, 0, -327678, 2, 0, -327677, 24, 0, -327676, 24, 0, -327675, 24, 0, -327674, 24, 0, -327673, 24, 0, -327672, 24, 0, -327671, 24, 0, -327670, 24, 0, -327669, 24, 0, -327668, 24, 0, -327667, 24, 0, -327666, 24, 0, -327665, 24, 0, -196624, 24, 0, -196623, 24, 0, -196622, 24, 0, -196621, 24, 0, -196620, 24, 0, -196619, 24, 0, -196618, 24, 0, -196617, 24, 0, -196616, 24, 0, -196615, 24, 0, -196614, 24, 0, -196613, 24, 0, -196612, 24, 0, -196611, 2, 0, -196610, 2, 0, -196609, 2, 0, -262144, 2, 0, -262143, 2, 0, -262142, 2, 0, -262141, 24, 0, -262140, 24, 0, -262139, 24, 0, -262138, 24, 0, -262137, 24, 0, -262136, 24, 0, -262135, 24, 0, -262134, 24, 0, -262133, 24, 0, -262132, 24, 0, -262131, 24, 0, -262130, 24, 0, -262129, 24, 0, -131088, 2, 0, -131087, 2, 0, -131086, 2, 0, -131085, 2, 0, -131084, 2, 0, -131083, 2, 0, -131082, 2, 0, -131081, 2, 0, -131080, 2, 0, -131079, 2, 0, -131078, 2, 0, -131077, 2, 0, -131076, 2, 0, -131075, 2, 0, -131074, 2, 0, -131073, 2, 0, -196608, 2, 0, -196607, 2, 0, -196606, 2, 0, -196605, 2, 0, -196604, 2, 0, -196603, 2, 0, -196602, 2, 0, -196601, 2, 0, -196600, 2, 0, -196599, 2, 0, -196598, 2, 0, -196597, 2, 0, -196596, 2, 0, -196595, 2, 0, -196594, 2, 0, -196593, 2, 0, -65552, 2, 0, -65551, 2, 0, -65550, 2, 0, -65549, 2, 0, -65548, 2, 0, -65547, 2, 0, -65546, 2, 0, -65545, 2, 0, -65544, 2, 0, -65543, 2, 0, -65542, 2, 0, -65541, 2, 0, -65540, 2, 0, -65539, 2, 0, -65538, 2, 0, -65537, 2, 0, -131072, 2, 0, -131071, 2, 0, -131070, 2, 0, -131069, 2, 0, -131068, 2, 0, -131067, 2, 0, -131066, 2, 0, -131065, 2, 0, -131064, 2, 0, -131063, 2, 0, -131062, 2, 0, -131061, 2, 0, -131060, 2, 0, -131059, 2, 0, -131058, 2, 0, -131057, 2, 0, -16, 2, 0, -15, 2, 0, -14, 2, 0, -13, 2, 0, -12, 2, 0, -11, 2, 0, -10, 2, 0, -9, 2, 0, -8, 2, 0, -7, 2, 0, -6, 2, 0, -5, 2, 0, -4, 2, 0, -3, 2, 0, -2, 2, 0, -1, 2, 0, -65536, 2, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, -65528, 2, 0, -65527, 2, 0, -65526, 2, 0, -65525, 2, 0, -65524, 2, 0, -65523, 2, 0, -65522, 2, 0, -65521, 2, 0, 65520, 2, 0, 65521, 2, 0, 65522, 2, 0, 65523, 2, 0, 65524, 2, 0, 65525, 2, 0, 65526, 2, 0, 65527, 2, 0, 65528, 2, 0, 65529, 2, 0, 65530, 2, 0, 65531, 2, 0, 65532, 2, 0, 65533, 2, 0, 65534, 2, 0, 65535, 2, 0, 0, 2, 0, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 2, 0, 5, 2, 0, 6, 2, 0, 7, 2, 0, 8, 2, 0, 9, 2, 0, 10, 2, 0, 11, 2, 0, 12, 2, 0, 13, 2, 0, 14, 2, 0, 15, 2, 0, 131056, 2, 0, 131057, 2, 0, 131058, 2, 0, 131059, 2, 0, 131060, 2, 0, 131061, 2, 0, 131062, 2, 0, 131063, 2, 0, 131064, 2, 0, 131065, 2, 0, 131066, 2, 0, 131067, 2, 0, 131068, 2, 0, 131069, 2, 0, 131070, 2, 0, 131071, 2, 0, 65536, 2, 0, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 65548, 2, 0, 65549, 2, 0, 65550, 2, 0, 65551, 2, 0, 196592, 2, 0, 196593, 2, 0, 196594, 2, 0, 196595, 2, 0, 196596, 2, 0, 196597, 2, 0, 196598, 2, 0, 196599, 2, 0, 196600, 2, 0, 196601, 2, 0, 196602, 2, 0, 196603, 2, 0, 196604, 2, 0, 196605, 2, 0, 196606, 2, 0, 196607, 2, 0, 131072, 2, 0, 131073, 2, 0, 131074, 2, 0, 131075, 2, 0, 131076, 2, 0, 131077, 2, 0, 131078, 2, 0, 131079, 2, 0, 131080, 2, 0, 131081, 2, 0, 131082, 2, 0, 131083, 2, 0, 131084, 2, 0, 131085, 2, 0, 131086, 2, 0, 131087, 2, 0, 262128, 24, 0, 262129, 24, 0, 262130, 24, 0, 262131, 24, 0, 262132, 24, 0, 262133, 24, 0, 262134, 24, 0, 262135, 24, 0, 262136, 24, 0, 262137, 24, 0, 262138, 24, 0, 262139, 24, 0, 262140, 24, 0, 262141, 2, 0, 262142, 2, 0, 262143, 2, 0, 196608, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 24, 0, 196612, 24, 0, 196613, 24, 0, 196614, 24, 0, 196615, 24, 0, 196616, 24, 0, 196617, 24, 0, 196618, 24, 0, 196619, 24, 0, 196620, 24, 0, 196621, 24, 0, 196622, 24, 0, 196623, 24, 0, 327664, 24, 0, 327665, 24, 0, 327666, 24, 0, 327667, 24, 0, 327668, 24, 0, 327669, 24, 0, 327670, 24, 0, 327671, 24, 0, 327672, 24, 0, 327673, 24, 0, 327674, 24, 0, 327675, 24, 0, 327676, 24, 0, 327677, 2, 0, 327678, 2, 0, 327679, 2, 0, 262144, 2, 0, 262145, 2, 0, 262146, 2, 0, 262147, 24, 0, 262148, 24, 0, 262149, 24, 0, 262150, 24, 0, 262151, 24, 0, 262152, 24, 0, 262153, 24, 0, 262154, 24, 0, 262155, 24, 0, 262156, 24, 0, 262157, 24, 0, 262158, 24, 0, 262159, 24, 0, 393200, 24, 0, 393201, 24, 0, 393202, 24, 0, 393203, 24, 0, 393204, 24, 0, 393205, 24, 0, 393206, 24, 0, 393207, 24, 0, 393208, 24, 0, 393209, 24, 0, 393210, 24, 0, 393211, 24, 0, 393212, 24, 0, 393213, 2, 0, 393214, 2, 0, 393215, 2, 0, 327680, 2, 0, 327681, 2, 0, 327682, 2, 0, 327683, 24, 0, 327684, 24, 0, 327685, 24, 0, 327686, 24, 0, 327687, 24, 0, 327688, 24, 0, 327689, 24, 0, 327690, 24, 0, 327691, 24, 0, 327692, 24, 0, 327693, 24, 0, 327694, 24, 0, 327695, 24, 0, 458736, 24, 0, 458737, 24, 0, 458738, 24, 0, 458739, 24, 0, 458740, 24, 0, 458741, 24, 0, 458742, 24, 0, 458743, 24, 0, 458744, 24, 0, 458745, 24, 0, 458746, 24, 0, 458747, 24, 0, 458748, 24, 0, 458749, 2, 0, 458750, 2, 0, 458751, 2, 0, 393216, 2, 0, 393217, 2, 0, 393218, 2, 0, 393219, 24, 0, 393220, 24, 0, 393221, 24, 0, 393222, 24, 0, 393223, 24, 0, 393224, 24, 0, 393225, 24, 0, 393226, 24, 0, 393227, 24, 0, 393228, 24, 0, 393229, 24, 0, 393230, 24, 0, 393231, 24, 0, 524272, 24, 0, 524273, 24, 0, 524274, 24, 0, 524275, 24, 0, 524276, 24, 0, 524277, 24, 0, 524278, 24, 0, 524279, 24, 0, 524280, 24, 0, 524281, 24, 0, 524282, 24, 0, 524283, 24, 0, 524284, 24, 0, 524285, 2, 0, 524286, 2, 0, 524287, 2, 0, 458752, 2, 0, 458753, 2, 0, 458754, 2, 0, 458755, 24, 0, 458756, 24, 0, 458757, 24, 0, 458758, 24, 0, 458759, 24, 0, 458760, 24, 0, 458761, 24, 0, 458762, 24, 0, 458763, 24, 0, 458764, 24, 0, 458765, 24, 0, 458766, 24, 0, 458767, 24, 0 )
+
+[node name="Walls" parent="." index="1"]
+tile_data = PoolIntArray( -458768, 7, 0, -458767, 3, 0, -458766, 3, 0, -458765, 3, 0, -458764, 3, 0, -458763, 3, 0, -458762, 3, 0, -458761, 3, 0, -458760, 3, 0, -458759, 3, 0, -458758, 3, 0, -458757, 3, 0, -458756, 8, 0, -458755, 7, 0, -524286, 8, 0, -524285, 7, 0, -524284, 3, 0, -524283, 3, 0, -524282, 3, 0, -524281, 3, 0, -524280, 3, 0, -524279, 3, 0, -524278, 3, 0, -524277, 3, 0, -524276, 3, 0, -524275, 3, 0, -524274, 3, 0, -524273, 8, 0, -393232, 5, 0, -393220, 4, 0, -393219, 5, 0, -458750, 4, 0, -458749, 5, 0, -458737, 4, 0, -327696, 5, 0, -327684, 4, 0, -327683, 5, 0, -393214, 4, 0, -393213, 5, 0, -393201, 4, 0, -262160, 5, 0, -262148, 4, 0, -262147, 5, 0, -327678, 4, 0, -327677, 5, 0, -327665, 4, 0, -196624, 9, 0, -196623, 6, 0, -196622, 6, 0, -196621, 6, 0, -196620, 6, 0, -196619, 6, 0, -196618, 6, 0, -196617, 6, 0, -196616, 20, 0, -196614, 19, 0, -196613, 6, 0, -196612, 10, 0, -196611, 5, 0, -262142, 4, 0, -262141, 9, 0, -262140, 6, 0, -262139, 20, 0, -262137, 19, 0, -262136, 6, 0, -262135, 6, 0, -262134, 6, 0, -262133, 6, 0, -262132, 6, 0, -262131, 6, 0, -262130, 6, 0, -262129, 10, 0, -131088, 7, 0, -131087, 3, 0, -131086, 3, 0, -131085, 3, 0, -131084, 3, 0, -131083, 3, 0, -131082, 3, 0, -131081, 3, 0, -131080, 22, 0, -131078, 21, 0, -131077, 3, 0, -131076, 3, 0, -131075, 22, 0, -196606, 21, 0, -196605, 3, 0, -196604, 3, 0, -196603, 22, 0, -196601, 21, 0, -196600, 3, 0, -196599, 3, 0, -196598, 3, 0, -196597, 3, 0, -196596, 3, 0, -196595, 3, 0, -196594, 3, 0, -196593, 8, 0, 196592, 9, 0, 196593, 6, 0, 196594, 6, 0, 196595, 6, 0, 196596, 6, 0, 196597, 6, 0, 196598, 6, 0, 196599, 6, 0, 196600, 20, 0, 196602, 19, 0, 196603, 6, 0, 196604, 6, 0, 196605, 20, 0, 131074, 19, 0, 131075, 6, 0, 131076, 6, 0, 131077, 20, 0, 131079, 19, 0, 131080, 6, 0, 131081, 6, 0, 131082, 6, 0, 131083, 6, 0, 131084, 6, 0, 131085, 6, 0, 131086, 6, 0, 131087, 10, 0, 262128, 7, 0, 262129, 3, 0, 262130, 3, 0, 262131, 3, 0, 262132, 3, 0, 262133, 3, 0, 262134, 3, 0, 262135, 3, 0, 262136, 22, 0, 262138, 21, 0, 262139, 3, 0, 262140, 8, 0, 262141, 5, 0, 196610, 4, 0, 196611, 7, 0, 196612, 3, 0, 196613, 22, 0, 196615, 21, 0, 196616, 3, 0, 196617, 3, 0, 196618, 3, 0, 196619, 3, 0, 196620, 3, 0, 196621, 3, 0, 196622, 3, 0, 196623, 8, 0, 327664, 5, 0, 327676, 4, 0, 327677, 5, 0, 262146, 4, 0, 262147, 5, 0, 262159, 4, 0, 393200, 5, 0, 393212, 4, 0, 393213, 5, 0, 327682, 4, 0, 327683, 5, 0, 327695, 4, 0, 458736, 5, 0, 458748, 4, 0, 458749, 5, 0, 393218, 4, 0, 393219, 5, 0, 393231, 4, 0, 524272, 9, 0, 524273, 6, 0, 524274, 6, 0, 524275, 6, 0, 524276, 6, 0, 524277, 6, 0, 524278, 6, 0, 524279, 6, 0, 524280, 6, 0, 524281, 6, 0, 524282, 6, 0, 524283, 6, 0, 524284, 10, 0, 524285, 9, 0, 458754, 10, 0, 458755, 9, 0, 458756, 6, 0, 458757, 6, 0, 458758, 6, 0, 458759, 6, 0, 458760, 6, 0, 458761, 6, 0, 458762, 6, 0, 458763, 6, 0, 458764, 6, 0, 458765, 6, 0, 458766, 6, 0, 458767, 10, 0 )
+
+[node name="Furniture" type="Node2D" parent="." index="2"]
+
+[node name="TopRight" type="Node2D" parent="Furniture" index="0"]
+
+[node name="Toilet" parent="Furniture/TopRight" index="0" instance=ExtResource( 2 )]
+position = Vector2( 64, -112 )
+
+[node name="ThinWall" parent="Furniture/TopRight" index="1" instance=ExtResource( 3 )]
+position = Vector2( 74, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor" parent="Furniture/TopRight" index="2" instance=ExtResource( 4 )]
+position = Vector2( 64, -84 )
+
+[node name="Toilet2" parent="Furniture/TopRight" index="3" instance=ExtResource( 2 )]
+position = Vector2( 84, -112 )
+
+[node name="ThinWall2" parent="Furniture/TopRight" index="4" instance=ExtResource( 3 )]
+position = Vector2( 94, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor2" parent="Furniture/TopRight" index="5" instance=ExtResource( 4 )]
+position = Vector2( 84, -84 )
+
+[node name="Toilet3" parent="Furniture/TopRight" index="6" instance=ExtResource( 2 )]
+position = Vector2( 104, -112 )
+
+[node name="ThinWall3" parent="Furniture/TopRight" index="7" instance=ExtResource( 3 )]
+position = Vector2( 114, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor3" parent="Furniture/TopRight" index="8" instance=ExtResource( 4 )]
+position = Vector2( 104, -84 )
+
+[node name="Toilet4" parent="Furniture/TopRight" index="9" instance=ExtResource( 2 )]
+position = Vector2( 124, -112 )
+
+[node name="ThinWall4" parent="Furniture/TopRight" index="10" instance=ExtResource( 3 )]
+position = Vector2( 134, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor4" parent="Furniture/TopRight" index="11" instance=ExtResource( 4 )]
+position = Vector2( 124, -84 )
+
+[node name="Toilet5" parent="Furniture/TopRight" index="12" instance=ExtResource( 2 )]
+position = Vector2( 144, -112 )
+
+[node name="ThinWall5" parent="Furniture/TopRight" index="13" instance=ExtResource( 3 )]
+position = Vector2( 154, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor5" parent="Furniture/TopRight" index="14" instance=ExtResource( 4 )]
+position = Vector2( 144, -84 )
+
+[node name="Toilet6" parent="Furniture/TopRight" index="15" instance=ExtResource( 2 )]
+position = Vector2( 164, -112 )
+
+[node name="ThinWall6" parent="Furniture/TopRight" index="16" instance=ExtResource( 3 )]
+position = Vector2( 174, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor6" parent="Furniture/TopRight" index="17" instance=ExtResource( 4 )]
+position = Vector2( 164, -84 )
+
+[node name="Toilet7" parent="Furniture/TopRight" index="18" instance=ExtResource( 2 )]
+position = Vector2( 184, -112 )
+
+[node name="ThinWall7" parent="Furniture/TopRight" index="19" instance=ExtResource( 3 )]
+position = Vector2( 194, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor7" parent="Furniture/TopRight" index="20" instance=ExtResource( 4 )]
+position = Vector2( 184, -84 )
+
+[node name="Toilet8" parent="Furniture/TopRight" index="21" instance=ExtResource( 2 )]
+position = Vector2( 204, -112 )
+
+[node name="ThinWall8" parent="Furniture/TopRight" index="22" instance=ExtResource( 3 )]
+position = Vector2( 214, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor8" parent="Furniture/TopRight" index="23" instance=ExtResource( 4 )]
+position = Vector2( 204, -84 )
+
+[node name="Toilet9" parent="Furniture/TopRight" index="24" instance=ExtResource( 2 )]
+position = Vector2( 224, -112 )
+
+[node name="ThinWall9" parent="Furniture/TopRight" index="25" instance=ExtResource( 3 )]
+position = Vector2( 234, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor9" parent="Furniture/TopRight" index="26" instance=ExtResource( 4 )]
+position = Vector2( 224, -84 )
+
+[node name="Toilet10" parent="Furniture/TopRight" index="27" instance=ExtResource( 2 )]
+position = Vector2( 242, -112 )
+
+[node name="ThinDoor10" parent="Furniture/TopRight" index="28" instance=ExtResource( 4 )]
+position = Vector2( 242, -84 )
+
+[node name="Sink" parent="Furniture/TopRight" index="29" instance=ExtResource( 5 )]
+position = Vector2( 238, -62 )
+rotation = 3.14159
+
+[node name="Sink2" parent="Furniture/TopRight" index="30" instance=ExtResource( 5 )]
+position = Vector2( 220, -62 )
+rotation = 3.14159
+
+[node name="Sink3" parent="Furniture/TopRight" index="31" instance=ExtResource( 5 )]
+position = Vector2( 202, -62 )
+rotation = 3.14159
+
+[node name="Sink4" parent="Furniture/TopRight" index="32" instance=ExtResource( 5 )]
+position = Vector2( 184, -62 )
+rotation = 3.14159
+
+[node name="Sink5" parent="Furniture/TopRight" index="33" instance=ExtResource( 5 )]
+position = Vector2( 166, -62 )
+rotation = 3.14159
+
+[node name="Sink6" parent="Furniture/TopRight" index="34" instance=ExtResource( 5 )]
+position = Vector2( 148, -62 )
+rotation = 3.14159
+
+[node name="Sink7" parent="Furniture/TopRight" index="35" instance=ExtResource( 5 )]
+position = Vector2( 130, -62 )
+rotation = 3.14159
+
+[node name="BottomLeft" type="Node2D" parent="Furniture" index="1"]
+rotation = 3.14159
+
+[node name="Toilet" parent="Furniture/BottomLeft" index="0" instance=ExtResource( 2 )]
+position = Vector2( 64, -112 )
+
+[node name="ThinWall" parent="Furniture/BottomLeft" index="1" instance=ExtResource( 3 )]
+position = Vector2( 74, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor" parent="Furniture/BottomLeft" index="2" instance=ExtResource( 4 )]
+position = Vector2( 64, -84 )
+
+[node name="Toilet2" parent="Furniture/BottomLeft" index="3" instance=ExtResource( 2 )]
+position = Vector2( 84, -112 )
+
+[node name="ThinWall2" parent="Furniture/BottomLeft" index="4" instance=ExtResource( 3 )]
+position = Vector2( 94, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor2" parent="Furniture/BottomLeft" index="5" instance=ExtResource( 4 )]
+position = Vector2( 84, -84 )
+
+[node name="Toilet3" parent="Furniture/BottomLeft" index="6" instance=ExtResource( 2 )]
+position = Vector2( 104, -112 )
+
+[node name="ThinWall3" parent="Furniture/BottomLeft" index="7" instance=ExtResource( 3 )]
+position = Vector2( 114, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor3" parent="Furniture/BottomLeft" index="8" instance=ExtResource( 4 )]
+position = Vector2( 104, -84 )
+
+[node name="Toilet4" parent="Furniture/BottomLeft" index="9" instance=ExtResource( 2 )]
+position = Vector2( 124, -112 )
+
+[node name="ThinWall4" parent="Furniture/BottomLeft" index="10" instance=ExtResource( 3 )]
+position = Vector2( 134, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor4" parent="Furniture/BottomLeft" index="11" instance=ExtResource( 4 )]
+position = Vector2( 124, -84 )
+
+[node name="Toilet5" parent="Furniture/BottomLeft" index="12" instance=ExtResource( 2 )]
+position = Vector2( 144, -112 )
+
+[node name="ThinWall5" parent="Furniture/BottomLeft" index="13" instance=ExtResource( 3 )]
+position = Vector2( 154, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor5" parent="Furniture/BottomLeft" index="14" instance=ExtResource( 4 )]
+position = Vector2( 144, -84 )
+
+[node name="Toilet6" parent="Furniture/BottomLeft" index="15" instance=ExtResource( 2 )]
+position = Vector2( 164, -112 )
+
+[node name="ThinWall6" parent="Furniture/BottomLeft" index="16" instance=ExtResource( 3 )]
+position = Vector2( 174, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor6" parent="Furniture/BottomLeft" index="17" instance=ExtResource( 4 )]
+position = Vector2( 164, -84 )
+
+[node name="Toilet7" parent="Furniture/BottomLeft" index="18" instance=ExtResource( 2 )]
+position = Vector2( 184, -112 )
+
+[node name="ThinWall7" parent="Furniture/BottomLeft" index="19" instance=ExtResource( 3 )]
+position = Vector2( 194, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor7" parent="Furniture/BottomLeft" index="20" instance=ExtResource( 4 )]
+position = Vector2( 184, -84 )
+
+[node name="Toilet8" parent="Furniture/BottomLeft" index="21" instance=ExtResource( 2 )]
+position = Vector2( 204, -112 )
+
+[node name="ThinWall8" parent="Furniture/BottomLeft" index="22" instance=ExtResource( 3 )]
+position = Vector2( 214, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor8" parent="Furniture/BottomLeft" index="23" instance=ExtResource( 4 )]
+position = Vector2( 204, -84 )
+
+[node name="Toilet9" parent="Furniture/BottomLeft" index="24" instance=ExtResource( 2 )]
+position = Vector2( 224, -112 )
+
+[node name="ThinWall9" parent="Furniture/BottomLeft" index="25" instance=ExtResource( 3 )]
+position = Vector2( 234, -100 )
+rotation = 1.5708
+scale = Vector2( 0.8, 1 )
+
+[node name="ThinDoor9" parent="Furniture/BottomLeft" index="26" instance=ExtResource( 4 )]
+position = Vector2( 224, -84 )
+
+[node name="Toilet10" parent="Furniture/BottomLeft" index="27" instance=ExtResource( 2 )]
+position = Vector2( 242, -112 )
+
+[node name="ThinDoor10" parent="Furniture/BottomLeft" index="28" instance=ExtResource( 4 )]
+position = Vector2( 242, -84 )
+
+[node name="Sink" parent="Furniture/BottomLeft" index="29" instance=ExtResource( 5 )]
+position = Vector2( 238, -62 )
+rotation = 3.14159
+
+[node name="Sink2" parent="Furniture/BottomLeft" index="30" instance=ExtResource( 5 )]
+position = Vector2( 220, -62 )
+rotation = 3.14159
+
+[node name="Sink3" parent="Furniture/BottomLeft" index="31" instance=ExtResource( 5 )]
+position = Vector2( 202, -62 )
+rotation = 3.14159
+
+[node name="Sink4" parent="Furniture/BottomLeft" index="32" instance=ExtResource( 5 )]
+position = Vector2( 184, -62 )
+rotation = 3.14159
+
+[node name="Sink5" parent="Furniture/BottomLeft" index="33" instance=ExtResource( 5 )]
+position = Vector2( 166, -62 )
+rotation = 3.14159
+
+[node name="Sink6" parent="Furniture/BottomLeft" index="34" instance=ExtResource( 5 )]
+position = Vector2( 148, -62 )
+rotation = 3.14159
+
+[node name="Sink7" parent="Furniture/BottomLeft" index="35" instance=ExtResource( 5 )]
+position = Vector2( 130, -62 )
+rotation = 3.14159
+
+[node name="TopLeft" type="Node2D" parent="Furniture" index="2"]
+
+[node name="ThinWall" parent="Furniture/TopLeft" index="0" instance=ExtResource( 3 )]
+position = Vector2( -130, -80 )
+rotation = 1.5708
+
+[node name="Urinal" parent="Furniture/TopLeft" index="1" instance=ExtResource( 6 )]
+position = Vector2( -240, -114 )
+
+[node name="Urinal2" parent="Furniture/TopLeft" index="2" instance=ExtResource( 6 )]
+position = Vector2( -224, -114 )
+
+[node name="Urinal3" parent="Furniture/TopLeft" index="3" instance=ExtResource( 6 )]
+position = Vector2( -208, -114 )
+
+[node name="Urinal4" parent="Furniture/TopLeft" index="4" instance=ExtResource( 6 )]
+position = Vector2( -192, -114 )
+
+[node name="Urinal5" parent="Furniture/TopLeft" index="5" instance=ExtResource( 6 )]
+position = Vector2( -176, -114 )
+
+[node name="Urinal6" parent="Furniture/TopLeft" index="6" instance=ExtResource( 6 )]
+position = Vector2( -160, -114 )
+
+[node name="Urinal7" parent="Furniture/TopLeft" index="7" instance=ExtResource( 6 )]
+position = Vector2( -240, -62 )
+rotation = 3.14159
+
+[node name="Urinal8" parent="Furniture/TopLeft" index="8" instance=ExtResource( 6 )]
+position = Vector2( -224, -62 )
+rotation = 3.14159
+
+[node name="Urinal9" parent="Furniture/TopLeft" index="9" instance=ExtResource( 6 )]
+position = Vector2( -208, -62 )
+rotation = 3.14159
+
+[node name="Urinal10" parent="Furniture/TopLeft" index="10" instance=ExtResource( 6 )]
+position = Vector2( -192, -62 )
+rotation = 3.14159
+
+[node name="Urinal11" parent="Furniture/TopLeft" index="11" instance=ExtResource( 6 )]
+position = Vector2( -176, -62 )
+rotation = 3.14159
+
+[node name="Urinal12" parent="Furniture/TopLeft" index="12" instance=ExtResource( 6 )]
+position = Vector2( -160, -62 )
+rotation = 3.14159
+
+[node name="Urinal13" parent="Furniture/TopLeft" index="13" instance=ExtResource( 6 )]
+position = Vector2( -144, -62 )
+rotation = 3.14159
+
+[node name="Sink" parent="Furniture/TopLeft" index="14" instance=ExtResource( 5 )]
+position = Vector2( -62, -112 )
+rotation = 1.5708
+
+[node name="Sink2" parent="Furniture/TopLeft" index="15" instance=ExtResource( 5 )]
+position = Vector2( -62, -96 )
+rotation = 1.5708
+
+[node name="Sink3" parent="Furniture/TopLeft" index="16" instance=ExtResource( 5 )]
+position = Vector2( -62, -80 )
+rotation = 1.5708
+
+[node name="Sink4" parent="Furniture/TopLeft" index="17" instance=ExtResource( 5 )]
+position = Vector2( -62, -64 )
+rotation = 1.5708
+
+[node name="BottomRight" type="Node2D" parent="Furniture" index="3"]
+rotation = 3.14159
+
+[node name="ThinWall" parent="Furniture/BottomRight" index="0" instance=ExtResource( 3 )]
+position = Vector2( -130, -80 )
+rotation = 1.5708
+
+[node name="Urinal" parent="Furniture/BottomRight" index="1" instance=ExtResource( 6 )]
+position = Vector2( -240, -114 )
+
+[node name="Urinal2" parent="Furniture/BottomRight" index="2" instance=ExtResource( 6 )]
+position = Vector2( -224, -114 )
+
+[node name="Urinal3" parent="Furniture/BottomRight" index="3" instance=ExtResource( 6 )]
+position = Vector2( -208, -114 )
+
+[node name="Urinal4" parent="Furniture/BottomRight" index="4" instance=ExtResource( 6 )]
+position = Vector2( -192, -114 )
+
+[node name="Urinal5" parent="Furniture/BottomRight" index="5" instance=ExtResource( 6 )]
+position = Vector2( -176, -114 )
+
+[node name="Urinal6" parent="Furniture/BottomRight" index="6" instance=ExtResource( 6 )]
+position = Vector2( -160, -114 )
+
+[node name="Urinal7" parent="Furniture/BottomRight" index="7" instance=ExtResource( 6 )]
+position = Vector2( -240, -62 )
+rotation = 3.14159
+
+[node name="Urinal8" parent="Furniture/BottomRight" index="8" instance=ExtResource( 6 )]
+position = Vector2( -224, -62 )
+rotation = 3.14159
+
+[node name="Urinal9" parent="Furniture/BottomRight" index="9" instance=ExtResource( 6 )]
+position = Vector2( -208, -62 )
+rotation = 3.14159
+
+[node name="Urinal10" parent="Furniture/BottomRight" index="10" instance=ExtResource( 6 )]
+position = Vector2( -192, -62 )
+rotation = 3.14159
+
+[node name="Urinal11" parent="Furniture/BottomRight" index="11" instance=ExtResource( 6 )]
+position = Vector2( -176, -62 )
+rotation = 3.14159
+
+[node name="Urinal12" parent="Furniture/BottomRight" index="12" instance=ExtResource( 6 )]
+position = Vector2( -160, -62 )
+rotation = 3.14159
+
+[node name="Urinal13" parent="Furniture/BottomRight" index="13" instance=ExtResource( 6 )]
+position = Vector2( -144, -62 )
+rotation = 3.14159
+
+[node name="Sink" parent="Furniture/BottomRight" index="14" instance=ExtResource( 5 )]
+position = Vector2( -62, -112 )
+rotation = 1.5708
+
+[node name="Sink2" parent="Furniture/BottomRight" index="15" instance=ExtResource( 5 )]
+position = Vector2( -62, -96 )
+rotation = 1.5708
+
+[node name="Sink3" parent="Furniture/BottomRight" index="16" instance=ExtResource( 5 )]
+position = Vector2( -62, -80 )
+rotation = 1.5708
+
+[node name="Sink4" parent="Furniture/BottomRight" index="17" instance=ExtResource( 5 )]
+position = Vector2( -62, -64 )
+rotation = 1.5708
+
+[node name="LargePlants" parent="Furniture" index="4" instance=ExtResource( 7 )]
+position = Vector2( -8, 0 )
+
+[node name="LargePlants2" parent="Furniture" index="5" instance=ExtResource( 7 )]
+position = Vector2( 8, 0 )
+
+[node name="Bench" parent="Furniture" index="6" instance=ExtResource( 9 )]
+position = Vector2( 24, 0 )
+
+[node name="Bench2" parent="Furniture" index="7" instance=ExtResource( 9 )]
+position = Vector2( -24, 0 )
+rotation = 3.14159
+
+[node name="RandomMoveEnemy" parent="Enemies" index="0" instance=ExtResource( 8 )]
+position = Vector2( -192, -80 )
+
+[node name="RandomMoveEnemy2" parent="Enemies" index="1" instance=ExtResource( 8 )]
+position = Vector2( 224, -96 )
+
+[node name="RandomMoveEnemy3" parent="Enemies" index="2" instance=ExtResource( 8 )]
+position = Vector2( 88, 96 )
+
+[node name="RandomMoveEnemy4" parent="Enemies" index="3" instance=ExtResource( 8 )]
+position = Vector2( -184, 96 )
