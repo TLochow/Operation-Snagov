@@ -15,3 +15,10 @@ enum RoomTypes {
 	Shop,
 	Item
 }
+
+enum PickupTypes {
+	Health,
+	Grenade,
+	Key,
+	Money
+}

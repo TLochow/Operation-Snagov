@@ -10,6 +10,9 @@ extents = Vector2( 8, 16 )
 [node name="LargePlants" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 Health = 5.0
+SpawnPickups = true
+GrenadeChance = 0.1
+MoneyChance = 0.1
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )

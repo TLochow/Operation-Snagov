@@ -34,7 +34,8 @@ func _ready():
 	AnimPlayer.play("Walk")
 
 func _input(event):
-	if event.is_action_pressed("mouse_right"):
+	if event.is_action_pressed("mouse_right") and Grenades > 0:
+		GrenadesSet(Grenades - 1)
 		ThrowGrenade()
 
 func _physics_process(delta):

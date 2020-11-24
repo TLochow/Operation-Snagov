@@ -9,6 +9,8 @@ height = 2.0
 
 [node name="Toilet" instance=ExtResource( 2 )]
 Health = 4.0
+SpawnPickups = true
+HealthChance = 0.01
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )

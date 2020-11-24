@@ -105,18 +105,18 @@ tile_data = PoolIntArray( -458768, 7, 0, -458767, 3, 0, -458766, 3, 0, -458765, 
 
 [node name="SimpleMovingEnemy" parent="Enemies" index="0" instance=ExtResource( 4 )]
 position = Vector2( -128, 0 )
-ShootCooldown = 0.5
+ShootCooldown = 1.5
 HorizontalMovement = false
 
 [node name="SimpleMovingEnemy2" parent="Enemies" index="1" instance=ExtResource( 4 )]
 position = Vector2( 128, 0 )
-ShootCooldown = 0.5
+ShootCooldown = 1.5
 HorizontalMovement = false
 
 [node name="SimpleMovingEnemy3" parent="Enemies" index="2" instance=ExtResource( 4 )]
 position = Vector2( 32, -8 )
-ShootCooldown = 0.5
+ShootCooldown = 1.5
 
 [node name="SimpleMovingEnemy4" parent="Enemies" index="3" instance=ExtResource( 4 )]
 position = Vector2( -32, 8 )
-ShootCooldown = 0.5
+ShootCooldown = 1.5

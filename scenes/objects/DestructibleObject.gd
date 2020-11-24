@@ -2,9 +2,16 @@ extends StaticBody2D
 
 var DEBRISSCENE = preload("res://scenes/objects/Debris.tscn")
 var WALLHITSCENE = preload("res://scenes/effects/WallHit.tscn")
+var PICKUPSCENE = preload("res://scenes/Pickup.tscn")
 
 export(float) var Health = 10.0
 var Destroyed = false
+
+export(bool) var SpawnPickups = false
+export(float, 0.0, 1.0, 0.01) var HealthChance = 0.0
+export(float, 0.0, 1.0, 0.01) var GrenadeChance = 0.0
+export(float, 0.0, 1.0, 0.01) var KeyChance = 0.0
+export(float, 0.0, 1.0, 0.01) var MoneyChance = 0.0
 
 func Damage(damage, hitPoint, direction, collisionNormal):
 	var hitEffect = WALLHITSCENE.instance()
@@ -25,6 +32,8 @@ func Destroy(forceDirection):
 	if not Destroyed:
 		Destroyed = true
 		var pos = get_global_position()
+		if SpawnPickups:
+			SpawnPickups(pos)
 		var spriteNode = $Sprite
 		var spriteWidth = spriteNode.texture.get_width() / spriteNode.hframes
 		var spriteHeight = spriteNode.texture.get_height() / spriteNode.vframes
@@ -45,3 +54,19 @@ func Destroy(forceDirection):
 				debris.set_position(debrisPos)
 				Global.DebrisNode.call_deferred("add_child", debris)
 		call_deferred("queue_free")
+
+func SpawnPickups(pos):
+	if HealthChance > 0.0 and randf() <= HealthChance:
+		SpawnPickup(pos, Default.PickupTypes.Health)
+	if GrenadeChance > 0.0 and randf() <= GrenadeChance:
+		SpawnPickup(pos, Default.PickupTypes.Grenade)
+	if KeyChance > 0.0 and randf() <= KeyChance:
+		SpawnPickup(pos, Default.PickupTypes.Key)
+	if MoneyChance > 0.0 and randf() <= MoneyChance:
+		SpawnPickup(pos, Default.PickupTypes.Money)
+
+func SpawnPickup(pos, type):
+	var pickup = PICKUPSCENE.instance()
+	pickup.set_position(pos)
+	pickup.Type = type
+	Global.DebrisNode.call_deferred("add_child", pickup)

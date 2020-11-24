@@ -7,12 +7,10 @@ export(float) var Health = 5.0
 var Active = false
 
 func _ready():
-	visible = false
 	set_process(false)
 	set_physics_process(false)
 
 func Activate():
-	visible = true
 	Active = true
 	set_process(true)
 	set_physics_process(true)
