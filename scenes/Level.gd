@@ -41,15 +41,11 @@ func GenerateLevel():
 	# Selecting Special Rooms
 	var numberOfRooms = allRooms.size()
 	allRooms[numberOfRooms - 1].Type = Default.RoomTypes.Boss
-	var placingShop = true
+	allRooms[numberOfRooms - 2].Type = Default.RoomTypes.Item
 	for room in allRooms:
 		if room.GetNumberOfNeighbors() == 1:
-			if placingShop:
-				room.Type = Default.RoomTypes.Shop
-				placingShop = false
-			else:
-				room.Type = Default.RoomTypes.Item
-				break
+			room.Type = Default.RoomTypes.Shop
+			break
 	
 	# Load Layouts
 	for room in allRooms:
