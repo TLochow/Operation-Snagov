@@ -19,6 +19,6 @@ enum RoomTypes {
 enum PickupTypes {
 	Health,
 	Grenade,
-	Key,
+	Armor,
 	Money
 }

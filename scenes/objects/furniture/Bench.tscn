@@ -7,7 +7,7 @@
 extents = Vector2( 8, 16 )
 
 [node name="Bench" instance=ExtResource( 1 )]
-Health = 5.0
+Health = 3.0
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )

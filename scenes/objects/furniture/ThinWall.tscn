@@ -7,7 +7,7 @@
 extents = Vector2( 24, 2 )
 
 [node name="ThinWall" instance=ExtResource( 1 )]
-Health = 3.0
+Health = 2.0
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )

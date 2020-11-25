@@ -9,10 +9,11 @@ extents = Vector2( 8, 8 )
 
 [node name="FilingCabinet" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+Health = 6.0
 SpawnPickups = true
 HealthChance = 0.01
-GrenadeChance = 0.1
-KeyChance = 0.2
+GrenadeChance = 0.05
+ArmorChance = 0.05
 MoneyChance = 0.1
 
 [node name="CollisionShape2D" parent="." index="0"]

@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 signal HealthChanged(health, maxHealth)
 signal GrenadesChanged(grenades)
-signal KeysChanged(keys)
+signal ArmorChanged(armor)
 signal MoneyChanged(money)
 
 var SHOTSCENE = preload("res://scenes/Shot.tscn")
@@ -21,7 +21,7 @@ var MoveDirection = Vector2(0.0, 0.0)
 var Health = 10 setget HealthSet
 var MaxHealth = 10 setget MaxHealthSet
 var Grenades = 3 setget GrenadesSet
-var Keys = 0 setget KeysSet
+var Armor = 0 setget ArmorSet
 var Money = 0 setget MoneySet
 
 var ShootCooldown = 0.1
@@ -88,6 +88,16 @@ func Damage(damage, hitPoint, direction, collisionNormal):
 	HealthSet(Health - damage)
 	Bleed(hitPoint, direction, damage)
 
+func Explode(pos, strength):
+	TakeDamage(strength)
+
+func TakeDamage(damage):
+	print(damage)
+	if Armor > 0.0:
+		ArmorSet(Armor - damage)
+	else:
+		HealthSet(Health - damage)
+
 func Bleed(pos, direction, damage):
 	for i in range(10 * damage):
 		var blood = BLOODSCENE.instance()
@@ -97,7 +107,7 @@ func Bleed(pos, direction, damage):
 		Global.TopEffectsNode.add_child(blood)
 
 func HealthSet(health):
-	Health = clamp(health, 0, MaxHealth)
+	Health = clamp(ceil(health), 0, MaxHealth)
 	emit_signal("HealthChanged", Health, MaxHealth)
 
 func MaxHealthSet(maxHealth):
@@ -109,9 +119,9 @@ func GrenadesSet(grenades):
 	Grenades = max(grenades, 0)
 	emit_signal("GrenadesChanged", Grenades)
 
-func KeysSet(keys):
-	Keys = max(keys, 0)
-	emit_signal("KeysChanged", Keys)
+func ArmorSet(armor):
+	Armor = max(ceil(armor), 0)
+	emit_signal("ArmorChanged", Armor)
 
 func MoneySet(money):
 	Money = max(money, 0)

@@ -10,7 +10,7 @@ var Destroyed = false
 export(bool) var SpawnPickups = false
 export(float, 0.0, 1.0, 0.01) var HealthChance = 0.0
 export(float, 0.0, 1.0, 0.01) var GrenadeChance = 0.0
-export(float, 0.0, 1.0, 0.01) var KeyChance = 0.0
+export(float, 0.0, 1.0, 0.01) var ArmorChance = 0.0
 export(float, 0.0, 1.0, 0.01) var MoneyChance = 0.0
 
 func Damage(damage, hitPoint, direction, collisionNormal):
@@ -60,8 +60,8 @@ func SpawnPickups(pos):
 		SpawnPickup(pos, Default.PickupTypes.Health)
 	if GrenadeChance > 0.0 and randf() <= GrenadeChance:
 		SpawnPickup(pos, Default.PickupTypes.Grenade)
-	if KeyChance > 0.0 and randf() <= KeyChance:
-		SpawnPickup(pos, Default.PickupTypes.Key)
+	if ArmorChance > 0.0 and randf() <= ArmorChance:
+		SpawnPickup(pos, Default.PickupTypes.Armor)
 	if MoneyChance > 0.0 and randf() <= MoneyChance:
 		SpawnPickup(pos, Default.PickupTypes.Money)
 

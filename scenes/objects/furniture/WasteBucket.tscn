@@ -13,7 +13,6 @@ Health = 2.0
 SpawnPickups = true
 HealthChance = 0.1
 GrenadeChance = 0.1
-KeyChance = 0.1
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )

@@ -16,8 +16,8 @@ func _on_PlayerDetection_body_entered(body):
 		Default.PickupTypes.Grenade:
 			body.Grenades += 1
 			call_deferred("queue_free")
-		Default.PickupTypes.Key:
-			body.Keys += 1
+		Default.PickupTypes.Armor:
+			body.Armor += 1
 			call_deferred("queue_free")
 		Default.PickupTypes.Money:
 			body.Money += 1

@@ -16,7 +16,7 @@ func _ready():
 	var player = $Player
 	player.connect("HealthChanged", self, "PlayerHealthChanged")
 	player.connect("GrenadesChanged", self, "PlayerGrenadesChanged")
-	player.connect("KeysChanged", self, "PlayerKeysChanged")
+	player.connect("ArmorChanged", self, "PlayerArmorChanged")
 	player.connect("MoneyChanged", self, "PlayerMoneyChanged")
 	
 	$GameCamera.connect("ChangedRoom", $UI/ViewportContainer/MiniMap, "ChangedRoom")
@@ -76,8 +76,8 @@ func PlayerHealthChanged(health, maxHealth):
 func PlayerGrenadesChanged(grenades):
 	$UI/Grenades.text = str(grenades)
 
-func PlayerKeysChanged(keys):
-	$UI/Keys.text = str(keys)
+func PlayerArmorChanged(armor):
+	$UI/Armor.text = str(armor)
 
 func PlayerMoneyChanged(money):
 	$UI/Money.text = str(money)

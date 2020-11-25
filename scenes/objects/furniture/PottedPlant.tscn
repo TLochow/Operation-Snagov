@@ -12,6 +12,7 @@ script = ExtResource( 3 )
 Health = 3.0
 SpawnPickups = true
 GrenadeChance = 0.05
+ArmorChance = 0.01
 MoneyChance = 0.05
 
 [node name="CollisionShape2D" parent="." index="0"]
