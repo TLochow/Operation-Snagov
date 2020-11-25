@@ -18,6 +18,8 @@ func _ready():
 	player.connect("GrenadesChanged", self, "PlayerGrenadesChanged")
 	player.connect("KeysChanged", self, "PlayerKeysChanged")
 	player.connect("MoneyChanged", self, "PlayerMoneyChanged")
+	
+	$GameCamera.connect("ChangedRoom", $UI/ViewportContainer/MiniMap, "ChangedRoom")
 
 func GenerateLevel():
 	$Rooms/StartRoom.Type = Default.RoomTypes.Start

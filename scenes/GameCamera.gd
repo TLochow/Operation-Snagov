@@ -1,5 +1,7 @@
 extends Camera2D
 
+signal ChangedRoom(dir)
+
 onready var Player = get_tree().get_nodes_in_group("Player")[0]
 
 func _process(delta):
@@ -8,12 +10,16 @@ func _process(delta):
 	if relativePlayerPos.x < -256.0:
 		pos.x -= 512.0
 		set_position(pos)
+		emit_signal("ChangedRoom", Default.DirLeft)
 	elif relativePlayerPos.x > 256.0:
 		pos.x += 512.0
 		set_position(pos)
+		emit_signal("ChangedRoom", Default.DirRight)
 	if relativePlayerPos.y < -112.0:
 		pos.y -= 256.0
 		set_position(pos)
+		emit_signal("ChangedRoom", Default.DirUp)
 	if relativePlayerPos.y > 144.0:
 		pos.y += 256.0
 		set_position(pos)
+		emit_signal("ChangedRoom", Default.DirDown)

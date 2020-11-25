@@ -61,8 +61,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MiniMap" parent="UI" instance=ExtResource( 7 )]
-position = Vector2( 30, 14 )
+[node name="ViewportContainer" type="ViewportContainer" parent="UI"]
+margin_left = 7.0
+margin_top = 4.0
+margin_right = 53.0
+margin_bottom = 24.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="MiniMap" parent="UI/ViewportContainer" instance=ExtResource( 7 )]
+handle_input_locally = false
+render_target_update_mode = 3
+gui_disable_input = true
 
 [node name="Health" type="Label" parent="UI"]
 anchor_left = 0.5
