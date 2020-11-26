@@ -29,7 +29,7 @@ func Explode(pos, strength):
 			call_deferred("queue_free")
 
 func Bleed(pos, direction, damage):
-	for i in range(5 * damage):
+	for i in range(10 * damage):
 		var blood = BLOODSCENE.instance()
 		blood.set_position(pos)
 		blood.Direction = direction.angle() + rand_range(-0.2, 0.2)

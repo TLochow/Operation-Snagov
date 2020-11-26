@@ -11,8 +11,8 @@ func _input(event):
 func _ready():
 	Global.TopEffectsNode = $TopEffects
 	Global.DebrisNode = $Debris
+	Global.BloodHandler = $BloodHandler
 	GenerateLevel()
-	PrepareBloodSprite()
 	$Rooms/StartRoom.OpenDoors()
 	
 	var player = $Player
@@ -57,20 +57,6 @@ func GenerateLevel():
 	for room in allRooms:
 		room.SetExits()
 		room.LoadLayout()
-
-func PrepareBloodSprite():
-	var minX = 1000.0
-	var minY = 1000.0
-	var maxX = -1000.0
-	var maxY = -1000.0
-	for coord in Global.LevelGenBlockedCoords:
-		minX = min(minX, coord.x)
-		minY = min(minY, coord.y)
-		maxX = max(maxX, coord.x)
-		maxY = max(maxY, coord.y)
-	var spriteSize = ((Vector2(max(-minX, maxX), max(-minY, maxY)) * Default.RoomSize) * 2.0) + Default.RoomSize
-	Global.BloodHandler = $BloodHandler
-	Global.BloodHandler.PrepareBloodSprite(spriteSize)
 
 func PlayerHealthChanged(health, maxHealth):
 	if health < HealthBefore:

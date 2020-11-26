@@ -107,7 +107,7 @@ func TakeDamage(damage):
 		HealthSet(Health - damage)
 
 func Bleed(pos, direction, damage):
-	for i in range(10 * damage):
+	for i in range(20 * damage):
 		var blood = BLOODSCENE.instance()
 		blood.set_position(pos)
 		blood.Direction = direction.angle() + rand_range(-0.2, 0.2)
