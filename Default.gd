@@ -27,9 +27,13 @@ enum Items {
 	Pistol,
 	DualWield,
 	Shotgun,
-	MachinePistol,
+	MachineGun,
 	BagOfGrenades,
 	HeartyMeal,
-	HealthKit,
-	GlassCannon
+	FirstAidKit,
+	GlassPistol,
+	ImpactDetector,
+	GrenadeLauncher,
+	BlastShield,
+	SniperRifle
 }

@@ -24,11 +24,15 @@ var Grenades = 3 setget GrenadesSet
 var Armor = 0 setget ArmorSet
 var Money = 0 setget MoneySet
 
-var ShootCooldown = 0.1
+var ShootCooldown = 1.0
 var ShootCooldownCounter = 0.0
 var ShotSpread = 0.1
 var ShotAmount = 1.0
 var ShotDamage = 1.0
+
+var ImpactDetector = false
+var GrenadeLauncher = false
+var BlastShield = false
 
 func _ready():
 	AnimPlayer.play("Walk")
@@ -36,7 +40,7 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("mouse_right") and Grenades > 0:
 		GrenadesSet(Grenades - 1)
-		ThrowGrenade()
+		ThrowGrenade(ImpactDetector)
 
 func _physics_process(delta):
 	MoveDirection = Default.DirCenter
@@ -70,15 +74,19 @@ func _physics_process(delta):
 
 func Shoot(angle, pos):
 	ShootCooldownCounter = ShootCooldown
-	for i in range(ShotAmount):
-		var shot = SHOTSCENE.instance()
-		ShotNode.add_child(shot)
-		shot.set_position(pos)
-		shot.Shoot(ShotDamage, angle + rand_range(-ShotSpread, ShotSpread))
+	if GrenadeLauncher:
+		ThrowGrenade(true)
+	else:
+		for i in range(ShotAmount):
+			var shot = SHOTSCENE.instance()
+			ShotNode.add_child(shot)
+			shot.set_position(pos)
+			shot.Shoot(ShotDamage, angle + rand_range(-ShotSpread, ShotSpread))
 
-func ThrowGrenade():
+func ThrowGrenade(explodeOnContact):
 	var pos = get_position() + (LookDirection * 10.0)
 	var grenade = GRENADESCENE.instance()
+	grenade.ExplodeOnContact = explodeOnContact
 	grenade.set_position(pos)
 	grenade.linear_velocity = LookDirection * 500.0
 	grenade.angular_velocity = rand_range(-10.0, 10.0)
@@ -89,10 +97,10 @@ func Damage(damage, hitPoint, direction, collisionNormal):
 	Bleed(hitPoint, direction, damage)
 
 func Explode(pos, strength):
-	TakeDamage(strength)
+	if not BlastShield:
+		TakeDamage(strength)
 
 func TakeDamage(damage):
-	print(damage)
 	if Armor > 0.0:
 		ArmorSet(Armor - damage)
 	else:
@@ -111,7 +119,7 @@ func HealthSet(health):
 	emit_signal("HealthChanged", Health, MaxHealth)
 
 func MaxHealthSet(maxHealth):
-	MaxHealth = max(MaxHealth, 1)
+	MaxHealth = max(maxHealth, 1)
 	Health = min(Health, MaxHealth)
 	emit_signal("HealthChanged", Health, MaxHealth)
 
