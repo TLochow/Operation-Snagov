@@ -19,7 +19,9 @@ func _ready():
 	player.connect("ArmorChanged", self, "PlayerArmorChanged")
 	player.connect("MoneyChanged", self, "PlayerMoneyChanged")
 	
-	$GameCamera.connect("ChangedRoom", $UI/ViewportContainer/MiniMap, "ChangedRoom")
+	$GameCamera.connect("ChangedRoom", $UI/Game/ViewportContainer/MiniMap, "ChangedRoom")
+	
+	Global.connect("ItemCollected", self, "ItemCollected")
 
 func GenerateLevel():
 	$Rooms/StartRoom.Type = Default.RoomTypes.Start
@@ -67,13 +69,18 @@ func PrepareBloodSprite():
 	Global.BloodHandler.PrepareBloodSprite(spriteSize)
 
 func PlayerHealthChanged(health, maxHealth):
-	$UI/Health.text = str(health) + "/" + str(maxHealth)
+	$UI/Game/Health.text = str(health) + "/" + str(maxHealth)
 
 func PlayerGrenadesChanged(grenades):
-	$UI/Grenades.text = str(grenades)
+	$UI/Game/Grenades.text = str(grenades)
 
 func PlayerArmorChanged(armor):
-	$UI/Armor.text = str(armor)
+	$UI/Game/Armor.text = str(armor)
 
 func PlayerMoneyChanged(money):
-	$UI/Money.text = str(money)
+	$UI/Game/Money.text = str(money)
+
+func ItemCollected(title, description):
+	$UI/Game/ItemCollected/ColorRect/TitleLabel.text = title
+	$UI/Game/ItemCollected/ColorRect/DescriptionLabel.text = description
+	$UI/Game/ItemCollected/AnimationPlayer.play("ItemCollected")
