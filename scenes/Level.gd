@@ -1,8 +1,6 @@
 extends Node2D
 
 var HealthBefore = 0.0
-var DamageVisibility = 0.0
-var DamageControl
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -27,12 +25,7 @@ func _ready():
 	
 	Global.connect("ItemCollected", self, "ItemCollected")
 	
-	DamageControl = $UI/Game/Damage
 	HealthBefore = player.Health
-
-func _process(delta):
-	DamageVisibility = max(DamageVisibility - (delta * 0.5), 0.0)
-	DamageControl.modulate = Color(1.0, 1.0, 1.0, DamageVisibility)
 
 func GenerateLevel():
 	$Rooms/StartRoom.Type = Default.RoomTypes.Start
@@ -81,7 +74,10 @@ func PrepareBloodSprite():
 
 func PlayerHealthChanged(health, maxHealth):
 	if health < HealthBefore:
-		DamageVisibility = min(0.25 * (HealthBefore - health), 1.0)
+		var intensity = min(0.25 * (HealthBefore - health), 1.0)
+		$UI/Game/Damage/Tween.stop_all()
+		$UI/Game/Damage/Tween.interpolate_property($UI/Game/Damage, "modulate", Color(1.0, 1.0, 1.0, intensity), Color(1.0, 1.0, 1.0, 0.0), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$UI/Game/Damage/Tween.start()
 	HealthBefore = health
 	$UI/Game/Health.text = str(health) + "/" + str(maxHealth)
 
