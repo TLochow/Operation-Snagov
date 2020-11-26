@@ -233,3 +233,10 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Game/ItemCollected"]
 anims/ItemCollected = SubResource( 7 )
+
+[node name="Damage" type="ColorRect" parent="UI/Game"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 32.0
+color = Color( 0.733333, 0, 0, 1 )

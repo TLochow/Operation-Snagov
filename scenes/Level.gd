@@ -1,5 +1,9 @@
 extends Node2D
 
+var HealthBefore = 0.0
+var DamageVisibility = 0.0
+var DamageControl
+
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		SceneChanger.EndGame()
@@ -22,6 +26,13 @@ func _ready():
 	$GameCamera.connect("ChangedRoom", $UI/Game/ViewportContainer/MiniMap, "ChangedRoom")
 	
 	Global.connect("ItemCollected", self, "ItemCollected")
+	
+	DamageControl = $UI/Game/Damage
+	HealthBefore = player.Health
+
+func _process(delta):
+	DamageVisibility = max(DamageVisibility - (delta * 0.5), 0.0)
+	DamageControl.modulate = Color(1.0, 1.0, 1.0, DamageVisibility)
 
 func GenerateLevel():
 	$Rooms/StartRoom.Type = Default.RoomTypes.Start
@@ -69,6 +80,9 @@ func PrepareBloodSprite():
 	Global.BloodHandler.PrepareBloodSprite(spriteSize)
 
 func PlayerHealthChanged(health, maxHealth):
+	if health < HealthBefore:
+		DamageVisibility = min(0.25 * (HealthBefore - health), 1.0)
+	HealthBefore = health
 	$UI/Game/Health.text = str(health) + "/" + str(maxHealth)
 
 func PlayerGrenadesChanged(grenades):
