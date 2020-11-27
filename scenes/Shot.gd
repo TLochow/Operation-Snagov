@@ -10,7 +10,7 @@ func Shoot(damage, angle):
 	var direction = Vector2(cos(angle), sin(angle))
 	var localPos = to_local(get_position())
 	Line = $Line2D
-	Line.width *= (damage * 0.5)
+	Line.width += (damage * 0.5)
 	var raycast = $RayCast2D
 	raycast.cast_to = direction * 1000.0
 	raycast.force_raycast_update()
