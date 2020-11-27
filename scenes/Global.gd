@@ -1,6 +1,6 @@
 extends Node
 
-signal ItemCollected(title, description)
+signal Announcement(title, description)
 
 var ROOMSCENE = preload("res://scenes/rooms/Room.tscn")
 var LevelGenBlockedCoords = []

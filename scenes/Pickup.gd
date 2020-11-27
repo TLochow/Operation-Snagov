@@ -24,4 +24,4 @@ func _on_PlayerDetection_body_entered(body):
 			call_deferred("queue_free")
 
 func Explode(pos, strength):
-	linear_velocity += (get_position() - pos).normalized() * strength * 3000.0
+	linear_velocity += (get_position() - pos).normalized() * strength * 30.0

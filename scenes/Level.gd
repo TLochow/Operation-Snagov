@@ -1,5 +1,7 @@
 extends Node2D
 
+var ANNOUNCEMENTSCENE = preload("res://scenes/Announcement.tscn")
+
 var HealthBefore = 0.0
 
 func _input(event):
@@ -23,7 +25,7 @@ func _ready():
 	
 	$GameCamera.connect("ChangedRoom", $UI/Game/ViewportContainer/MiniMap, "ChangedRoom")
 	
-	Global.connect("ItemCollected", self, "ItemCollected")
+	Global.connect("Announcement", self, "Announcement")
 	
 	HealthBefore = player.Health
 
@@ -76,7 +78,8 @@ func PlayerArmorChanged(armor):
 func PlayerMoneyChanged(money):
 	$UI/Game/Money.text = str(money)
 
-func ItemCollected(title, description):
-	$UI/Game/ItemCollected/ColorRect/TitleLabel.text = title
-	$UI/Game/ItemCollected/ColorRect/DescriptionLabel.text = description
-	$UI/Game/ItemCollected/AnimationPlayer.play("ItemCollected")
+func Announcement(title, description):
+	var announcement = ANNOUNCEMENTSCENE.instance()
+	announcement.Title = title
+	announcement.Description = description
+	$UI/Game/Announcement.add_child(announcement)

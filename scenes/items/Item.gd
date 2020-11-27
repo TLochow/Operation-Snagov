@@ -15,7 +15,7 @@ func _ready():
 func _on_ItemBase_body_entered(body):
 	if not Collected:
 		Collected = true
-		Global.emit_signal("ItemCollected", Title, Description)
+		Global.emit_signal("Announcement", Title, Description)
 		Collect(body)
 	$Particles2D.emitting = false
 	$Sprite.visible = false

@@ -11,7 +11,7 @@ func _ready():
 
 func _on_Explosion_body_entered(body):
 	if body.has_method("Explode"):
-		body.Explode(Position, (50.0 - Position.distance_to(body.get_position())) * 0.2)
+		body.Explode(Position, 10.0)
 
 func _on_Timer_timeout():
 	call_deferred("queue_free")
