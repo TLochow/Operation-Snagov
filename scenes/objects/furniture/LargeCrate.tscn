@@ -9,6 +9,11 @@ extents = Vector2( 16, 16 )
 
 [node name="LargeCrate" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+Health = 5.0
+SpawnPickups = true
+HealthChance = 0.4
+GrenadeChance = 0.4
+ArmorChance = 0.4
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )
