@@ -93,7 +93,7 @@ func ThrowGrenade(explodeOnContact):
 	ShotNode.add_child(grenade)
 
 func Damage(damage, hitPoint, direction, collisionNormal):
-	HealthSet(Health - damage)
+	TakeDamage(damage)
 	Bleed(hitPoint, direction, damage)
 
 func Explode(pos, strength):
