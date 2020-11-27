@@ -26,9 +26,9 @@ var Money = 0 setget MoneySet
 
 var ShootCooldown = 1.0
 var ShootCooldownCounter = 0.0
-var ShotSpread = 0.1
+var ShotSpread = 0.05
 var ShotAmount = 1.0
-var ShotDamage = 1.0
+var ShotDamage = 2.0
 
 var ImpactDetector = false
 var GrenadeLauncher = false
@@ -117,6 +117,8 @@ func Bleed(pos, direction, damage):
 func HealthSet(health):
 	Health = clamp(ceil(health), 0, MaxHealth)
 	emit_signal("HealthChanged", Health, MaxHealth)
+	if Health <= 0.0:
+		SceneChanger.ChangeScene("res://scenes/Level.tscn")
 
 func MaxHealthSet(maxHealth):
 	MaxHealth = max(maxHealth, 1)

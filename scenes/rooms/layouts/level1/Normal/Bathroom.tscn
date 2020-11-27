@@ -444,12 +444,16 @@ rotation = 3.14159
 
 [node name="RandomMoveEnemy" parent="Enemies" index="0" instance=ExtResource( 8 )]
 position = Vector2( -192, -80 )
+Health = 3.0
 
 [node name="RandomMoveEnemy2" parent="Enemies" index="1" instance=ExtResource( 8 )]
 position = Vector2( 224, -96 )
+Health = 3.0
 
 [node name="RandomMoveEnemy3" parent="Enemies" index="2" instance=ExtResource( 8 )]
 position = Vector2( 88, 96 )
+Health = 3.0
 
 [node name="RandomMoveEnemy4" parent="Enemies" index="3" instance=ExtResource( 8 )]
 position = Vector2( -184, 96 )
+Health = 3.0

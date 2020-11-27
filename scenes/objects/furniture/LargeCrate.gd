@@ -1,4 +1,4 @@
 extends "res://scenes/objects/DestructibleObject.gd"
 
 func _ready():
-	$Sprite.frame = randi() % 4
+	rotation += PI * (randi() % 4)

@@ -12,7 +12,7 @@ onready var ShootCooldownCounter = ShootCooldown + rand_range(0.0, ShootCooldown
 export(float) var ShootCooldown = 2.0
 export(float) var ShootAmount = 1.0
 export(float) var ShootDamage = 1.0
-export(float) var ShootSpread = 0.0
+export(float) var ShootSpread = 0.1
 
 var MoveDir
 
