@@ -22,7 +22,7 @@ var Health = 10 setget HealthSet
 var MaxHealth = 10 setget MaxHealthSet
 var Grenades = 3 setget GrenadesSet
 var Armor = 0 setget ArmorSet
-var Money = 0 setget MoneySet
+var Money = 50 setget MoneySet
 
 var ShootCooldown = 1.0
 var ShootCooldownCounter = 0.0

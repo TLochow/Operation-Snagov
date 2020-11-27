@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var Type
+export(Default.PickupTypes) var Type
 
 func _ready():
 	$AnimationPlayer.play("Blink")
