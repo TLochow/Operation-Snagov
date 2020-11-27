@@ -19,6 +19,21 @@ var Cleared = false
 func _ready():
 	get_tree().get_nodes_in_group("MiniMap")[0].RegisterRoom(self)
 
+func ShowBossSprite():
+	var bossSprite = $BossSprite
+	bossSprite.visible = true
+	if OpenTop:
+		bossSprite.rotation = PI
+		bossSprite.set_position(Vector2(0.0, -((Default.RoomSize.y * 0.5) + 32.0)))
+	elif OpenBottom:
+		bossSprite.set_position(Vector2(0.0, ((Default.RoomSize.y * 0.5) + 32.0)))
+	elif OpenLeft:
+		bossSprite.rotation = PI * 0.5
+		bossSprite.set_position(Vector2(-((Default.RoomSize.x * 0.5) + 32.0), 0.0))
+	elif OpenRight:
+		bossSprite.rotation = PI * -0.5
+		bossSprite.set_position(Vector2(((Default.RoomSize.x * 0.5) + 32.0), 0.0))
+
 func SetExits():
 	if OpenTop:
 		$Doors/TopWall.queue_free()
@@ -39,6 +54,10 @@ func SetExits():
 
 func LoadLayout():
 	$Layout.add_child(LayoutLoader.LoadRandomLayout(Global.CurrentLevel, Type))
+	if Type == Default.RoomTypes.Boss:
+		ShowBossSprite()
+	else:
+		$BossSprite.queue_free()
 
 func GenerateNeighbors(roomsNode):
 	GeneratedNeighbors = true
