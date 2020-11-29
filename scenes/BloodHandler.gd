@@ -31,8 +31,8 @@ func ReparentNode(child, newParent):
 	newParent.add_child(child)
 
 func _process(delta):
-	if BloodToAdd.get_child_count() > 0:
-		var blood = BloodToAdd.get_child(0)
+	var bloodNodes = BloodToAdd.get_children()
+	for blood in bloodNodes:
 		var pos = blood.get_position()
 		var keyPos = Vector2(floor(pos.x / BloodImageSize.x), floor(pos.y / BloodImageSize.y))
 		if not BloodImages.has(keyPos):
