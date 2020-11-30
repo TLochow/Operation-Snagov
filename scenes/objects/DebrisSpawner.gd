@@ -12,7 +12,9 @@ func SpawnDebris(spriteNode, baseRotation, forceDirection, basePos):
 	for x in range(spriteWidthTileAmount):
 		for y in range(spriteHeightTileAmount):
 			var debris = DEBRISSCENE.instance()
-			debris.add_child(spriteNode.duplicate())
+			var sprite = spriteNode.duplicate()
+			debris.SpriteNode = sprite
+			debris.add_child(sprite)
 			debris.CutSprite(spriteWidthTileSize, spriteHeightTileSize, x, y)
 			debris.rotation = baseRotation + spriteNode.rotation
 			var spread = forceDirection.angle() + rand_range(-1.0, 1.0)
