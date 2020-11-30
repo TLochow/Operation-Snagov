@@ -28,7 +28,7 @@ var ShootCooldown = 1.0
 var ShootCooldownCounter = 0.0
 var ShotSpread = 0.05
 var ShotAmount = 1.0
-var ShotDamage = 2.0
+var ShotDamage = 1.0
 
 var ImpactDetector = false
 var GrenadeLauncher = false
