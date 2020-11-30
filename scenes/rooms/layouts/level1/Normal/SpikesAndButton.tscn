@@ -1,0 +1,627 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/rooms/layouts/LayoutBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/rooms/layouts/level1/Normal/SpikesAndButton.gd" type="Script" id=2]
+[ext_resource path="res://scenes/objects/Button.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/objects/Spikes.tscn" type="PackedScene" id=4]
+
+[node name="SpikesAndButton" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="TileMap" parent="." index="0"]
+tile_data = PoolIntArray( -458768, 2, 0, -458767, 2, 0, -458766, 2, 0, -458765, 2, 0, -458764, 2, 0, -458763, 2, 0, -458762, 2, 0, -458761, 2, 0, -458760, 2, 0, -458759, 2, 0, -458758, 2, 0, -458757, 2, 0, -458756, 2, 0, -458755, 2, 0, -458754, 2, 0, -458753, 23, 0, -524288, 23, 0, -524287, 2, 0, -524286, 2, 0, -524285, 2, 0, -524284, 2, 0, -524283, 2, 0, -524282, 2, 0, -524281, 2, 0, -524280, 2, 0, -524279, 2, 0, -524278, 2, 0, -524277, 2, 0, -524276, 2, 0, -524275, 2, 0, -524274, 2, 0, -524273, 2, 0, -393232, 2, 0, -393231, 23, 0, -393230, 23, 0, -393229, 23, 0, -393228, 23, 0, -393227, 23, 0, -393226, 23, 0, -393225, 2, 0, -393224, 2, 0, -393223, 2, 0, -393222, 2, 0, -393221, 23, 0, -393220, 23, 0, -393219, 23, 0, -393218, 2, 0, -393217, 23, 0, -458752, 23, 0, -458751, 2, 0, -458750, 2, 0, -458749, 2, 0, -458748, 2, 0, -458747, 2, 0, -458746, 2, 0, -458745, 2, 0, -458744, 23, 0, -458743, 23, 0, -458742, 23, 0, -458741, 23, 0, -458740, 23, 0, -458739, 23, 0, -458738, 23, 0, -458737, 2, 0, -327696, 2, 0, -327695, 23, 0, -327694, 2, 0, -327693, 2, 0, -327692, 2, 0, -327691, 2, 0, -327690, 23, 0, -327689, 2, 0, -327688, 23, 0, -327687, 23, 0, -327686, 23, 0, -327685, 23, 0, -327684, 2, 0, -327683, 23, 0, -327682, 2, 0, -327681, 23, 0, -393216, 2, 0, -393215, 2, 0, -393214, 23, 0, -393213, 23, 0, -393212, 23, 0, -393211, 23, 0, -393210, 23, 0, -393209, 2, 0, -393208, 23, 0, -393207, 2, 0, -393206, 2, 0, -393205, 2, 0, -393204, 2, 0, -393203, 2, 0, -393202, 23, 0, -393201, 2, 0, -262160, 2, 0, -262159, 23, 0, -262158, 23, 0, -262157, 23, 0, -262156, 23, 0, -262155, 2, 0, -262154, 23, 0, -262153, 2, 0, -262152, 23, 0, -262151, 2, 0, -262150, 2, 0, -262149, 2, 0, -262148, 2, 0, -262147, 23, 0, -262146, 23, 0, -262145, 23, 0, -327680, 2, 0, -327679, 2, 0, -327678, 23, 0, -327677, 2, 0, -327676, 2, 0, -327675, 2, 0, -327674, 23, 0, -327673, 2, 0, -327672, 23, 0, -327671, 2, 0, -327670, 23, 0, -327669, 23, 0, -327668, 23, 0, -327667, 23, 0, -327666, 23, 0, -327665, 2, 0, -196624, 2, 0, -196623, 2, 0, -196622, 2, 0, -196621, 2, 0, -196620, 23, 0, -196619, 2, 0, -196618, 23, 0, -196617, 2, 0, -196616, 23, 0, -196615, 23, 0, -196614, 23, 0, -196613, 2, 0, -196612, 2, 0, -196611, 2, 0, -196610, 2, 0, -196609, 2, 0, -262144, 2, 0, -262143, 2, 0, -262142, 23, 0, -262141, 2, 0, -262140, 23, 0, -262139, 23, 0, -262138, 23, 0, -262137, 2, 0, -262136, 23, 0, -262135, 2, 0, -262134, 23, 0, -262133, 2, 0, -262132, 2, 0, -262131, 2, 0, -262130, 2, 0, -262129, 2, 0, -131088, 2, 0, -131087, 2, 0, -131086, 2, 0, -131085, 2, 0, -131084, 23, 0, -131083, 2, 0, -131082, 23, 0, -131081, 2, 0, -131080, 2, 0, -131079, 2, 0, -131078, 23, 0, -131077, 2, 0, -131076, 23, 0, -131075, 23, 0, -131074, 23, 0, -131073, 23, 0, -196608, 23, 0, -196607, 23, 0, -196606, 23, 0, -196605, 2, 0, -196604, 23, 0, -196603, 2, 0, -196602, 2, 0, -196601, 2, 0, -196600, 23, 0, -196599, 2, 0, -196598, 23, 0, -196597, 2, 0, -196596, 23, 0, -196595, 23, 0, -196594, 23, 0, -196593, 2, 0, -65552, 2, 0, -65551, 2, 0, -65550, 2, 0, -65549, 2, 0, -65548, 23, 0, -65547, 2, 0, -65546, 23, 0, -65545, 23, 0, -65544, 23, 0, -65543, 23, 0, -65542, 23, 0, -65541, 2, 0, -65540, 23, 0, -65539, 2, 0, -65538, 2, 0, -65537, 2, 0, -131072, 23, 0, -131071, 2, 0, -131070, 2, 0, -131069, 2, 0, -131068, 23, 0, -131067, 23, 0, -131066, 23, 0, -131065, 23, 0, -131064, 23, 0, -131063, 2, 0, -131062, 23, 0, -131061, 23, 0, -131060, 23, 0, -131059, 2, 0, -131058, 23, 0, -131057, 2, 0, -16, 23, 0, -15, 23, 0, -14, 2, 0, -13, 2, 0, -12, 23, 0, -11, 2, 0, -10, 2, 0, -9, 2, 0, -8, 2, 0, -7, 2, 0, -6, 2, 0, -5, 2, 0, -4, 23, 0, -3, 2, 0, -2, 2, 0, -1, 23, 0, -65536, 23, 0, -65535, 2, 0, -65534, 2, 0, -65533, 2, 0, -65532, 2, 0, -65531, 2, 0, -65530, 2, 0, -65529, 2, 0, -65528, 2, 0, -65527, 2, 0, -65526, 2, 0, -65525, 2, 0, -65524, 2, 0, -65523, 2, 0, -65522, 23, 0, -65521, 23, 0, 65520, 23, 0, 65521, 23, 0, 65522, 2, 0, 65523, 2, 0, 65524, 23, 0, 65525, 23, 0, 65526, 23, 0, 65527, 23, 0, 65528, 23, 0, 65529, 23, 0, 65530, 23, 0, 65531, 23, 0, 65532, 23, 0, 65533, 2, 0, 65534, 2, 0, 65535, 23, 0, 0, 23, 0, 1, 2, 0, 2, 23, 0, 3, 23, 0, 4, 23, 0, 5, 23, 0, 6, 23, 0, 7, 23, 0, 8, 23, 0, 9, 23, 0, 10, 23, 0, 11, 23, 0, 12, 23, 0, 13, 2, 0, 14, 23, 0, 15, 23, 0, 131056, 2, 0, 131057, 23, 0, 131058, 2, 0, 131059, 2, 0, 131060, 2, 0, 131061, 2, 0, 131062, 2, 0, 131063, 2, 0, 131064, 2, 0, 131065, 2, 0, 131066, 2, 0, 131067, 2, 0, 131068, 2, 0, 131069, 2, 0, 131070, 2, 0, 131071, 23, 0, 65536, 2, 0, 65537, 2, 0, 65538, 23, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 65548, 23, 0, 65549, 2, 0, 65550, 2, 0, 65551, 2, 0, 196592, 2, 0, 196593, 23, 0, 196594, 23, 0, 196595, 23, 0, 196596, 2, 0, 196597, 23, 0, 196598, 23, 0, 196599, 23, 0, 196600, 23, 0, 196601, 23, 0, 196602, 2, 0, 196603, 23, 0, 196604, 23, 0, 196605, 23, 0, 196606, 23, 0, 196607, 23, 0, 131072, 23, 0, 131073, 23, 0, 131074, 23, 0, 131075, 2, 0, 131076, 23, 0, 131077, 23, 0, 131078, 23, 0, 131079, 23, 0, 131080, 23, 0, 131081, 23, 0, 131082, 23, 0, 131083, 2, 0, 131084, 23, 0, 131085, 2, 0, 131086, 2, 0, 131087, 2, 0, 262128, 2, 0, 262129, 2, 0, 262130, 2, 0, 262131, 23, 0, 262132, 2, 0, 262133, 23, 0, 262134, 2, 0, 262135, 2, 0, 262136, 2, 0, 262137, 23, 0, 262138, 2, 0, 262139, 23, 0, 262140, 2, 0, 262141, 2, 0, 262142, 2, 0, 262143, 2, 0, 196608, 2, 0, 196609, 2, 0, 196610, 2, 0, 196611, 2, 0, 196612, 23, 0, 196613, 2, 0, 196614, 2, 0, 196615, 2, 0, 196616, 2, 0, 196617, 2, 0, 196618, 23, 0, 196619, 2, 0, 196620, 23, 0, 196621, 23, 0, 196622, 23, 0, 196623, 2, 0, 327664, 2, 0, 327665, 23, 0, 327666, 23, 0, 327667, 23, 0, 327668, 2, 0, 327669, 23, 0, 327670, 2, 0, 327671, 23, 0, 327672, 23, 0, 327673, 23, 0, 327674, 2, 0, 327675, 23, 0, 327676, 2, 0, 327677, 23, 0, 327678, 23, 0, 327679, 23, 0, 262144, 23, 0, 262145, 23, 0, 262146, 23, 0, 262147, 2, 0, 262148, 23, 0, 262149, 23, 0, 262150, 23, 0, 262151, 23, 0, 262152, 23, 0, 262153, 2, 0, 262154, 23, 0, 262155, 2, 0, 262156, 2, 0, 262157, 2, 0, 262158, 23, 0, 262159, 2, 0, 393200, 2, 0, 393201, 23, 0, 393202, 2, 0, 393203, 2, 0, 393204, 2, 0, 393205, 23, 0, 393206, 2, 0, 393207, 23, 0, 393208, 2, 0, 393209, 2, 0, 393210, 2, 0, 393211, 23, 0, 393212, 2, 0, 393213, 23, 0, 393214, 2, 0, 393215, 2, 0, 327680, 2, 0, 327681, 2, 0, 327682, 23, 0, 327683, 2, 0, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 23, 0, 327689, 2, 0, 327690, 23, 0, 327691, 2, 0, 327692, 23, 0, 327693, 23, 0, 327694, 23, 0, 327695, 2, 0, 458736, 2, 0, 458737, 23, 0, 458738, 23, 0, 458739, 23, 0, 458740, 23, 0, 458741, 23, 0, 458742, 2, 0, 458743, 23, 0, 458744, 23, 0, 458745, 23, 0, 458746, 23, 0, 458747, 23, 0, 458748, 2, 0, 458749, 23, 0, 458750, 23, 0, 458751, 23, 0, 393216, 23, 0, 393217, 2, 0, 393218, 23, 0, 393219, 23, 0, 393220, 23, 0, 393221, 23, 0, 393222, 23, 0, 393223, 23, 0, 393224, 23, 0, 393225, 2, 0, 393226, 23, 0, 393227, 23, 0, 393228, 23, 0, 393229, 2, 0, 393230, 2, 0, 393231, 2, 0, 524272, 2, 0, 524273, 2, 0, 524274, 2, 0, 524275, 2, 0, 524276, 2, 0, 524277, 2, 0, 524278, 2, 0, 524279, 2, 0, 524280, 2, 0, 524281, 2, 0, 524282, 2, 0, 524283, 2, 0, 524284, 2, 0, 524285, 2, 0, 524286, 2, 0, 524287, 23, 0, 458752, 23, 0, 458753, 2, 0, 458754, 2, 0, 458755, 2, 0, 458756, 2, 0, 458757, 2, 0, 458758, 2, 0, 458759, 2, 0, 458760, 2, 0, 458761, 2, 0, 458762, 2, 0, 458763, 2, 0, 458764, 2, 0, 458765, 2, 0, 458766, 2, 0, 458767, 2, 0 )
+
+[node name="Button" parent="." index="3" instance=ExtResource( 3 )]
+OneTimePress = true
+
+[node name="Spikes" type="Node2D" parent="." index="4"]
+
+[node name="Spikes" parent="Spikes" index="0" instance=ExtResource( 4 )]
+position = Vector2( -216, -88 )
+
+[node name="Spikes2" parent="Spikes" index="1" instance=ExtResource( 4 )]
+position = Vector2( -200, -88 )
+
+[node name="Spikes3" parent="Spikes" index="2" instance=ExtResource( 4 )]
+position = Vector2( -184, -88 )
+
+[node name="Spikes4" parent="Spikes" index="3" instance=ExtResource( 4 )]
+position = Vector2( -168, -88 )
+
+[node name="Spikes5" parent="Spikes" index="4" instance=ExtResource( 4 )]
+position = Vector2( -168, -72 )
+
+[node name="Spikes6" parent="Spikes" index="5" instance=ExtResource( 4 )]
+position = Vector2( -168, -56 )
+
+[node name="Spikes7" parent="Spikes" index="6" instance=ExtResource( 4 )]
+position = Vector2( -168, -40 )
+
+[node name="Spikes8" parent="Spikes" index="7" instance=ExtResource( 4 )]
+position = Vector2( -168, -24 )
+
+[node name="Spikes9" parent="Spikes" index="8" instance=ExtResource( 4 )]
+position = Vector2( -168, -8 )
+
+[node name="Spikes10" parent="Spikes" index="9" instance=ExtResource( 4 )]
+position = Vector2( -152, -8 )
+
+[node name="Spikes11" parent="Spikes" index="10" instance=ExtResource( 4 )]
+position = Vector2( -136, -8 )
+
+[node name="Spikes12" parent="Spikes" index="11" instance=ExtResource( 4 )]
+position = Vector2( -120, -8 )
+
+[node name="Spikes13" parent="Spikes" index="12" instance=ExtResource( 4 )]
+position = Vector2( -104, -8 )
+
+[node name="Spikes14" parent="Spikes" index="13" instance=ExtResource( 4 )]
+position = Vector2( -88, -8 )
+
+[node name="Spikes15" parent="Spikes" index="14" instance=ExtResource( 4 )]
+position = Vector2( -72, -8 )
+
+[node name="Spikes16" parent="Spikes" index="15" instance=ExtResource( 4 )]
+position = Vector2( -72, -24 )
+
+[node name="Spikes17" parent="Spikes" index="16" instance=ExtResource( 4 )]
+position = Vector2( -72, -40 )
+
+[node name="Spikes18" parent="Spikes" index="17" instance=ExtResource( 4 )]
+position = Vector2( -72, -56 )
+
+[node name="Spikes19" parent="Spikes" index="18" instance=ExtResource( 4 )]
+position = Vector2( -72, -72 )
+
+[node name="Spikes20" parent="Spikes" index="19" instance=ExtResource( 4 )]
+position = Vector2( -88, -72 )
+
+[node name="Spikes21" parent="Spikes" index="20" instance=ExtResource( 4 )]
+position = Vector2( -104, -72 )
+
+[node name="Spikes22" parent="Spikes" index="21" instance=ExtResource( 4 )]
+position = Vector2( -56, -88 )
+
+[node name="Spikes23" parent="Spikes" index="22" instance=ExtResource( 4 )]
+position = Vector2( -56, -72 )
+
+[node name="Spikes24" parent="Spikes" index="23" instance=ExtResource( 4 )]
+position = Vector2( -56, -56 )
+
+[node name="Spikes25" parent="Spikes" index="24" instance=ExtResource( 4 )]
+position = Vector2( -40, -56 )
+
+[node name="Spikes26" parent="Spikes" index="25" instance=ExtResource( 4 )]
+position = Vector2( -24, -56 )
+
+[node name="Spikes27" parent="Spikes" index="26" instance=ExtResource( 4 )]
+position = Vector2( -8, -56 )
+
+[node name="Spikes28" parent="Spikes" index="27" instance=ExtResource( 4 )]
+position = Vector2( 8, -56 )
+
+[node name="Spikes29" parent="Spikes" index="28" instance=ExtResource( 4 )]
+position = Vector2( 24, -56 )
+
+[node name="Spikes30" parent="Spikes" index="29" instance=ExtResource( 4 )]
+position = Vector2( 24, -72 )
+
+[node name="Spikes31" parent="Spikes" index="30" instance=ExtResource( 4 )]
+position = Vector2( 8, -72 )
+
+[node name="Spikes32" parent="Spikes" index="31" instance=ExtResource( 4 )]
+position = Vector2( 8, -88 )
+
+[node name="Spikes33" parent="Spikes" index="32" instance=ExtResource( 4 )]
+position = Vector2( 24, -88 )
+
+[node name="Spikes34" parent="Spikes" index="33" instance=ExtResource( 4 )]
+position = Vector2( 24, -104 )
+
+[node name="Spikes35" parent="Spikes" index="34" instance=ExtResource( 4 )]
+position = Vector2( 40, -104 )
+
+[node name="Spikes36" parent="Spikes" index="35" instance=ExtResource( 4 )]
+position = Vector2( 56, -104 )
+
+[node name="Spikes37" parent="Spikes" index="36" instance=ExtResource( 4 )]
+position = Vector2( 72, -104 )
+
+[node name="Spikes38" parent="Spikes" index="37" instance=ExtResource( 4 )]
+position = Vector2( 88, -104 )
+
+[node name="Spikes39" parent="Spikes" index="38" instance=ExtResource( 4 )]
+position = Vector2( 104, -104 )
+
+[node name="Spikes40" parent="Spikes" index="39" instance=ExtResource( 4 )]
+position = Vector2( 120, -104 )
+
+[node name="Spikes41" parent="Spikes" index="40" instance=ExtResource( 4 )]
+position = Vector2( 120, -88 )
+
+[node name="Spikes42" parent="Spikes" index="41" instance=ExtResource( 4 )]
+position = Vector2( 120, -72 )
+
+[node name="Spikes43" parent="Spikes" index="42" instance=ExtResource( 4 )]
+position = Vector2( 120, -56 )
+
+[node name="Spikes44" parent="Spikes" index="43" instance=ExtResource( 4 )]
+position = Vector2( 120, -40 )
+
+[node name="Spikes45" parent="Spikes" index="44" instance=ExtResource( 4 )]
+position = Vector2( 104, -40 )
+
+[node name="Spikes46" parent="Spikes" index="45" instance=ExtResource( 4 )]
+position = Vector2( 88, -40 )
+
+[node name="Spikes47" parent="Spikes" index="46" instance=ExtResource( 4 )]
+position = Vector2( -24, -104 )
+
+[node name="Spikes48" parent="Spikes" index="47" instance=ExtResource( 4 )]
+position = Vector2( -24, -88 )
+
+[node name="Spikes49" parent="Spikes" index="48" instance=ExtResource( 4 )]
+position = Vector2( -88, -104 )
+
+[node name="Spikes50" parent="Spikes" index="49" instance=ExtResource( 4 )]
+position = Vector2( -104, -104 )
+
+[node name="Spikes51" parent="Spikes" index="50" instance=ExtResource( 4 )]
+position = Vector2( -120, -104 )
+
+[node name="Spikes52" parent="Spikes" index="51" instance=ExtResource( 4 )]
+position = Vector2( -136, -104 )
+
+[node name="Spikes53" parent="Spikes" index="52" instance=ExtResource( 4 )]
+position = Vector2( -136, -88 )
+
+[node name="Spikes54" parent="Spikes" index="53" instance=ExtResource( 4 )]
+position = Vector2( -136, -72 )
+
+[node name="Spikes55" parent="Spikes" index="54" instance=ExtResource( 4 )]
+position = Vector2( -136, -56 )
+
+[node name="Spikes56" parent="Spikes" index="55" instance=ExtResource( 4 )]
+position = Vector2( -136, -40 )
+
+[node name="Spikes57" parent="Spikes" index="56" instance=ExtResource( 4 )]
+position = Vector2( -120, -40 )
+
+[node name="Spikes58" parent="Spikes" index="57" instance=ExtResource( 4 )]
+position = Vector2( -104, -40 )
+
+[node name="Spikes59" parent="Spikes" index="58" instance=ExtResource( 4 )]
+position = Vector2( -232, -56 )
+
+[node name="Spikes60" parent="Spikes" index="59" instance=ExtResource( 4 )]
+position = Vector2( -216, -56 )
+
+[node name="Spikes61" parent="Spikes" index="60" instance=ExtResource( 4 )]
+position = Vector2( -200, -56 )
+
+[node name="Spikes62" parent="Spikes" index="61" instance=ExtResource( 4 )]
+position = Vector2( -200, -40 )
+
+[node name="Spikes63" parent="Spikes" index="62" instance=ExtResource( 4 )]
+position = Vector2( -216, -40 )
+
+[node name="Spikes64" parent="Spikes" index="63" instance=ExtResource( 4 )]
+position = Vector2( -232, -40 )
+
+[node name="Spikes65" parent="Spikes" index="64" instance=ExtResource( 4 )]
+position = Vector2( -232, -24 )
+
+[node name="Spikes66" parent="Spikes" index="65" instance=ExtResource( 4 )]
+position = Vector2( -216, -24 )
+
+[node name="Spikes67" parent="Spikes" index="66" instance=ExtResource( 4 )]
+position = Vector2( -200, -24 )
+
+[node name="Spikes68" parent="Spikes" index="67" instance=ExtResource( 4 )]
+position = Vector2( -200, -8 )
+
+[node name="Spikes69" parent="Spikes" index="68" instance=ExtResource( 4 )]
+position = Vector2( -216, -8 )
+
+[node name="Spikes70" parent="Spikes" index="69" instance=ExtResource( 4 )]
+position = Vector2( -216, 8 )
+
+[node name="Spikes71" parent="Spikes" index="70" instance=ExtResource( 4 )]
+position = Vector2( -200, 8 )
+
+[node name="Spikes72" parent="Spikes" index="71" instance=ExtResource( 4 )]
+position = Vector2( -200, 24 )
+
+[node name="Spikes73" parent="Spikes" index="72" instance=ExtResource( 4 )]
+position = Vector2( -216, 24 )
+
+[node name="Spikes74" parent="Spikes" index="73" instance=ExtResource( 4 )]
+position = Vector2( -216, 88 )
+
+[node name="Spikes75" parent="Spikes" index="74" instance=ExtResource( 4 )]
+position = Vector2( -200, 88 )
+
+[node name="Spikes76" parent="Spikes" index="75" instance=ExtResource( 4 )]
+position = Vector2( -184, 88 )
+
+[node name="Spikes77" parent="Spikes" index="76" instance=ExtResource( 4 )]
+position = Vector2( -184, 72 )
+
+[node name="Spikes78" parent="Spikes" index="77" instance=ExtResource( 4 )]
+position = Vector2( -184, 56 )
+
+[node name="Spikes79" parent="Spikes" index="78" instance=ExtResource( 4 )]
+position = Vector2( -184, 40 )
+
+[node name="Spikes80" parent="Spikes" index="79" instance=ExtResource( 4 )]
+position = Vector2( -184, 24 )
+
+[node name="Spikes81" parent="Spikes" index="80" instance=ExtResource( 4 )]
+position = Vector2( -216, 56 )
+
+[node name="Spikes82" parent="Spikes" index="81" instance=ExtResource( 4 )]
+position = Vector2( -232, 56 )
+
+[node name="Spikes83" parent="Spikes" index="82" instance=ExtResource( 4 )]
+position = Vector2( -168, 24 )
+
+[node name="Spikes84" parent="Spikes" index="83" instance=ExtResource( 4 )]
+position = Vector2( -152, 24 )
+
+[node name="Spikes85" parent="Spikes" index="84" instance=ExtResource( 4 )]
+position = Vector2( -136, 24 )
+
+[node name="Spikes86" parent="Spikes" index="85" instance=ExtResource( 4 )]
+position = Vector2( -120, 24 )
+
+[node name="Spikes87" parent="Spikes" index="86" instance=ExtResource( 4 )]
+position = Vector2( -104, 24 )
+
+[node name="Spikes88" parent="Spikes" index="87" instance=ExtResource( 4 )]
+position = Vector2( -88, 24 )
+
+[node name="Spikes89" parent="Spikes" index="88" instance=ExtResource( 4 )]
+position = Vector2( -88, 40 )
+
+[node name="Spikes90" parent="Spikes" index="89" instance=ExtResource( 4 )]
+position = Vector2( -88, 56 )
+
+[node name="Spikes91" parent="Spikes" index="90" instance=ExtResource( 4 )]
+position = Vector2( -88, 72 )
+
+[node name="Spikes92" parent="Spikes" index="91" instance=ExtResource( 4 )]
+position = Vector2( -88, 88 )
+
+[node name="Spikes93" parent="Spikes" index="92" instance=ExtResource( 4 )]
+position = Vector2( -104, 88 )
+
+[node name="Spikes94" parent="Spikes" index="93" instance=ExtResource( 4 )]
+position = Vector2( -120, 88 )
+
+[node name="Spikes95" parent="Spikes" index="94" instance=ExtResource( 4 )]
+position = Vector2( -152, 104 )
+
+[node name="Spikes96" parent="Spikes" index="95" instance=ExtResource( 4 )]
+position = Vector2( -152, 88 )
+
+[node name="Spikes97" parent="Spikes" index="96" instance=ExtResource( 4 )]
+position = Vector2( -152, 72 )
+
+[node name="Spikes98" parent="Spikes" index="97" instance=ExtResource( 4 )]
+position = Vector2( -152, 56 )
+
+[node name="Spikes99" parent="Spikes" index="98" instance=ExtResource( 4 )]
+position = Vector2( -136, 56 )
+
+[node name="Spikes100" parent="Spikes" index="99" instance=ExtResource( 4 )]
+position = Vector2( -120, 56 )
+
+[node name="Spikes101" parent="Spikes" index="100" instance=ExtResource( 4 )]
+position = Vector2( -56, 104 )
+
+[node name="Spikes102" parent="Spikes" index="101" instance=ExtResource( 4 )]
+position = Vector2( -56, 88 )
+
+[node name="Spikes103" parent="Spikes" index="102" instance=ExtResource( 4 )]
+position = Vector2( -56, 72 )
+
+[node name="Spikes104" parent="Spikes" index="103" instance=ExtResource( 4 )]
+position = Vector2( -56, 56 )
+
+[node name="Spikes105" parent="Spikes" index="104" instance=ExtResource( 4 )]
+position = Vector2( -40, 56 )
+
+[node name="Spikes106" parent="Spikes" index="105" instance=ExtResource( 4 )]
+position = Vector2( -24, 56 )
+
+[node name="Spikes107" parent="Spikes" index="106" instance=ExtResource( 4 )]
+position = Vector2( -8, 56 )
+
+[node name="Spikes108" parent="Spikes" index="107" instance=ExtResource( 4 )]
+position = Vector2( 8, 56 )
+
+[node name="Spikes109" parent="Spikes" index="108" instance=ExtResource( 4 )]
+position = Vector2( 24, 56 )
+
+[node name="Spikes110" parent="Spikes" index="109" instance=ExtResource( 4 )]
+position = Vector2( 40, 56 )
+
+[node name="Spikes111" parent="Spikes" index="110" instance=ExtResource( 4 )]
+position = Vector2( 56, 56 )
+
+[node name="Spikes112" parent="Spikes" index="111" instance=ExtResource( 4 )]
+position = Vector2( 56, 72 )
+
+[node name="Spikes113" parent="Spikes" index="112" instance=ExtResource( 4 )]
+position = Vector2( 56, 88 )
+
+[node name="Spikes114" parent="Spikes" index="113" instance=ExtResource( 4 )]
+position = Vector2( 72, 88 )
+
+[node name="Spikes115" parent="Spikes" index="114" instance=ExtResource( 4 )]
+position = Vector2( 88, 88 )
+
+[node name="Spikes116" parent="Spikes" index="115" instance=ExtResource( 4 )]
+position = Vector2( 104, 88 )
+
+[node name="Spikes117" parent="Spikes" index="116" instance=ExtResource( 4 )]
+position = Vector2( 120, 88 )
+
+[node name="Spikes118" parent="Spikes" index="117" instance=ExtResource( 4 )]
+position = Vector2( 88, 56 )
+
+[node name="Spikes119" parent="Spikes" index="118" instance=ExtResource( 4 )]
+position = Vector2( 104, 56 )
+
+[node name="Spikes120" parent="Spikes" index="119" instance=ExtResource( 4 )]
+position = Vector2( 120, 56 )
+
+[node name="Spikes121" parent="Spikes" index="120" instance=ExtResource( 4 )]
+position = Vector2( 136, 56 )
+
+[node name="Spikes122" parent="Spikes" index="121" instance=ExtResource( 4 )]
+position = Vector2( 152, 56 )
+
+[node name="Spikes123" parent="Spikes" index="122" instance=ExtResource( 4 )]
+position = Vector2( 152, 72 )
+
+[node name="Spikes124" parent="Spikes" index="123" instance=ExtResource( 4 )]
+position = Vector2( 152, 88 )
+
+[node name="Spikes125" parent="Spikes" index="124" instance=ExtResource( 4 )]
+position = Vector2( 152, 104 )
+
+[node name="Spikes126" parent="Spikes" index="125" instance=ExtResource( 4 )]
+position = Vector2( 216, 104 )
+
+[node name="Spikes127" parent="Spikes" index="126" instance=ExtResource( 4 )]
+position = Vector2( 232, 104 )
+
+[node name="Spikes128" parent="Spikes" index="127" instance=ExtResource( 4 )]
+position = Vector2( 216, 72 )
+
+[node name="Spikes129" parent="Spikes" index="128" instance=ExtResource( 4 )]
+position = Vector2( 200, 72 )
+
+[node name="Spikes130" parent="Spikes" index="129" instance=ExtResource( 4 )]
+position = Vector2( 184, 88 )
+
+[node name="Spikes131" parent="Spikes" index="130" instance=ExtResource( 4 )]
+position = Vector2( 184, 72 )
+
+[node name="Spikes132" parent="Spikes" index="131" instance=ExtResource( 4 )]
+position = Vector2( 184, 56 )
+
+[node name="Spikes133" parent="Spikes" index="132" instance=ExtResource( 4 )]
+position = Vector2( 184, 40 )
+
+[node name="Spikes134" parent="Spikes" index="133" instance=ExtResource( 4 )]
+position = Vector2( 184, 24 )
+
+[node name="Spikes135" parent="Spikes" index="134" instance=ExtResource( 4 )]
+position = Vector2( 168, 24 )
+
+[node name="Spikes136" parent="Spikes" index="135" instance=ExtResource( 4 )]
+position = Vector2( 152, 24 )
+
+[node name="Spikes137" parent="Spikes" index="136" instance=ExtResource( 4 )]
+position = Vector2( 136, 24 )
+
+[node name="Spikes138" parent="Spikes" index="137" instance=ExtResource( 4 )]
+position = Vector2( 120, 24 )
+
+[node name="Spikes139" parent="Spikes" index="138" instance=ExtResource( 4 )]
+position = Vector2( 104, 24 )
+
+[node name="Spikes140" parent="Spikes" index="139" instance=ExtResource( 4 )]
+position = Vector2( 88, 24 )
+
+[node name="Spikes141" parent="Spikes" index="140" instance=ExtResource( 4 )]
+position = Vector2( 72, 24 )
+
+[node name="Spikes142" parent="Spikes" index="141" instance=ExtResource( 4 )]
+position = Vector2( 56, 24 )
+
+[node name="Spikes143" parent="Spikes" index="142" instance=ExtResource( 4 )]
+position = Vector2( 56, 40 )
+
+[node name="Spikes144" parent="Spikes" index="143" instance=ExtResource( 4 )]
+position = Vector2( -24, 88 )
+
+[node name="Spikes145" parent="Spikes" index="144" instance=ExtResource( 4 )]
+position = Vector2( -8, 88 )
+
+[node name="Spikes146" parent="Spikes" index="145" instance=ExtResource( 4 )]
+position = Vector2( 8, 88 )
+
+[node name="Spikes147" parent="Spikes" index="146" instance=ExtResource( 4 )]
+position = Vector2( 24, 88 )
+
+[node name="Spikes148" parent="Spikes" index="147" instance=ExtResource( 4 )]
+position = Vector2( 24, 104 )
+
+[node name="Spikes149" parent="Spikes" index="148" instance=ExtResource( 4 )]
+position = Vector2( -72, 24 )
+
+[node name="Spikes150" parent="Spikes" index="149" instance=ExtResource( 4 )]
+position = Vector2( -56, 24 )
+
+[node name="Spikes151" parent="Spikes" index="150" instance=ExtResource( 4 )]
+position = Vector2( -40, 24 )
+
+[node name="Spikes152" parent="Spikes" index="151" instance=ExtResource( 4 )]
+position = Vector2( -24, 24 )
+
+[node name="Spikes153" parent="Spikes" index="152" instance=ExtResource( 4 )]
+position = Vector2( -24, 8 )
+
+[node name="Spikes154" parent="Spikes" index="153" instance=ExtResource( 4 )]
+position = Vector2( -40, 8 )
+
+[node name="Spikes155" parent="Spikes" index="154" instance=ExtResource( 4 )]
+position = Vector2( -40, -8 )
+
+[node name="Spikes156" parent="Spikes" index="155" instance=ExtResource( 4 )]
+position = Vector2( -24, -8 )
+
+[node name="Spikes157" parent="Spikes" index="156" instance=ExtResource( 4 )]
+position = Vector2( -40, -24 )
+
+[node name="Spikes158" parent="Spikes" index="157" instance=ExtResource( 4 )]
+position = Vector2( -24, -24 )
+
+[node name="Spikes159" parent="Spikes" index="158" instance=ExtResource( 4 )]
+position = Vector2( -8, -24 )
+
+[node name="Spikes160" parent="Spikes" index="159" instance=ExtResource( 4 )]
+position = Vector2( 88, -72 )
+
+[node name="Spikes161" parent="Spikes" index="160" instance=ExtResource( 4 )]
+position = Vector2( 72, -72 )
+
+[node name="Spikes162" parent="Spikes" index="161" instance=ExtResource( 4 )]
+position = Vector2( 56, -72 )
+
+[node name="Spikes163" parent="Spikes" index="162" instance=ExtResource( 4 )]
+position = Vector2( 56, -56 )
+
+[node name="Spikes164" parent="Spikes" index="163" instance=ExtResource( 4 )]
+position = Vector2( 56, -40 )
+
+[node name="Spikes165" parent="Spikes" index="164" instance=ExtResource( 4 )]
+position = Vector2( 56, -24 )
+
+[node name="Spikes166" parent="Spikes" index="165" instance=ExtResource( 4 )]
+position = Vector2( 40, -24 )
+
+[node name="Spikes167" parent="Spikes" index="166" instance=ExtResource( 4 )]
+position = Vector2( 24, -24 )
+
+[node name="Spikes168" parent="Spikes" index="167" instance=ExtResource( 4 )]
+position = Vector2( 8, 24 )
+
+[node name="Spikes169" parent="Spikes" index="168" instance=ExtResource( 4 )]
+position = Vector2( 24, 24 )
+
+[node name="Spikes170" parent="Spikes" index="169" instance=ExtResource( 4 )]
+position = Vector2( 24, 8 )
+
+[node name="Spikes171" parent="Spikes" index="170" instance=ExtResource( 4 )]
+position = Vector2( 24, -8 )
+
+[node name="Spikes172" parent="Spikes" index="171" instance=ExtResource( 4 )]
+position = Vector2( 40, -8 )
+
+[node name="Spikes173" parent="Spikes" index="172" instance=ExtResource( 4 )]
+position = Vector2( 56, -8 )
+
+[node name="Spikes174" parent="Spikes" index="173" instance=ExtResource( 4 )]
+position = Vector2( 72, -8 )
+
+[node name="Spikes175" parent="Spikes" index="174" instance=ExtResource( 4 )]
+position = Vector2( 88, -8 )
+
+[node name="Spikes176" parent="Spikes" index="175" instance=ExtResource( 4 )]
+position = Vector2( 104, -8 )
+
+[node name="Spikes177" parent="Spikes" index="176" instance=ExtResource( 4 )]
+position = Vector2( 120, -8 )
+
+[node name="Spikes178" parent="Spikes" index="177" instance=ExtResource( 4 )]
+position = Vector2( 136, -8 )
+
+[node name="Spikes179" parent="Spikes" index="178" instance=ExtResource( 4 )]
+position = Vector2( 216, -88 )
+
+[node name="Spikes180" parent="Spikes" index="179" instance=ExtResource( 4 )]
+position = Vector2( 200, -88 )
+
+[node name="Spikes181" parent="Spikes" index="180" instance=ExtResource( 4 )]
+position = Vector2( 184, -88 )
+
+[node name="Spikes182" parent="Spikes" index="181" instance=ExtResource( 4 )]
+position = Vector2( 168, -88 )
+
+[node name="Spikes183" parent="Spikes" index="182" instance=ExtResource( 4 )]
+position = Vector2( 152, -88 )
+
+[node name="Spikes184" parent="Spikes" index="183" instance=ExtResource( 4 )]
+position = Vector2( 152, -72 )
+
+[node name="Spikes185" parent="Spikes" index="184" instance=ExtResource( 4 )]
+position = Vector2( 152, -56 )
+
+[node name="Spikes186" parent="Spikes" index="185" instance=ExtResource( 4 )]
+position = Vector2( 152, -40 )
+
+[node name="Spikes187" parent="Spikes" index="186" instance=ExtResource( 4 )]
+position = Vector2( 152, -24 )
+
+[node name="Spikes188" parent="Spikes" index="187" instance=ExtResource( 4 )]
+position = Vector2( 152, -8 )
+
+[node name="Spikes189" parent="Spikes" index="188" instance=ExtResource( 4 )]
+position = Vector2( 168, -8 )
+
+[node name="Spikes190" parent="Spikes" index="189" instance=ExtResource( 4 )]
+position = Vector2( 184, -8 )
+
+[node name="Spikes191" parent="Spikes" index="190" instance=ExtResource( 4 )]
+position = Vector2( 200, -8 )
+
+[node name="Spikes192" parent="Spikes" index="191" instance=ExtResource( 4 )]
+position = Vector2( 216, -24 )
+
+[node name="Spikes193" parent="Spikes" index="192" instance=ExtResource( 4 )]
+position = Vector2( 216, -8 )
+
+[node name="Spikes194" parent="Spikes" index="193" instance=ExtResource( 4 )]
+position = Vector2( 216, 8 )
+
+[node name="Spikes195" parent="Spikes" index="194" instance=ExtResource( 4 )]
+position = Vector2( 216, 24 )
+
+[node name="Spikes196" parent="Spikes" index="195" instance=ExtResource( 4 )]
+position = Vector2( 216, 40 )
+
+[node name="Spikes197" parent="Spikes" index="196" instance=ExtResource( 4 )]
+position = Vector2( 232, 24 )
+
+[node name="Spikes198" parent="Spikes" index="197" instance=ExtResource( 4 )]
+position = Vector2( 232, 40 )
+
+[node name="Spikes199" parent="Spikes" index="198" instance=ExtResource( 4 )]
+position = Vector2( 232, -56 )
+
+[node name="Spikes200" parent="Spikes" index="199" instance=ExtResource( 4 )]
+position = Vector2( 216, -56 )
+
+[node name="Spikes201" parent="Spikes" index="200" instance=ExtResource( 4 )]
+position = Vector2( 200, -56 )
+
+[node name="Spikes202" parent="Spikes" index="201" instance=ExtResource( 4 )]
+position = Vector2( 184, -56 )
+
+[node name="Spikes203" parent="Spikes" index="202" instance=ExtResource( 4 )]
+position = Vector2( 184, -40 )
+[connection signal="Pressed" from="Button" to="." method="_on_Button_Pressed"]
