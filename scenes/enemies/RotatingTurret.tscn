@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/enemies/_EnemyBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://graphics/enemies/rotating turret.png" type="Texture" id=2]
+[ext_resource path="res://scenes/enemies/RotatingTurret.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 8.0
+
+[node name="RotatingTurret" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+EnemyType = 1
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="." index="1"]
+texture = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="." index="2"]
+
+[node name="WarmupTimer" type="Timer" parent="." index="3"]
+one_shot = true
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
+[connection signal="timeout" from="WarmupTimer" to="." method="_on_WarmupTimer_timeout"]

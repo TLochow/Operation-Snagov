@@ -44,3 +44,8 @@ enum Items {
 	BlastShield,
 	SniperRifle
 }
+
+enum EnemyTypes {
+	Alive,
+	Mechanical
+}

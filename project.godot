@@ -26,6 +26,7 @@ Default="*res://Default.gd"
 Global="*res://scenes/Global.tscn"
 LayoutLoader="*res://scenes/rooms/layouts/LayoutLoader.gd"
 ItemLoader="*res://scenes/items/ItemLoader.gd"
+DebrisSpawner="*res://scenes/objects/DebrisSpawner.gd"
 
 [display]
 
