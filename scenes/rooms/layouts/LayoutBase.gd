@@ -2,6 +2,11 @@ extends Node2D
 
 signal Cleared
 
+var RoomOpenTop = false
+var RoomOpenBottom = false
+var RoomOpenLeft = false
+var RoomOpenRight = false
+
 export(bool) var IsEnemyBased = false
 
 onready var EnemyNode = $Enemies

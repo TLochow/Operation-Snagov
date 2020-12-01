@@ -181,3 +181,7 @@ __meta__ = {
 }
 
 [node name="Tween" type="Tween" parent="UI/Game/Damage"]
+[connection signal="ArmorChanged" from="Player" to="." method="_on_Player_ArmorChanged"]
+[connection signal="GrenadesChanged" from="Player" to="." method="_on_Player_GrenadesChanged"]
+[connection signal="HealthChanged" from="Player" to="." method="_on_Player_HealthChanged"]
+[connection signal="MoneyChanged" from="Player" to="." method="_on_Player_MoneyChanged"]

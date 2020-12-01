@@ -62,5 +62,4 @@ func Die(forceDirection):
 	call_deferred("queue_free")
 
 func SpawnDebrisForSprite(sprite, forceDirection):
-	print(sprite)
 	DebrisSpawner.SpawnDebris(sprite, rotation, forceDirection, sprite.get_global_position())

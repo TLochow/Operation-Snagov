@@ -16,7 +16,25 @@ func _ready():
 	BossMaxHealth = boss.Health
 	BossHealthBar.max_value = BossMaxHealth
 	$CanvasLayer/UI/BossName.text = BossName
+	PlaceElevator()
 	._ready()
+
+func PlaceElevator():
+	var elevatorRotation = 0.0
+	var pos
+	if RoomOpenTop:
+		pos = Vector2(0.0, Default.RoomSize.y - 32.0)
+	elif RoomOpenBottom:
+		elevatorRotation = PI
+		pos = Vector2(0.0, -(Default.RoomSize.y - 32.0))
+	elif RoomOpenLeft:
+		elevatorRotation = PI * -0.5
+		pos = Vector2(Default.RoomSize.x - 32.0, 0.0)
+	elif RoomOpenRight:
+		elevatorRotation = PI * 0.5
+		pos = Vector2(-(Default.RoomSize.x - 32.0), 0.0)
+	$Elevator.rotation = elevatorRotation
+	$Elevator.set_position(pos * 0.5)
 
 func Activate():
 	.Activate()
@@ -35,6 +53,7 @@ func _process(delta):
 		if BossHealth == 0.0:
 			SpawnItem()
 			$CanvasLayer/UI.visible = false
+			$Elevator.Open()
 			emit_signal("Cleared")
 			set_process(false)
 	BossHealthBar.value = BossHealth

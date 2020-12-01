@@ -53,7 +53,12 @@ func SetExits():
 		$Doors/Right.queue_free()
 
 func LoadLayout():
-	$Layout.add_child(LayoutLoader.LoadRandomLayout(Global.CurrentLevel, Type))
+	var layout = LayoutLoader.LoadRandomLayout(Global.CurrentLevel, Type)
+	layout.RoomOpenTop = OpenTop
+	layout.RoomOpenBottom = OpenBottom
+	layout.RoomOpenLeft = OpenLeft
+	layout.RoomOpenRight = OpenRight
+	$Layout.add_child(layout)
 	if Type == Default.RoomTypes.Boss:
 		ShowBossSprite()
 	else:
@@ -61,7 +66,7 @@ func LoadLayout():
 
 func GenerateNeighbors(roomsNode):
 	GeneratedNeighbors = true
-	var percentageForRoomGeneration = 1.0 - (DistanceToStart * 0.4)
+	var percentageForRoomGeneration = (1.0 * Global.CurrentLevel) - (DistanceToStart * 0.4)
 	var generateRoomUp = randf() < percentageForRoomGeneration
 	var generateRoomDown = randf() < percentageForRoomGeneration
 	var generateRoomLeft = randf() < percentageForRoomGeneration

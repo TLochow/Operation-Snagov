@@ -5,6 +5,10 @@ var ANNOUNCEMENTSCENE = preload("res://scenes/Announcement.tscn")
 var HealthBefore = 0.0
 var ArmorBefore = 0.0
 
+func _init():
+	if Global.CurrentLevel == 1:
+		Global.LoadDefaults()
+
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		SceneChanger.EndGame()
@@ -18,18 +22,9 @@ func _ready():
 	GenerateLevel()
 	$Rooms/StartRoom.OpenDoors()
 	
-	var player = $Player
-	player.connect("HealthChanged", self, "PlayerHealthChanged")
-	player.connect("GrenadesChanged", self, "PlayerGrenadesChanged")
-	player.connect("ArmorChanged", self, "PlayerArmorChanged")
-	player.connect("MoneyChanged", self, "PlayerMoneyChanged")
-	
 	$GameCamera.connect("ChangedRoom", $UI/Game/ViewportContainer/MiniMap, "ChangedRoom")
 	
 	Global.connect("Announcement", self, "Announcement")
-	
-	HealthBefore = player.Health
-	ArmorBefore = player.Armor
 
 func GenerateLevel():
 	$Rooms/StartRoom.Type = Default.RoomTypes.Start
@@ -62,19 +57,13 @@ func GenerateLevel():
 		room.SetExits()
 		room.LoadLayout()
 
-func PlayerHealthChanged(health, maxHealth):
-	if health < HealthBefore:
-		var intensity = min(0.25 * (HealthBefore - health), 1.0)
-		$UI/Game/Damage/Tween.stop_all()
-		$UI/Game/Damage/Tween.interpolate_property($UI/Game/Damage, "color", Color(0.7, 0.0, 0.0, intensity), Color(0.7, 0.0, 0.0, 0.0), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		$UI/Game/Damage/Tween.start()
-	HealthBefore = health
-	$UI/Game/Health.text = str(health) + "/" + str(maxHealth)
+func Announcement(title, description):
+	var announcement = ANNOUNCEMENTSCENE.instance()
+	announcement.Title = title
+	announcement.Description = description
+	$UI/Game/Announcement.add_child(announcement)
 
-func PlayerGrenadesChanged(grenades):
-	$UI/Game/Grenades.text = str(grenades)
-
-func PlayerArmorChanged(armor):
+func _on_Player_ArmorChanged(armor):
 	if armor < ArmorBefore:
 		var intensity = min(0.25 * (ArmorBefore - armor), 1.0)
 		$UI/Game/Damage/Tween.stop_all()
@@ -83,11 +72,17 @@ func PlayerArmorChanged(armor):
 	ArmorBefore = armor
 	$UI/Game/Armor.text = str(armor)
 
-func PlayerMoneyChanged(money):
-	$UI/Game/Money.text = str(money)
+func _on_Player_GrenadesChanged(grenades):
+	$UI/Game/Grenades.text = str(grenades)
 
-func Announcement(title, description):
-	var announcement = ANNOUNCEMENTSCENE.instance()
-	announcement.Title = title
-	announcement.Description = description
-	$UI/Game/Announcement.add_child(announcement)
+func _on_Player_HealthChanged(health, maxHealth):
+	if health < HealthBefore:
+		var intensity = min(0.25 * (HealthBefore - health), 1.0)
+		$UI/Game/Damage/Tween.stop_all()
+		$UI/Game/Damage/Tween.interpolate_property($UI/Game/Damage, "color", Color(0.7, 0.0, 0.0, intensity), Color(0.7, 0.0, 0.0, 0.0), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$UI/Game/Damage/Tween.start()
+	HealthBefore = health
+	$UI/Game/Health.text = str(health) + "/" + str(maxHealth)
+
+func _on_Player_MoneyChanged(money):
+	$UI/Game/Money.text = str(money)

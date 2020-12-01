@@ -19,23 +19,40 @@ var LookDirection = Vector2(0.0, 0.0)
 var MoveDirection = Vector2(0.0, 0.0)
 
 var Health = 10 setget HealthSet
-var MaxHealth = 10 setget MaxHealthSet
-var Grenades = 3 setget GrenadesSet
-var Armor = 0 setget ArmorSet
-var Money = 0 setget MoneySet
+var MaxHealth setget MaxHealthSet
+var Grenades setget GrenadesSet
+var Armor setget ArmorSet
+var Money setget MoneySet
 
-var ShootCooldown = 1.0
+var ShootCooldown
 var ShootCooldownCounter = 0.0
-var ShotSpread = 0.05
-var ShotAmount = 1.0
-var ShotDamage = 1.0
+var ShotSpread
+var ShotAmount
+var ShotDamage
 
 var ImpactDetector = false
 var GrenadeLauncher = false
 var BlastShield = false
 
 func _ready():
+	LoadPlayerValues()
 	AnimPlayer.play("Walk")
+
+func LoadPlayerValues():
+	MaxHealthSet(Global.PlayerMaxHealth)
+	HealthSet(Global.PlayerHealth)
+	GrenadesSet(Global.PlayerGrenades)
+	ArmorSet(Global.PlayerArmor)
+	MoneySet(Global.PlayerMoney)
+	
+	ShootCooldown = Global.PlayerShootCooldown
+	ShotSpread = Global.PlayerShotSpread
+	ShotAmount = Global.PlayerShotAmount
+	ShotDamage = Global.PlayerShotDamage
+	
+	ImpactDetector = Global.PlayerImpactDetector
+	GrenadeLauncher = Global.PlayerGrenadeLauncher
+	BlastShield = Global.PlayerBlastShield
 
 func _input(event):
 	if event.is_action_pressed("mouse_right") and Grenades > 0:
