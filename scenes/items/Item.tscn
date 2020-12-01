@@ -55,6 +55,7 @@ script = ExtResource( 2 )
 shape = SubResource( 1 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
+z_index = 14
 emitting = false
 amount = 512
 lifetime = 2.0
