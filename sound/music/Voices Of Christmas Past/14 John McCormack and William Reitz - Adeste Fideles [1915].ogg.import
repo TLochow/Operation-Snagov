@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/14 John McCormack and William Reitz - Adeste Fideles [1915].ogg-ee51671031554a02894e2a490c5653ff.oggstr"
+
+[deps]
+
+source_file="res://sound/music/Voices Of Christmas Past/14 John McCormack and William Reitz - Adeste Fideles [1915].ogg"
+dest_files=[ "res://.import/14 John McCormack and William Reitz - Adeste Fideles [1915].ogg-ee51671031554a02894e2a490c5653ff.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

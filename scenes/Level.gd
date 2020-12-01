@@ -16,6 +16,7 @@ func _input(event):
 		SceneChanger.ChangeScene("res://scenes/Level.tscn")
 
 func _ready():
+	MusicHandler.Play()
 	Global.TopEffectsNode = $TopEffects
 	Global.DebrisNode = $Debris
 	Global.BloodHandler = $BloodHandler

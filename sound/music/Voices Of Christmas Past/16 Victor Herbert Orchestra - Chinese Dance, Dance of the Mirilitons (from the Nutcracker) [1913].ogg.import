@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/16 Victor Herbert Orchestra - Chinese Dance, Dance of the Mirilitons (from the Nutcracker) [1913].ogg-2f43de3f3526ead4ac5be8ca2fbd5a5a.oggstr"
+
+[deps]
+
+source_file="res://sound/music/Voices Of Christmas Past/16 Victor Herbert Orchestra - Chinese Dance, Dance of the Mirilitons (from the Nutcracker) [1913].ogg"
+dest_files=[ "res://.import/16 Victor Herbert Orchestra - Chinese Dance, Dance of the Mirilitons (from the Nutcracker) [1913].ogg-2f43de3f3526ead4ac5be8ca2fbd5a5a.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/15 Ernest Hare - Night Before Christmas [1920].ogg-471180a3f834e0d9b09cbda82bc8e6f9.oggstr"
+
+[deps]
+
+source_file="res://sound/music/Voices Of Christmas Past/15 Ernest Hare - Night Before Christmas [1920].ogg"
+dest_files=[ "res://.import/15 Ernest Hare - Night Before Christmas [1920].ogg-471180a3f834e0d9b09cbda82bc8e6f9.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

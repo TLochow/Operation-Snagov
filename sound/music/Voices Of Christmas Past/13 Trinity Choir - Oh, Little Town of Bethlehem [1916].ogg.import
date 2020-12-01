@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/13 Trinity Choir - Oh, Little Town of Bethlehem [1916].ogg-84b3c8fda36328383e34d0ac207592c2.oggstr"
+
+[deps]
+
+source_file="res://sound/music/Voices Of Christmas Past/13 Trinity Choir - Oh, Little Town of Bethlehem [1916].ogg"
+dest_files=[ "res://.import/13 Trinity Choir - Oh, Little Town of Bethlehem [1916].ogg-84b3c8fda36328383e34d0ac207592c2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
