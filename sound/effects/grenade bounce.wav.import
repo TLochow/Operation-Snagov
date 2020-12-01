@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/grenade bounce.wav-de595e6d6b6e2de2949f7c2cec1c3f6e.sample"
+
+[deps]
+
+source_file="res://sound/effects/grenade bounce.wav"
+dest_files=[ "res://.import/grenade bounce.wav-de595e6d6b6e2de2949f7c2cec1c3f6e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

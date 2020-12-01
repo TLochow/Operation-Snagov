@@ -49,3 +49,10 @@ enum EnemyTypes {
 	Alive,
 	Mechanical
 }
+
+enum BreakingSoundEffects {
+	Wood,
+	Clay,
+	Glass,
+	Metal
+}

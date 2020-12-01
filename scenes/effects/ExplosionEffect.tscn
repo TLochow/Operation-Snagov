@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://graphics/explosion.png" type="Texture" id=1]
 [ext_resource path="res://scenes/effects/ExplosionEffect.gd" type="Script" id=2]
 [ext_resource path="res://graphics/smoke.png" type="Texture" id=3]
+[ext_resource path="res://sound/effects/explosion.wav" type="AudioStream" id=4]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.481481, 0.881481, 1 )
@@ -76,3 +77,8 @@ explosiveness = 1.0
 visibility_rect = Rect2( -10000, -10000, 20000, 20000 )
 process_material = SubResource( 8 )
 texture = ExtResource( 3 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+autoplay = true
+bus = "Effects"

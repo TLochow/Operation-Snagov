@@ -28,6 +28,7 @@ LayoutLoader="*res://scenes/rooms/layouts/LayoutLoader.gd"
 ItemLoader="*res://scenes/items/ItemLoader.gd"
 DebrisSpawner="*res://scenes/objects/DebrisSpawner.gd"
 MusicHandler="*res://sound/MusicHandler.tscn"
+BreakingSoundEffectHandler="*res://sound/BreakingSoundEffectHandler.tscn"
 
 [display]
 

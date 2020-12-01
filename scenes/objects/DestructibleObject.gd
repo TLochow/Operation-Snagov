@@ -12,6 +12,8 @@ export(float, 0.0, 1.0, 0.01) var GrenadeChance = 0.0
 export(float, 0.0, 1.0, 0.01) var ArmorChance = 0.0
 export(float, 0.0, 1.0, 0.01) var MoneyChance = 0.0
 
+export(Default.BreakingSoundEffects) var BreakingSoundEffect
+
 func Damage(damage, hitPoint, direction, collisionNormal):
 	var hitEffect = WALLHITSCENE.instance()
 	hitEffect.set_position(hitPoint)
@@ -34,6 +36,7 @@ func Destroy(forceDirection):
 		if SpawnPickups:
 			SpawnPickups(pos)
 		DebrisSpawner.SpawnDebris($Sprite, rotation, forceDirection, pos)
+		BreakingSoundEffectHandler.Play(BreakingSoundEffect)
 		call_deferred("queue_free")
 
 func SpawnPickups(pos):
