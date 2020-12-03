@@ -30,9 +30,9 @@ var ShotSpread
 var ShotAmount
 var ShotDamage
 
-var ImpactDetector = false
-var GrenadeLauncher = false
-var BlastShield = false
+var ImpactDetector
+var GrenadeLauncher
+var BlastShield
 
 func _ready():
 	LoadPlayerValues()
@@ -57,7 +57,7 @@ func LoadPlayerValues():
 func _input(event):
 	if event.is_action_pressed("mouse_right") and Grenades > 0:
 		GrenadesSet(Grenades - 1)
-		ThrowGrenade(ImpactDetector)
+		ThrowGrenade(ImpactDetector, false)
 
 func _physics_process(delta):
 	MoveDirection = Default.DirCenter
@@ -92,7 +92,8 @@ func _physics_process(delta):
 func Shoot(angle, pos):
 	ShootCooldownCounter = ShootCooldown
 	if GrenadeLauncher:
-		ThrowGrenade(true)
+		for i in range(ShotAmount):
+			ThrowGrenade(true, true)
 	else:
 		for i in range(ShotAmount):
 			var shot = SHOTSCENE.instance()
@@ -100,12 +101,14 @@ func Shoot(angle, pos):
 			shot.set_position(pos)
 			shot.Shoot(ShotDamage, angle + rand_range(-ShotSpread, ShotSpread))
 
-func ThrowGrenade(explodeOnContact):
+func ThrowGrenade(explodeOnContact, applySpread):
 	var pos = get_position() + (LookDirection * 10.0)
 	var grenade = GRENADESCENE.instance()
 	grenade.ExplodeOnContact = explodeOnContact
 	grenade.set_position(pos)
 	grenade.linear_velocity = LookDirection * 500.0
+	if applySpread:
+		grenade.linear_velocity = grenade.linear_velocity.rotated(rand_range(-ShotSpread, ShotSpread))
 	grenade.angular_velocity = rand_range(-10.0, 10.0)
 	ShotNode.add_child(grenade)
 
