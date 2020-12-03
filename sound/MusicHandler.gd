@@ -12,18 +12,19 @@ func _ready():
 
 func Play():
 	Playing = true
-	StreamPlayer.stop()
-	
-	var songToPlay = randi() % SongCount
-	while PlayedSongs.has(songToPlay):
-		songToPlay = randi() % SongCount
-	
-	PlayedSongs.append(songToPlay)
-	if PlayedSongs.size() > SongCount * 0.75:
-		PlayedSongs.remove(0)
-	
-	StreamPlayer.stream = Songs[songToPlay]
-	StreamPlayer.play()
+	if StreamPlayer.playing:
+		StreamPlayer.stop()
+	else:
+		var songToPlay = randi() % SongCount
+		while PlayedSongs.has(songToPlay):
+			songToPlay = randi() % SongCount
+		
+		PlayedSongs.append(songToPlay)
+		if PlayedSongs.size() > SongCount * 0.75:
+			PlayedSongs.remove(0)
+		
+		StreamPlayer.stream = Songs[songToPlay]
+		StreamPlayer.play()
 
 func Stop():
 	Playing = false
