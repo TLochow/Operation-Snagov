@@ -8,6 +8,8 @@ func _input(event):
 		SceneChanger.EndGame()
 
 func _ready():
+	get_tree().paused = false
+	MusicHandler.Stop()
 	LoadSettings()
 
 func LoadSettings():

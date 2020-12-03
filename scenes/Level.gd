@@ -10,9 +10,7 @@ func _init():
 		Global.LoadDefaults()
 
 func _input(event):
-	if event.is_action_pressed("ui_cancel"):
-		SceneChanger.EndGame()
-	elif event.is_action_pressed("restart"):
+	if event.is_action_pressed("restart"):
 		SceneChanger.ChangeScene("res://scenes/Level.tscn")
 
 func _ready():
