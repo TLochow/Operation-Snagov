@@ -24,7 +24,7 @@ func LoadDefaults():
 	PlayerShootCooldown = 1.0
 	PlayerShotSpread = 0.05
 	PlayerShotAmount = 1.0
-	PlayerShotDamage = 1.0
+	PlayerShotDamage = 10.0
 	
 	PlayerImpactDetector = false
 	PlayerGrenadeLauncher = false
