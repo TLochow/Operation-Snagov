@@ -66,7 +66,7 @@ func LoadLayout():
 
 func GenerateNeighbors(roomsNode):
 	GeneratedNeighbors = true
-	var percentageForRoomGeneration = (1.0 * Global.CurrentLevel) - (DistanceToStart * 0.4)
+	var percentageForRoomGeneration = 1.0 - (DistanceToStart * 0.4)
 	var generateRoomUp = randf() < percentageForRoomGeneration
 	var generateRoomDown = randf() < percentageForRoomGeneration
 	var generateRoomLeft = randf() < percentageForRoomGeneration
