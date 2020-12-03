@@ -7,6 +7,7 @@ var DistanceToStart = 0
 var GenerationCoords = Vector2(0, 0)
 
 var Type = Default.RoomTypes.Normal
+var Layout
 
 export(bool) var OpenTop = false
 export(bool) var OpenBottom = false
@@ -53,12 +54,12 @@ func SetExits():
 		$Doors/Right.queue_free()
 
 func LoadLayout():
-	var layout = LayoutLoader.LoadRandomLayout(Global.CurrentLevel, Type)
-	layout.RoomOpenTop = OpenTop
-	layout.RoomOpenBottom = OpenBottom
-	layout.RoomOpenLeft = OpenLeft
-	layout.RoomOpenRight = OpenRight
-	$Layout.add_child(layout)
+	Layout = LayoutLoader.LoadRandomLayout(Global.CurrentLevel, Type)
+	Layout.RoomOpenTop = OpenTop
+	Layout.RoomOpenBottom = OpenBottom
+	Layout.RoomOpenLeft = OpenLeft
+	Layout.RoomOpenRight = OpenRight
+	$Layout.add_child(Layout)
 	if Type == Default.RoomTypes.Boss:
 		ShowBossSprite()
 	else:
@@ -142,7 +143,7 @@ func _on_PlayerDetector_body_entered(body):
 		$Layout.get_children()[0].connect("Cleared", self, "RoomCleared")
 		ActivateNodes($Layout)
 	if not Cleared:
-		if Type == Default.RoomTypes.Normal or Type == Default.RoomTypes.Boss:
+		if (Type == Default.RoomTypes.Normal or Type == Default.RoomTypes.Boss) and Layout.CloseDoors:
 			CloseDoors()
 		else:
 			Cleared = true

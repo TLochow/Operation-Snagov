@@ -8,6 +8,7 @@ var RoomOpenLeft = false
 var RoomOpenRight = false
 
 export(bool) var IsEnemyBased = false
+export(bool) var CloseDoors = true
 
 onready var EnemyNode = $Enemies
 

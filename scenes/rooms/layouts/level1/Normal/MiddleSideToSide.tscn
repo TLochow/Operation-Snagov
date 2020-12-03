@@ -12,27 +12,27 @@ tile_data = PoolIntArray( -458768, 2, 0, -458767, 2, 0, -458766, 2, 0, -458765, 
 
 [node name="SimpleMovingEnemy" parent="Enemies" index="0" instance=ExtResource( 2 )]
 position = Vector2( -16, -16 )
-HorizontalMoveDirection = 2
-VerticalLookDirection = 2
+HorizontalMoveDirection = 3
+VerticalLookDirection = 3
 
 [node name="SimpleMovingEnemy2" parent="Enemies" index="1" instance=ExtResource( 2 )]
 position = Vector2( 16, -16 )
 HorizontalMoveDirection = 3
-VerticalLookDirection = 3
+VerticalLookDirection = 1
 
 [node name="SimpleMovingEnemy3" parent="Enemies" index="2" instance=ExtResource( 2 )]
 position = Vector2( 16, 16 )
 HorizontalMoveDirection = 3
-VerticalMoveDirection = 1
-HorizontalLookDirection = 1
-VerticalLookDirection = 3
+VerticalMoveDirection = 2
+HorizontalLookDirection = 2
+VerticalLookDirection = 1
 
 [node name="SimpleMovingEnemy4" parent="Enemies" index="3" instance=ExtResource( 2 )]
 position = Vector2( -16, 16 )
-HorizontalMoveDirection = 2
-VerticalMoveDirection = 1
-HorizontalLookDirection = 1
-VerticalLookDirection = 2
+HorizontalMoveDirection = 3
+VerticalMoveDirection = 2
+HorizontalLookDirection = 2
+VerticalLookDirection = 3
 
 [node name="Spikes" type="Node2D" parent="." index="3"]
 

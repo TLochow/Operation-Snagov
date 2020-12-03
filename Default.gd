@@ -10,9 +10,9 @@ var RoomSize = Vector2(512.0, 256.0)
 
 enum Directions {
 	Up,
+	Right,
 	Down,
-	Left,
-	Right
+	Left
 }
 
 enum RoomTypes {
