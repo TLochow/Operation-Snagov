@@ -8,10 +8,11 @@ radius = 40.0
 height = 144.0
 
 [node name="LargeTable" instance=ExtResource( 1 )]
+BreakingSoundEffect = 2
 
-[node name="Sprite" parent="." index="0"]
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" parent="." index="1"]
+[node name="CollisionShape2D" parent="." index="0"]
 rotation = 1.5708
 shape = SubResource( 1 )
+
+[node name="Sprite" parent="." index="1"]
+texture = ExtResource( 2 )

@@ -8,7 +8,7 @@ extents = Vector2( 7, 5 )
 
 [node name="Urinal" instance=ExtResource( 1 )]
 Health = 3.0
-BreakingSoundEffect = 1
+BreakingSoundEffect = 3
 
 [node name="CollisionShape2D" parent="." index="0"]
 position = Vector2( 0, -1 )

@@ -15,7 +15,7 @@ HealthChance = 0.01
 GrenadeChance = 0.05
 ArmorChance = 0.05
 MoneyChance = 0.1
-BreakingSoundEffect = 3
+BreakingSoundEffect = 5
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )

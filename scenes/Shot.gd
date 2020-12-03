@@ -5,6 +5,9 @@ var ShotEnd = Vector2(0.0, 0.0)
 
 var Line
 
+func _ready():
+	SoundEffectHandler.Play(Default.SoundEffects.Shot)
+
 func Shoot(damage, angle):
 	Shot = true
 	var direction = Vector2(cos(angle), sin(angle))

@@ -50,7 +50,9 @@ enum EnemyTypes {
 	Mechanical
 }
 
-enum BreakingSoundEffects {
+enum SoundEffects {
+	Shot,
+	Explosion,
 	Wood,
 	Clay,
 	Glass,

@@ -14,6 +14,7 @@ SpawnPickups = true
 HealthChance = 0.1
 ArmorChance = 0.1
 MoneyChance = 0.5
+BreakingSoundEffect = 2
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )

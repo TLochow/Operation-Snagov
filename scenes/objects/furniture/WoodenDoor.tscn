@@ -8,6 +8,7 @@ extents = Vector2( 8, 2 )
 
 [node name="WoodenDoor" instance=ExtResource( 1 )]
 Health = 4.0
+BreakingSoundEffect = 2
 
 [node name="CollisionShape2D" parent="." index="0"]
 shape = SubResource( 1 )
