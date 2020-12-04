@@ -7,6 +7,7 @@ export(float) var Health = 5.0
 export(Default.EnemyTypes) var EnemyType
 
 var Active = false
+var Dead = false
 
 func _ready():
 	set_process(false)
@@ -48,12 +49,14 @@ func Spark(pos):
 	Global.TopEffectsNode.add_child(spark)
 
 func Die(forceDirection):
-	var pos = get_global_position()
-	match EnemyType:
-		Default.EnemyTypes.Alive:
-			for i in range(24):
-				var angle = TAU * (i / 24.0)
-				Bleed(pos, angle, 0.5)
-		Default.EnemyTypes.Mechanical:
-			DebrisSpawner.SpawnDebris($Sprite, rotation, forceDirection, pos)
-	call_deferred("queue_free")
+	if not Dead:
+		Dead = true
+		var pos = get_global_position()
+		match EnemyType:
+			Default.EnemyTypes.Alive:
+				for i in range(24):
+					var angle = TAU * (i / 24.0)
+					Bleed(pos, angle, 0.5)
+			Default.EnemyTypes.Mechanical:
+				DebrisSpawner.SpawnDebris($Sprite, rotation, forceDirection, pos)
+		call_deferred("queue_free")

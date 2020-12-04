@@ -25,10 +25,15 @@ func LoadDefaults():
 	PlayerShotSpread = 0.05
 	PlayerShotAmount = 1.0
 	PlayerShotDamage = 1.0
+	PlayerMoveSpeed = 100.0
 	
 	PlayerImpactDetector = false
 	PlayerGrenadeLauncher = false
 	PlayerBlastShield = false
+	PlayerShield = false
+	PlayerDrone = false
+	PlayerDefenisveDrones = false
+	PlayerRevenge = false
 
 var PlayerHealth
 var PlayerMaxHealth
@@ -40,7 +45,12 @@ var PlayerShootCooldown
 var PlayerShotSpread
 var PlayerShotAmount
 var PlayerShotDamage
+var PlayerMoveSpeed
 
 var PlayerImpactDetector
 var PlayerGrenadeLauncher
 var PlayerBlastShield
+var PlayerShield
+var PlayerDrone
+var PlayerDefenisveDrones
+var PlayerRevenge

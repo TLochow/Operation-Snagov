@@ -31,8 +31,14 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		Global.PlayerShotSpread = player.ShotSpread
 		Global.PlayerShotAmount = player.ShotAmount
 		Global.PlayerShotDamage = player.ShotDamage
+		Global.PlayerMoveSpeed = player.MoveSpeed
 		
 		Global.PlayerImpactDetector = player.ImpactDetector
 		Global.PlayerGrenadeLauncher = player.GrenadeLauncher
 		Global.PlayerBlastShield = player.BlastShield
+		Global.PlayerShield = player.Shield
+		Global.PlayerDrone = player.Drone
+		Global.PlayerDefenisveDrones = player.DefensiveDrones
+		Global.PlayerRevenge = player.Revenge
+		
 		SceneChanger.ChangeScene("res://scenes/Level.tscn")

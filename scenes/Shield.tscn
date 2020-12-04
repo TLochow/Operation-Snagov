@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://graphics/shield.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Shield.gd" type="Script" id=2]
+
+[node name="Shield" type="StaticBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 6, 8, 8, 5, 8, -5, 6, -8, 4, -8, 3, -7, 3, -5, 4, -4, 4, 4, 3, 5, 3, 7, 4, 8 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )

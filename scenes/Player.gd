@@ -8,15 +8,20 @@ signal MoneyChanged(money)
 var SHOTSCENE = preload("res://scenes/Shot.tscn")
 var GRENADESCENE = preload("res://scenes/Grenade.tscn")
 var BLOODSCENE = preload("res://scenes/effects/Blood.tscn")
+var DRONESCENE = preload("res://scenes/Drone.tscn")
+var DEFENSIVEDRONESSCENE = preload("res://scenes/DefensiveDrones.tscn")
+var SHIELDSCENE = preload("res://scenes/Shield.tscn")
 
 onready var ShotNode = get_tree().get_nodes_in_group("ShotsNode")[0]
 
 onready var AnimPlayer = $AnimationPlayer
 var PlayingWalkAnimation = true
 onready var PlayerSprite = $Sprite
+onready var ShieldNode = $Shield
 
 var LookDirection = Vector2(0.0, 0.0)
 var MoveDirection = Vector2(0.0, 0.0)
+
 
 var Health = 10 setget HealthSet
 var MaxHealth setget MaxHealthSet
@@ -29,10 +34,15 @@ var ShootCooldownCounter = 0.0
 var ShotSpread
 var ShotAmount
 var ShotDamage
+var MoveSpeed
 
 var ImpactDetector
 var GrenadeLauncher
 var BlastShield
+var Shield
+var Drone
+var DefensiveDrones
+var Revenge
 
 func _ready():
 	LoadPlayerValues()
@@ -49,10 +59,18 @@ func LoadPlayerValues():
 	ShotSpread = Global.PlayerShotSpread
 	ShotAmount = Global.PlayerShotAmount
 	ShotDamage = Global.PlayerShotDamage
+	MoveSpeed = Global.PlayerMoveSpeed
 	
 	ImpactDetector = Global.PlayerImpactDetector
 	GrenadeLauncher = Global.PlayerGrenadeLauncher
 	BlastShield = Global.PlayerBlastShield
+	if Global.PlayerShield:
+		ActivateShield()
+	if Global.PlayerDrone:
+		ActivateDrone()
+	if Global.PlayerDefenisveDrones:
+		ActivateDefensiveDrones()
+	Revenge = Global.PlayerRevenge
 
 func _input(event):
 	if event.is_action_pressed("mouse_right") and Grenades > 0:
@@ -69,7 +87,7 @@ func _physics_process(delta):
 		MoveDirection += Default.DirUp
 	if Input.is_action_pressed("ui_down"):
 		MoveDirection += Default.DirDown
-	move_and_slide(MoveDirection.normalized() * 100.0, Default.DirCenter)
+	move_and_slide(MoveDirection.normalized() * MoveSpeed, Default.DirCenter)
 	if MoveDirection == Default.DirCenter:
 		if PlayingWalkAnimation:
 			AnimPlayer.stop(false)
@@ -83,6 +101,7 @@ func _physics_process(delta):
 	LookDirection = (.get_global_mouse_position() - pos).normalized()
 	var lookAngle = LookDirection.angle()
 	PlayerSprite.rotation = lookAngle
+	ShieldNode.rotation = lookAngle
 	
 	ShootCooldownCounter -= delta
 	if Input.is_action_pressed("mouse_left") and ShootCooldownCounter <= 0.0:
@@ -96,10 +115,13 @@ func Shoot(angle, pos):
 			ThrowGrenade(true, true)
 	else:
 		for i in range(ShotAmount):
-			var shot = SHOTSCENE.instance()
-			ShotNode.add_child(shot)
-			shot.set_position(pos)
-			shot.Shoot(ShotDamage, angle + rand_range(-ShotSpread, ShotSpread))
+			SingleShot(pos, angle + rand_range(-ShotSpread, ShotSpread))
+
+func SingleShot(pos, angle):
+	var shot = SHOTSCENE.instance()
+	ShotNode.add_child(shot)
+	shot.set_position(pos)
+	shot.Shoot(ShotDamage, angle)
 
 func ThrowGrenade(explodeOnContact, applySpread):
 	var pos = get_position() + (LookDirection * 10.0)
@@ -115,6 +137,9 @@ func ThrowGrenade(explodeOnContact, applySpread):
 func Damage(damage, hitPoint, direction, collisionNormal):
 	TakeDamage(damage)
 	Bleed(hitPoint, direction, damage)
+	if Revenge:
+		var shotDir = direction.rotated(PI)
+		SingleShot(hitPoint + (shotDir.normalized() * 6.0), shotDir.angle())
 
 func Explode(pos, strength):
 	if not BlastShield:
@@ -156,3 +181,22 @@ func ArmorSet(armor):
 func MoneySet(money):
 	Money = max(money, 0)
 	emit_signal("MoneyChanged", Money)
+
+func ActivateDrone():
+	Drone = true
+	var drone = DRONESCENE.instance()
+	drone.set_position(get_position())
+	ShotNode.call_deferred("add_child", drone)
+
+func ActivateDefensiveDrones():
+	DefensiveDrones = true
+	var drones = DEFENSIVEDRONESSCENE.instance()
+	call_deferred("add_child", drones)
+
+func ActivateShield():
+	Shield = true
+	var shield = SHIELDSCENE.instance()
+	shield.rotation = PI
+	shield.Explodable = false
+	shield.set_position(Vector2(-4.0, 0.0))
+	ShieldNode.call_deferred("add_child", shield)

@@ -76,3 +76,8 @@ explosiveness = 1.0
 visibility_rect = Rect2( -10000, -10000, 20000, 20000 )
 process_material = SubResource( 8 )
 texture = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

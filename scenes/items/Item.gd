@@ -62,6 +62,21 @@ func SetNameAndDescription():
 		Default.Items.SniperRifle:
 			Title = "Sniper Rifle"
 			Description = "Shoot Speed Down - Accuracy Up - Damage Up"
+		Default.Items.Coffee:
+			Title = "Coffee"
+			Description = "Full Health - Move Speed Up"
+		Default.Items.Shield:
+			Title = "Shield"
+			Description = "Protection from Behind"
+		Default.Items.Drone:
+			Title = "Drone"
+			Description = "Shooting Buddy"
+		Default.Items.DefensiveDrones:
+			Title = "Defensive Drones"
+			Description = "Protecting Buddies"
+		Default.Items.Revenge:
+			Title = "Revenge"
+			Description = "Shoot Back when Hit"
 
 func Collect(player):
 	match ItemType:
@@ -97,3 +112,14 @@ func Collect(player):
 			player.ShotSpread = 0.0
 			player.ShootCooldown *= 2.5
 			player.ShotDamage *= 4.0
+		Default.Items.Coffee:
+			player.Health = player.MaxHealth
+			player.MoveSpeed *= 1.5
+		Default.Items.Shield:
+			player.ActivateShield()
+		Default.Items.Drone:
+			player.ActivateDrone()
+		Default.Items.DefensiveDrones:
+			player.ActivateDefensiveDrones()
+		Default.Items.Revenge:
+			player.Revenge = true

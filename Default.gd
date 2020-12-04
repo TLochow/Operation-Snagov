@@ -42,7 +42,12 @@ enum Items {
 	ImpactDetector,
 	GrenadeLauncher,
 	BlastShield,
-	SniperRifle
+	SniperRifle,
+	Coffee,
+	Shield,
+	Drone,
+	DefensiveDrones,
+	Revenge
 }
 
 enum EnemyTypes {
