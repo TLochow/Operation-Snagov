@@ -65,9 +65,8 @@ func Announcement(title, description):
 
 func _on_Player_ArmorChanged(armor):
 	if armor < ArmorBefore:
-		var intensity = min(0.25 * (ArmorBefore - armor), 1.0)
 		$UI/Game/Damage/Tween.stop_all()
-		$UI/Game/Damage/Tween.interpolate_property($UI/Game/Damage, "color", Color(0.0, 0.0, 0.7, intensity), Color(0.0, 0.0, 0.7, 0.0), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$UI/Game/Damage/Tween.interpolate_property($UI/Game/Damage, "color", Color(0.0, 0.0, 0.7, 0.2), Color(0.0, 0.0, 0.7, 0.0), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$UI/Game/Damage/Tween.start()
 	ArmorBefore = armor
 	$UI/Game/Armor.text = str(armor)
@@ -77,9 +76,8 @@ func _on_Player_GrenadesChanged(grenades):
 
 func _on_Player_HealthChanged(health, maxHealth):
 	if health < HealthBefore:
-		var intensity = min(0.25 * (HealthBefore - health), 1.0)
 		$UI/Game/Damage/Tween.stop_all()
-		$UI/Game/Damage/Tween.interpolate_property($UI/Game/Damage, "color", Color(0.7, 0.0, 0.0, intensity), Color(0.7, 0.0, 0.0, 0.0), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		$UI/Game/Damage/Tween.interpolate_property($UI/Game/Damage, "color", Color(0.7, 0.0, 0.0, 0.2), Color(0.7, 0.0, 0.0, 0.0), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$UI/Game/Damage/Tween.start()
 	HealthBefore = health
 	$UI/Game/Health.text = str(health) + "/" + str(maxHealth)
