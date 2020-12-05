@@ -42,20 +42,14 @@ func Activate():
 
 func _process(delta):
 	var boss = Boss.get_ref()
-	var healthMod = delta * 2.5
 	if boss:
-		if BossHealth < boss.Health:
-			BossHealth = min(BossHealth + healthMod, boss.Health)
-		elif BossHealth > boss.Health:
-			BossHealth = max(BossHealth - healthMod, boss.Health)
+		BossHealth = boss.Health
 	else:
-		BossHealth = max(BossHealth - healthMod, 0.0)
-		if BossHealth == 0.0:
-			SpawnItem()
-			$CanvasLayer/UI.visible = false
-			$Elevator.Open()
-			emit_signal("Cleared")
-			set_process(false)
+		SpawnItem()
+		$CanvasLayer/UI.visible = false
+		$Elevator.Open()
+		emit_signal("Cleared")
+		set_process(false)
 	BossHealthBar.value = BossHealth
 
 func SpawnItem():
