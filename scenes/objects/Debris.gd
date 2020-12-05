@@ -1,6 +1,11 @@
 extends RigidBody2D
 
+var BURNHANDLERSCENE = preload("res://scenes/BurnHandler.tscn")
+
 var SpriteNode
+
+var Health = 1.0
+var Destroyed = false
 
 func CutSprite(width, height, xIndex, yIndex):
 	move_child(SpriteNode, 0)
@@ -16,3 +21,10 @@ func CutSprite(width, height, xIndex, yIndex):
 
 func Explode(pos, strength):
 	linear_velocity += (get_position() - pos).normalized() * strength * 30.0
+
+func Burn(damage):
+	if not Destroyed:
+		Health -= damage
+		if Health <= 0.0:
+			Destroyed = true
+			add_child(BURNHANDLERSCENE.instance())

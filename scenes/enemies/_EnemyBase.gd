@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 var BLOODSCENE = preload("res://scenes/effects/Blood.tscn")
 var SPARKSCENE = preload("res://scenes/effects/Sparks.tscn")
+var BURNHANDLERSCENE = preload("res://scenes/BurnHandler.tscn")
 
 export(float) var Health = 5.0
 export(Default.EnemyTypes) var EnemyType
@@ -34,6 +35,14 @@ func Explode(pos, strength):
 		Health -= strength
 		if Health <= 0.0:
 			Die(pos - get_global_position())
+
+func Burn(damage):
+	if not Dead:
+		Health -= damage
+		if Health <= 0.0:
+			Dead = true
+			Global.KillCounter += 1
+			add_child(BURNHANDLERSCENE.instance())
 
 func Bleed(pos, angle, damage):
 	for i in range(10 * damage):

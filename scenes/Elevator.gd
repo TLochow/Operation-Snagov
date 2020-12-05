@@ -35,7 +35,9 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		
 		Global.PlayerImpactDetector = player.ImpactDetector
 		Global.PlayerGrenadeLauncher = player.GrenadeLauncher
+		Global.PlayerFlameThrower = player.FlameThrower
 		Global.PlayerBlastShield = player.BlastShield
+		Global.PlayerFlameShield = player.FlameShield
 		Global.PlayerShield = player.Shield
 		Global.PlayerDrone = player.Drone
 		Global.PlayerDefenisveDrones = player.DefensiveDrones

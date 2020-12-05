@@ -31,7 +31,9 @@ func LoadDefaults():
 	
 	PlayerImpactDetector = false
 	PlayerGrenadeLauncher = false
+	PlayerFlameThrower = false
 	PlayerBlastShield = false
+	PlayerFlameShield = false
 	PlayerShield = false
 	PlayerDrone = false
 	PlayerDefenisveDrones = false
@@ -54,7 +56,9 @@ var PlayerMoveSpeed
 
 var PlayerImpactDetector
 var PlayerGrenadeLauncher
+var PlayerFlameThrower
 var PlayerBlastShield
+var PlayerFlameShield
 var PlayerShield
 var PlayerDrone
 var PlayerDefenisveDrones

@@ -77,6 +77,12 @@ func SetNameAndDescription():
 		Default.Items.Revenge:
 			Title = "Revenge"
 			Description = "Shoot Back when Hit"
+		Default.Items.FlameThrower:
+			Title = "Flame Thrower"
+			Description = "It throws flames!"
+		Default.Items.FlameShield:
+			Title = "Flame Shield"
+			Description = "Fire doesn't hurt you"
 
 func Collect(player):
 	match ItemType:
@@ -123,3 +129,7 @@ func Collect(player):
 			player.ActivateDefensiveDrones()
 		Default.Items.Revenge:
 			player.Revenge = true
+		Default.Items.FlameThrower:
+			player.FlameThrower = true
+		Default.Items.FlameShield:
+			player.FlameShield = true

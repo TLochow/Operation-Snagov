@@ -9,6 +9,7 @@ signal Died
 
 var SHOTSCENE = preload("res://scenes/Shot.tscn")
 var GRENADESCENE = preload("res://scenes/Grenade.tscn")
+var FIRESCENE = preload("res://scenes/Fire.tscn")
 var BLOODSCENE = preload("res://scenes/effects/Blood.tscn")
 var DRONESCENE = preload("res://scenes/Drone.tscn")
 var DEFENSIVEDRONESSCENE = preload("res://scenes/DefensiveDrones.tscn")
@@ -40,7 +41,9 @@ var MoveSpeed
 
 var ImpactDetector
 var GrenadeLauncher
+var FlameThrower
 var BlastShield
+var FlameShield
 var Shield
 var Drone
 var DefensiveDrones
@@ -65,7 +68,9 @@ func LoadPlayerValues():
 	
 	ImpactDetector = Global.PlayerImpactDetector
 	GrenadeLauncher = Global.PlayerGrenadeLauncher
+	FlameThrower = Global.PlayerFlameThrower
 	BlastShield = Global.PlayerBlastShield
+	FlameShield = Global.PlayerFlameShield
 	if Global.PlayerShield:
 		ActivateShield()
 	if Global.PlayerDrone:
@@ -106,16 +111,21 @@ func _physics_process(delta):
 	ShieldNode.rotation = lookAngle
 	
 	ShootCooldownCounter -= delta
-	if Input.is_action_pressed("mouse_left") and ShootCooldownCounter <= 0.0:
-		var shootPos = pos + (LookDirection * 6.0)
-		Shoot(lookAngle, shootPos)
+	if Input.is_action_pressed("mouse_left"):
+		if FlameThrower:
+			ThrowFlames()
+		if ShootCooldownCounter <= 0.0:
+			var shootPos = pos + (LookDirection * 6.0)
+			Shoot(lookAngle, shootPos)
 
 func Shoot(angle, pos):
 	ShootCooldownCounter = ShootCooldown
+	var shot = FlameThrower
 	if GrenadeLauncher:
+		shot = true
 		for i in range(ShotAmount):
 			ThrowGrenade(true, true)
-	else:
+	if not shot:
 		for i in range(ShotAmount):
 			SingleShot(pos, angle + rand_range(-ShotSpread, ShotSpread))
 
@@ -136,6 +146,13 @@ func ThrowGrenade(explodeOnContact, applySpread):
 	grenade.angular_velocity = rand_range(-10.0, 10.0)
 	ShotNode.add_child(grenade)
 
+func ThrowFlames():
+	var pos = get_position() + (LookDirection * 14.0)
+	var fire = FIRESCENE.instance()
+	fire.set_position(pos)
+	fire.linear_velocity = (LookDirection * 500.0).rotated(rand_range(-ShotSpread, ShotSpread))
+	ShotNode.add_child(fire)
+
 func Damage(damage, hitPoint, direction, collisionNormal):
 	TakeDamage(damage)
 	Bleed(hitPoint, direction, damage)
@@ -146,6 +163,10 @@ func Damage(damage, hitPoint, direction, collisionNormal):
 func Explode(pos, strength):
 	if not BlastShield:
 		TakeDamage(strength)
+
+func Burn(damage):
+	if not FlameShield:
+		TakeDamage(damage)
 
 func TakeDamage(damage):
 	if Armor > 0.0:
@@ -162,7 +183,7 @@ func Bleed(pos, direction, damage):
 		Global.TopEffectsNode.add_child(blood)
 
 func HealthSet(health):
-	Health = clamp(ceil(health), 0, MaxHealth)
+	Health = clamp(stepify(health, 0.01), 0, MaxHealth)
 	emit_signal("HealthChanged", Health, MaxHealth)
 	if Health <= 0.0:
 		emit_signal("Died")
@@ -177,7 +198,7 @@ func GrenadesSet(grenades):
 	emit_signal("GrenadesChanged", Grenades)
 
 func ArmorSet(armor):
-	Armor = max(ceil(armor), 0)
+	Armor = max(stepify(armor, 0.01), 0)
 	emit_signal("ArmorChanged", Armor)
 
 func MoneySet(money):

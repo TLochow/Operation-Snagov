@@ -2,6 +2,7 @@ extends StaticBody2D
 
 var WALLHITSCENE = preload("res://scenes/effects/WallHit.tscn")
 var PICKUPSCENE = preload("res://scenes/Pickup.tscn")
+var BURNHANDLERSCENE = preload("res://scenes/BurnHandler.tscn")
 
 export(float) var Health = 10.0
 var Destroyed = false
@@ -28,6 +29,13 @@ func Explode(pos, strength):
 	Health -= strength
 	if Health <= 0.0:
 		Destroy((pos - get_position()).normalized())
+
+func Burn(damage):
+	if not Destroyed:
+		Health -= damage
+		if Health <= 0.0:
+			Destroyed = true
+			add_child(BURNHANDLERSCENE.instance())
 
 func Destroy(forceDirection):
 	if not Destroyed:
