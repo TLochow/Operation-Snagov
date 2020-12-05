@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Level.gd" type="Script" id=2]
@@ -46,6 +46,12 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=7]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=8]
 size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -368,7 +374,120 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="GameOver" type="Control" parent="UI"]
+pause_mode = 2
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="UI/GameOver"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.686275 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/GameOver"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = -228.0
+custom_fonts/font = SubResource( 5 )
+text = "YOU DIED!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="UI/GameOver"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 60.0
+margin_bottom = -168.0
+custom_fonts/font = SubResource( 8 )
+text = "Enemies Killed:"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EnemiesKilledLabel" type="Label" parent="UI/GameOver"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 80.0
+margin_bottom = -148.0
+custom_fonts/font = SubResource( 8 )
+text = "0"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverRestart" type="TextureButton" parent="UI/GameOver"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -12.0
+margin_right = 66.0
+margin_bottom = 36.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 10 )
+texture_disabled = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/GameOver/GameOverRestart"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 6 )
+text = "RESTART"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverBack" type="TextureButton" parent="UI/GameOver"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = 48.0
+margin_right = 66.0
+margin_bottom = 96.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 10 )
+texture_disabled = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="UI/GameOver/GameOverBack"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 6 )
+text = "MAIN MENU"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
 [connection signal="ArmorChanged" from="Player" to="." method="_on_Player_ArmorChanged"]
+[connection signal="Died" from="Player" to="." method="_on_Player_Died"]
 [connection signal="GrenadesChanged" from="Player" to="." method="_on_Player_GrenadesChanged"]
 [connection signal="HealthChanged" from="Player" to="." method="_on_Player_HealthChanged"]
 [connection signal="MoneyChanged" from="Player" to="." method="_on_Player_MoneyChanged"]
@@ -376,3 +495,5 @@ __meta__ = {
 [connection signal="pressed" from="UI/Pause/Normal/ExitButton" to="UI/Pause" method="_on_ExitButton_pressed"]
 [connection signal="pressed" from="UI/Pause/ExitConfirmation/YesButton" to="UI/Pause" method="_on_YesButton_pressed"]
 [connection signal="pressed" from="UI/Pause/ExitConfirmation/NoButton" to="UI/Pause" method="_on_NoButton_pressed"]
+[connection signal="pressed" from="UI/GameOver/GameOverRestart" to="." method="_on_GameOverRestart_pressed"]
+[connection signal="pressed" from="UI/GameOver/GameOverBack" to="." method="_on_GameOverBack_pressed"]

@@ -51,6 +51,7 @@ func Spark(pos):
 func Die(forceDirection):
 	if not Dead:
 		Dead = true
+		Global.KillCounter += 1
 		var pos = get_global_position()
 		match EnemyType:
 			Default.EnemyTypes.Alive:

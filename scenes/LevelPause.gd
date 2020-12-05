@@ -2,9 +2,10 @@ extends Control
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
-		if $ExitConfirmation.visible:
-			ToggleExitConfirmation()
-		TogglePause()
+		if not Global.GameOver:
+			if $ExitConfirmation.visible:
+				ToggleExitConfirmation()
+			TogglePause()
 
 func TogglePause():
 	var newPauseState = not get_tree().paused

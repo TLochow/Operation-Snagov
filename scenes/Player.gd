@@ -5,6 +5,8 @@ signal GrenadesChanged(grenades)
 signal ArmorChanged(armor)
 signal MoneyChanged(money)
 
+signal Died
+
 var SHOTSCENE = preload("res://scenes/Shot.tscn")
 var GRENADESCENE = preload("res://scenes/Grenade.tscn")
 var BLOODSCENE = preload("res://scenes/effects/Blood.tscn")
@@ -163,7 +165,7 @@ func HealthSet(health):
 	Health = clamp(ceil(health), 0, MaxHealth)
 	emit_signal("HealthChanged", Health, MaxHealth)
 	if Health <= 0.0:
-		SceneChanger.ChangeScene("res://scenes/Level.tscn")
+		emit_signal("Died")
 
 func MaxHealthSet(maxHealth):
 	MaxHealth = max(maxHealth, 1)

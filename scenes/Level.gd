@@ -14,6 +14,7 @@ func _input(event):
 		SceneChanger.ChangeScene("res://scenes/Level.tscn")
 
 func _ready():
+	get_tree().paused = false
 	MusicHandler.Play()
 	Global.TopEffectsNode = $TopEffects
 	Global.DebrisNode = $Debris
@@ -85,3 +86,16 @@ func _on_Player_HealthChanged(health, maxHealth):
 
 func _on_Player_MoneyChanged(money):
 	$UI/Game/Money.text = str(money)
+
+func _on_Player_Died():
+	Global.GameOver = true
+	get_tree().paused = true
+	$UI/GameOver/EnemiesKilledLabel.text = str(Global.KillCounter)
+	$UI/GameOver.visible = true
+
+func _on_GameOverRestart_pressed():
+	Global.LoadDefaults()
+	SceneChanger.ChangeScene("res://scenes/Level.tscn")
+
+func _on_GameOverBack_pressed():
+	SceneChanger.ChangeScene("res://MainMenu.tscn")

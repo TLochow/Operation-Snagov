@@ -14,6 +14,8 @@ var BloodHandler
 
 func LoadDefaults():
 	CurrentLevel = 1
+	KillCounter = 0
+	GameOver = false
 	
 	PlayerHealth = 10
 	PlayerMaxHealth = 10
@@ -34,6 +36,9 @@ func LoadDefaults():
 	PlayerDrone = false
 	PlayerDefenisveDrones = false
 	PlayerRevenge = false
+
+var KillCounter
+var GameOver
 
 var PlayerHealth
 var PlayerMaxHealth
