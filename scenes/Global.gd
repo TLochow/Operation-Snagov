@@ -21,10 +21,10 @@ func LoadDefaults():
 	PlayerArmor = 0
 	PlayerMoney = 0
 	
-	PlayerShootCooldown = 1.0
+	PlayerShootCooldown = 0.0
 	PlayerShotSpread = 0.05
 	PlayerShotAmount = 1.0
-	PlayerShotDamage = 1.0
+	PlayerShotDamage = 10.0
 	PlayerMoveSpeed = 100.0
 	
 	PlayerImpactDetector = false
