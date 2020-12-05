@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://graphics/turret.png" type="Texture" id=1]
+[ext_resource path="res://scenes/objects/Turret.gd" type="Script" id=2]
+
+[node name="Turret" type="StaticBody2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -7, 4, 1, 4, 1, 2, 7, 2, 8, 1, 8, -1, 7, -2, 1, -2, 1, -4, -7, -4, -7, 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
