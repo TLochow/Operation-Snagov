@@ -143,7 +143,7 @@ func _on_PlayerDetector_body_entered(body):
 		$Layout.get_children()[0].connect("Cleared", self, "RoomCleared")
 		ActivateNodes($Layout)
 	if not Cleared:
-		if (Type == Default.RoomTypes.Normal or Type == Default.RoomTypes.Boss) and Layout.CloseDoors:
+		if (Type == Default.RoomTypes.Start or Type == Default.RoomTypes.Normal or Type == Default.RoomTypes.Boss) and Layout.CloseDoors:
 			CloseDoors()
 		else:
 			Cleared = true
