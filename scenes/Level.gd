@@ -31,6 +31,12 @@ func GenerateLevel():
 	# Generate Rooms
 	var roomsNode = $Rooms
 	Global.LevelGenBlockedCoords = [Vector2(0, 0)]
+	if Global.CurrentLevel == 0:
+		Global.LevelGenBlockedCoords.append(Vector2(-1.0, 0.0))
+		Global.LevelGenBlockedCoords.append(Vector2(4.0, 0.0))
+		for i in range(4):
+			Global.LevelGenBlockedCoords.append(Vector2(i, -1.0))
+			Global.LevelGenBlockedCoords.append(Vector2(i, 1.0))
 	var roomIndex = 0
 	var roomsLeftToGenerate = true
 	var allRooms = roomsNode.get_children()
@@ -92,7 +98,10 @@ func _on_Player_Died():
 	$UI/GameOver.visible = true
 
 func _on_GameOverRestart_pressed():
+	var isTutorial = Global.CurrentLevel == 0
 	Global.LoadDefaults()
+	if isTutorial:
+		Global.CurrentLevel = 0
 	SceneChanger.ChangeScene("res://scenes/Level.tscn")
 
 func _on_GameOverBack_pressed():

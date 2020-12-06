@@ -60,7 +60,9 @@ func _on_Music_finished():
 	$Music.play()
 
 func _on_Tutorial_pressed():
-	pass # Replace with function body.
+	Global.LoadDefaults()
+	Global.CurrentLevel = 0
+	SceneChanger.ChangeScene("res://scenes/Level.tscn")
 
 func _on_Exit_pressed():
 	SceneChanger.EndGame()

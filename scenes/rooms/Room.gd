@@ -6,7 +6,7 @@ var GeneratedNeighbors = false
 var DistanceToStart = 0
 var GenerationCoords = Vector2(0, 0)
 
-var Type = Default.RoomTypes.Normal
+export(Default.RoomTypes) var Type = Default.RoomTypes.Normal
 var Layout
 
 export(bool) var OpenTop = false
@@ -18,6 +18,10 @@ var Activated = false
 var Cleared = false
 
 func _ready():
+	if Global.CurrentLevel == 0 and Type == Default.RoomTypes.Start:
+		OpenLeft = false
+		OpenTop = false
+		OpenBottom = false
 	get_tree().get_nodes_in_group("MiniMap")[0].RegisterRoom(self)
 
 func ShowBossSprite():
@@ -68,6 +72,8 @@ func LoadLayout():
 func GenerateNeighbors(roomsNode):
 	GeneratedNeighbors = true
 	var percentageForRoomGeneration = 1.0 - (DistanceToStart * 0.4)
+	if Global.CurrentLevel == 0:
+		percentageForRoomGeneration = 2.0
 	var generateRoomUp = randf() < percentageForRoomGeneration
 	var generateRoomDown = randf() < percentageForRoomGeneration
 	var generateRoomLeft = randf() < percentageForRoomGeneration

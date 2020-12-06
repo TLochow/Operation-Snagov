@@ -45,7 +45,8 @@ func _process(delta):
 	if boss:
 		BossHealth = boss.Health
 	else:
-		SpawnItem()
+		if Global.CurrentLevel != 0:
+			SpawnItem()
 		$CanvasLayer/UI.visible = false
 		$Elevator.Open()
 		emit_signal("Cleared")

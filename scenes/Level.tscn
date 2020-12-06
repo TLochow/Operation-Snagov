@@ -66,6 +66,7 @@ position = Vector2( 0, -16 )
 [node name="Rooms" type="Node2D" parent="."]
 
 [node name="StartRoom" parent="Rooms" instance=ExtResource( 4 )]
+Type = 1
 OpenTop = true
 OpenBottom = true
 OpenLeft = true
