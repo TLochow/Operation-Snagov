@@ -8,13 +8,15 @@ var Line
 func _ready():
 	SoundEffectHandler.Play(Default.SoundEffects.Shot)
 
-func Shoot(damage, angle):
+func Shoot(damage, angle, ignorePlayer = false):
 	Shot = true
 	var direction = Vector2(cos(angle), sin(angle))
 	var localPos = to_local(get_position())
 	Line = $Line2D
 	Line.width += (damage * 0.5)
 	var raycast = $RayCast2D
+	if ignorePlayer:
+		raycast.set_collision_mask_bit(1, false)
 	raycast.cast_to = direction * 1000.0
 	raycast.force_raycast_update()
 	if raycast.is_colliding():

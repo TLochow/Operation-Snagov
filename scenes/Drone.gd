@@ -38,7 +38,7 @@ func Shoot(pos):
 	var shot = SHOTSCENE.instance()
 	ShotNode.add_child(shot)
 	shot.set_position(shootPos)
-	shot.Shoot(Player.ShotDamage, rotation)
+	shot.Shoot(Player.ShotDamage, rotation, true)
 
 func _on_TargetDetection_body_entered(body):
 	Targets.append(body)

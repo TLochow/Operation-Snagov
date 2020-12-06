@@ -69,7 +69,7 @@ func _on_Player_ArmorChanged(armor):
 		$UI/Game/Damage/Tween.interpolate_property($UI/Game/Damage, "color", Color(0.0, 0.0, 0.7, 0.2), Color(0.0, 0.0, 0.7, 0.0), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$UI/Game/Damage/Tween.start()
 	ArmorBefore = armor
-	$UI/Game/Armor.text = str(armor)
+	$UI/Game/Armor.text = str(stepify(armor, 0.1))
 
 func _on_Player_GrenadesChanged(grenades):
 	$UI/Game/Grenades.text = str(grenades)
@@ -80,7 +80,7 @@ func _on_Player_HealthChanged(health, maxHealth):
 		$UI/Game/Damage/Tween.interpolate_property($UI/Game/Damage, "color", Color(0.7, 0.0, 0.0, 0.2), Color(0.7, 0.0, 0.0, 0.0), 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$UI/Game/Damage/Tween.start()
 	HealthBefore = health
-	$UI/Game/Health.text = str(health) + "/" + str(maxHealth)
+	$UI/Game/Health.text = str(stepify(health, 0.1)) + "/" + str(maxHealth)
 
 func _on_Player_MoneyChanged(money):
 	$UI/Game/Money.text = str(money)
