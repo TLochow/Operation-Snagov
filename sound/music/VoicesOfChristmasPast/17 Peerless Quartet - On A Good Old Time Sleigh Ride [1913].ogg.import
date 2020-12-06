@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/17 Peerless Quartet - On A Good Old Time Sleigh Ride [1913].ogg-7c594b0629da7b978e9f194d9b2d0a04.oggstr"
+
+[deps]
+
+source_file="res://sound/music/VoicesOfChristmasPast/17 Peerless Quartet - On A Good Old Time Sleigh Ride [1913].ogg"
+dest_files=[ "res://.import/17 Peerless Quartet - On A Good Old Time Sleigh Ride [1913].ogg-7c594b0629da7b978e9f194d9b2d0a04.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -35,11 +35,11 @@ func _on_AudioStreamPlayer_finished():
 		Play()
 
 func LoadSongs():
-	var basePath = "res://sound/music/Voices Of Christmas Past"
+	var basePath = "res://sound/music/VoicesOfChristmasPast"
 	var files = GetAllFilesFromDirectory(basePath)
 	for file in files:
-		if file.ends_with(".ogg"):
-			var song = load(basePath + "/" + file)
+		if file.ends_with(".import"):
+			var song = load(basePath + "/" + file.replace(".import", ""))
 			song.set_loop(false)
 			Songs.append(song)
 	SongCount = Songs.size()

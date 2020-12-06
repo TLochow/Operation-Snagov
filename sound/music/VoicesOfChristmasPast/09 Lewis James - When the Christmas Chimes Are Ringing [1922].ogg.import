@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/09 Lewis James - When the Christmas Chimes Are Ringing [1922].ogg-4568bf4bc7088df43d5bd2a489b07425.oggstr"
+
+[deps]
+
+source_file="res://sound/music/VoicesOfChristmasPast/09 Lewis James - When the Christmas Chimes Are Ringing [1922].ogg"
+dest_files=[ "res://.import/09 Lewis James - When the Christmas Chimes Are Ringing [1922].ogg-4568bf4bc7088df43d5bd2a489b07425.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

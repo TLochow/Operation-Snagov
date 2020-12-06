@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/05 Henry Burr - Hark the Herald Angels Sing [1907].ogg-2dff8451962ae8add1b4342c93fd532f.oggstr"
+
+[deps]
+
+source_file="res://sound/music/VoicesOfChristmasPast/05 Henry Burr - Hark the Herald Angels Sing [1907].ogg"
+dest_files=[ "res://.import/05 Henry Burr - Hark the Herald Angels Sing [1907].ogg-2dff8451962ae8add1b4342c93fd532f.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/23 Navada Van der Veer - Auld Lang Syne [1921].ogg-91c579fbebae03a404aee3f930490d70.oggstr"
+
+[deps]
+
+source_file="res://sound/music/VoicesOfChristmasPast/23 Navada Van der Veer - Auld Lang Syne [1921].ogg"
+dest_files=[ "res://.import/23 Navada Van der Veer - Auld Lang Syne [1921].ogg-91c579fbebae03a404aee3f930490d70.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/02 Prince's Orchestra - On A Christmas Morning [1911].ogg-462fb36a1777433661a269e01ae263d4.oggstr"
+
+[deps]
+
+source_file="res://sound/music/VoicesOfChristmasPast/02 Prince's Orchestra - On A Christmas Morning [1911].ogg"
+dest_files=[ "res://.import/02 Prince's Orchestra - On A Christmas Morning [1911].ogg-462fb36a1777433661a269e01ae263d4.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/06 Haydn Quartet - Silent Night, Hallowed Night [1905].ogg-680cdc8cf6b874dec2b254fc3918c23d.oggstr"
+
+[deps]
+
+source_file="res://sound/music/VoicesOfChristmasPast/06 Haydn Quartet - Silent Night, Hallowed Night [1905].ogg"
+dest_files=[ "res://.import/06 Haydn Quartet - Silent Night, Hallowed Night [1905].ogg-680cdc8cf6b874dec2b254fc3918c23d.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

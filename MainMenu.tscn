@@ -11,7 +11,7 @@
 [ext_resource path="res://graphics/UI/Slider.png" type="Texture" id=9]
 [ext_resource path="res://graphics/UI/SliderPinSelected.png" type="Texture" id=10]
 [ext_resource path="res://sound/effects/shot.wav" type="AudioStream" id=11]
-[ext_resource path="res://sound/music/Voices Of Christmas Past/05 Henry Burr - Hark the Herald Angels Sing [1907].ogg" type="AudioStream" id=12]
+[ext_resource path="res://sound/music/VoicesOfChristmasPast/05 Henry Burr - Hark the Herald Angels Sing [1907].ogg" type="AudioStream" id=12]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/18 Trinity Choir - Angels from the Realms of Glory [1916].ogg-e3e1459b7e8c961f2c69566c52d1f299.oggstr"
+
+[deps]
+
+source_file="res://sound/music/VoicesOfChristmasPast/18 Trinity Choir - Angels from the Realms of Glory [1916].ogg"
+dest_files=[ "res://.import/18 Trinity Choir - Angels from the Realms of Glory [1916].ogg-e3e1459b7e8c961f2c69566c52d1f299.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

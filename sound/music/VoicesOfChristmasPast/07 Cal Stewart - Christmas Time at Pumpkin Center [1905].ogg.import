@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/07 Cal Stewart - Christmas Time at Pumpkin Center [1905].ogg-0ca88537c03b9e51113c71261e33fb40.oggstr"
+
+[deps]
+
+source_file="res://sound/music/VoicesOfChristmasPast/07 Cal Stewart - Christmas Time at Pumpkin Center [1905].ogg"
+dest_files=[ "res://.import/07 Cal Stewart - Christmas Time at Pumpkin Center [1905].ogg-0ca88537c03b9e51113c71261e33fb40.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
