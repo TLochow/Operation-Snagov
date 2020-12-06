@@ -17,6 +17,7 @@ func Extend():
 func Retract():
 	Extended = false
 	$Sprite.frame = 0
+	$AnimationPlayer.stop()
 	set_collision_mask_bit(1, false)
 	set_collision_mask_bit(2, false)
 

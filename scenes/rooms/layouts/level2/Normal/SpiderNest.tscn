@@ -207,11 +207,11 @@ position = Vector2( -16, -64 )
 rotation = 3.14159
 
 [node name="Door12" parent="Doors" index="11" instance=ExtResource( 1 )]
-position = Vector2( 8, -64 )
+position = Vector2( 16, -64 )
 rotation = 3.14159
 
 [node name="Door13" parent="Doors" index="12" instance=ExtResource( 1 )]
-position = Vector2( 40, -64 )
+position = Vector2( 48, -64 )
 rotation = 3.14159
 
 [node name="Door14" parent="Doors" index="13" instance=ExtResource( 1 )]
