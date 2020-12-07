@@ -27,7 +27,7 @@ Global="*res://scenes/Global.tscn"
 LayoutLoader="*res://scenes/rooms/layouts/LayoutLoader.gd"
 ItemLoader="*res://scenes/items/ItemLoader.gd"
 DebrisSpawner="*res://scenes/objects/DebrisSpawner.gd"
-FireLimiter="*res://scenes/FireLimiter.tscn"
+FireLimiter="*res://scenes/shots/FireLimiter.tscn"
 MusicHandler="*res://sound/MusicHandler.tscn"
 SoundEffectHandler="*res://sound/SoundEffectHandler.tscn"
 

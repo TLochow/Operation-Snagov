@@ -7,13 +7,13 @@ signal MoneyChanged(money)
 
 signal Died
 
-var SHOTSCENE = preload("res://scenes/Shot.tscn")
-var GRENADESCENE = preload("res://scenes/Grenade.tscn")
-var FIRESCENE = preload("res://scenes/Fire.tscn")
+var SHOTSCENE = preload("res://scenes/shots/Shot.tscn")
+var GRENADESCENE = preload("res://scenes/shots/Grenade.tscn")
+var FIRESCENE = preload("res://scenes/shots/Fire.tscn")
 var BLOODSCENE = preload("res://scenes/effects/Blood.tscn")
-var DRONESCENE = preload("res://scenes/Drone.tscn")
-var DEFENSIVEDRONESSCENE = preload("res://scenes/DefensiveDrones.tscn")
-var SHIELDSCENE = preload("res://scenes/Shield.tscn")
+var DRONESCENE = preload("res://scenes/items/Drone.tscn")
+var DEFENSIVEDRONESSCENE = preload("res://scenes/items/DefensiveDrones.tscn")
+var SHIELDSCENE = preload("res://scenes/items/Shield.tscn")
 
 onready var ShotNode = get_tree().get_nodes_in_group("ShotsNode")[0]
 

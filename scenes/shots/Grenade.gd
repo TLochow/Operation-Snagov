@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var EXPLOSIONSCENE = preload("res://scenes/Explosion.tscn")
+var EXPLOSIONSCENE = preload("res://scenes/shots/Explosion.tscn")
 
 var ExplodeOnContact = false
 

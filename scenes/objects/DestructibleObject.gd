@@ -2,7 +2,7 @@ extends StaticBody2D
 
 var WALLHITSCENE = preload("res://scenes/effects/WallHit.tscn")
 var PICKUPSCENE = preload("res://scenes/Pickup.tscn")
-var BURNHANDLERSCENE = preload("res://scenes/BurnHandler.tscn")
+var BURNHANDLERSCENE = preload("res://scenes/shots/BurnHandler.tscn")
 
 export(float) var Health = 10.0
 var Destroyed = false

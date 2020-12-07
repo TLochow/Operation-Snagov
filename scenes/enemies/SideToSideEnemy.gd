@@ -1,6 +1,6 @@
 extends "res://scenes/enemies/_EnemyBase.gd"
 
-var SHOTSCENE = preload("res://scenes/Shot.tscn")
+var SHOTSCENE = preload("res://scenes/shots/Shot.tscn")
 
 onready var Player = get_tree().get_nodes_in_group("Player")[0]
 onready var ShotNode = get_tree().get_nodes_in_group("ShotsNode")[0]

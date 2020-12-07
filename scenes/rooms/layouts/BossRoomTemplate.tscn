@@ -6,7 +6,8 @@
 [ext_resource path="res://graphics/UI/HealthBarBorder.png" type="Texture" id=4]
 [ext_resource path="res://graphics/UI/HealthBarBack.png" type="Texture" id=5]
 [ext_resource path="res://graphics/homespun.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://scenes/Elevator.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/rooms/Elevator.tscn" type="PackedScene" id=7]
+
 
 [sub_resource type="DynamicFont" id=1]
 outline_size = 3

@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var BURNHANDLERSCENE = preload("res://scenes/BurnHandler.tscn")
+var BURNHANDLERSCENE = preload("res://scenes/shots/BurnHandler.tscn")
 
 var SpriteNode
 

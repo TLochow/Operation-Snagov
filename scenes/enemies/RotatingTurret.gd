@@ -1,6 +1,6 @@
 extends "res://scenes/enemies/_EnemyBase.gd"
 
-var SHOTSCENE = preload("res://scenes/Shot.tscn")
+var SHOTSCENE = preload("res://scenes/shots/Shot.tscn")
 
 export(float) var TurnDuration = 1.0
 export(float) var WarmUpTime = 1.0

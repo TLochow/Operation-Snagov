@@ -1,7 +1,7 @@
 extends StaticBody2D
 
-var SHOTSCENE = preload("res://scenes/Shot.tscn")
-var FIRESCENE = preload("res://scenes/Fire.tscn")
+var SHOTSCENE = preload("res://scenes/shots/Shot.tscn")
+var FIRESCENE = preload("res://scenes/shots/Fire.tscn")
 
 onready var ShotNode = get_tree().get_nodes_in_group("ShotsNode")[0]
 var ShotPos

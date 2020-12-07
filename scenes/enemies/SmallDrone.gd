@@ -5,7 +5,7 @@ var DirectionToPlayer
 
 var BLOODSCENE = preload("res://scenes/effects/Blood.tscn")
 var SPARKSCENE = preload("res://scenes/effects/Sparks.tscn")
-var BURNHANDLERSCENE = preload("res://scenes/BurnHandler.tscn")
+var BURNHANDLERSCENE = preload("res://scenes/shots/BurnHandler.tscn")
 
 export(float) var Health = 5.0
 export(Default.EnemyTypes) var EnemyType
