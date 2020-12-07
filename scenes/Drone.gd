@@ -17,11 +17,15 @@ func _physics_process(delta):
 	
 	var targeting = false
 	var targetPos
+	var bestDist = 999999999.0
 	for target in Targets:
 		if target.Active:
 			targeting = true
-			targetPos = target.get_global_position()
-			break
+			var thisPos = target.get_global_position()
+			var dist = thisPos.distance_to(pos)
+			if dist < bestDist:
+				bestDist = dist
+				targetPos = thisPos
 	
 	ShootCooldownCounter -= delta
 	if targeting:
@@ -38,7 +42,7 @@ func Shoot(pos):
 	var shot = SHOTSCENE.instance()
 	ShotNode.add_child(shot)
 	shot.set_position(shootPos)
-	shot.Shoot(Player.ShotDamage, rotation, true)
+	shot.Shoot(Player.ShotDamage, rotation + rand_range(-Player.ShotSpread, Player.ShotSpread), true)
 
 func _on_TargetDetection_body_entered(body):
 	Targets.append(body)
