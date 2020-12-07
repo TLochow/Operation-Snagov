@@ -49,7 +49,8 @@ enum Items {
 	DefensiveDrones,
 	Revenge,
 	FlameThrower,
-	FlameShield
+	FlameShield,
+	CloverLeaf
 }
 
 enum EnemyTypes {

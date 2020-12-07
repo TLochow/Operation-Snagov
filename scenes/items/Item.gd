@@ -83,6 +83,9 @@ func SetNameAndDescription():
 		Default.Items.FlameShield:
 			Title = "Flame Shield"
 			Description = "Fire doesn't hurt you"
+		Default.Items.CloverLeaf:
+			Title = "Lucky Clover Leaf"
+			Description = "Increased Pickup Drop Rate"
 
 func Collect(player):
 	match ItemType:
@@ -133,3 +136,5 @@ func Collect(player):
 			player.FlameThrower = true
 		Default.Items.FlameShield:
 			player.FlameShield = true
+		Default.Items.CloverLeaf:
+			Global.CloverLeaf = true

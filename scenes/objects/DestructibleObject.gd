@@ -48,13 +48,16 @@ func Destroy(forceDirection):
 		call_deferred("queue_free")
 
 func SpawnPickups(pos):
-	if HealthChance > 0.0 and randf() <= HealthChance:
+	var spawnMod = 1.0
+	if Global.CloverLeaf:
+		spawnMod = 0.5
+	if HealthChance > 0.0 and randf() * spawnMod <= HealthChance:
 		SpawnPickup(pos, Default.PickupTypes.Health)
-	if GrenadeChance > 0.0 and randf() <= GrenadeChance:
+	if GrenadeChance > 0.0 and randf() * spawnMod <= GrenadeChance:
 		SpawnPickup(pos, Default.PickupTypes.Grenade)
-	if ArmorChance > 0.0 and randf() <= ArmorChance:
+	if ArmorChance > 0.0 and randf() * spawnMod <= ArmorChance:
 		SpawnPickup(pos, Default.PickupTypes.Armor)
-	if MoneyChance > 0.0 and randf() <= MoneyChance:
+	if MoneyChance > 0.0 and randf() * spawnMod <= MoneyChance:
 		SpawnPickup(pos, Default.PickupTypes.Money)
 
 func SpawnPickup(pos, type):

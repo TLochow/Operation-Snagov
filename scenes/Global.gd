@@ -17,6 +17,8 @@ func LoadDefaults():
 	KillCounter = 0
 	GameOver = false
 	
+	CloverLeaf = false
+	
 	PlayerHealth = 10
 	PlayerMaxHealth = 10
 	PlayerGrenades = 3
@@ -41,6 +43,8 @@ func LoadDefaults():
 
 var KillCounter
 var GameOver
+
+var CloverLeaf
 
 var PlayerHealth
 var PlayerMaxHealth
