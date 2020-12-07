@@ -26,7 +26,7 @@ func Damage(damage, hitPoint, direction, collisionNormal):
 		Destroy(direction)
 
 func Explode(pos, strength):
-	Health -= strength
+	Health -= strength * 2.0
 	if Health <= 0.0:
 		Destroy((pos - get_position()).normalized())
 
