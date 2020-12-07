@@ -28,3 +28,11 @@ func _on_YesButton_pressed():
 
 func _on_NoButton_pressed():
 	ToggleExitConfirmation()
+
+func _on_SettingsButton_pressed():
+	$Normal.visible = false
+	$Settings.visible = true
+
+func _on_Settings_Back():
+	$Normal.visible = true
+	$Settings.visible = false

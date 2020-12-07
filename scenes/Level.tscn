@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Level.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://graphics/UI/Button Disabled.png" type="Texture" id=11]
 [ext_resource path="res://graphics/UI/Button Clicked.png" type="Texture" id=12]
 [ext_resource path="res://scenes/LevelPause.gd" type="Script" id=13]
+[ext_resource path="res://Settings.tscn" type="PackedScene" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 outline_size = 1
@@ -227,22 +228,23 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 0.686275 )
 
-[node name="Label" type="Label" parent="UI/Pause"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = -228.0
-custom_fonts/font = SubResource( 5 )
-text = "PAUSE"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Normal" type="Control" parent="UI/Pause"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 56.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/Pause/Normal"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -56.0
+margin_bottom = -248.0
+custom_fonts/font = SubResource( 5 )
+text = "PAUSE"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -260,6 +262,9 @@ texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 12 )
 texture_hover = ExtResource( 10 )
 texture_disabled = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="UI/Pause/Normal/ResumeButton"]
 show_behind_parent = true
@@ -274,15 +279,45 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="SettingsButton" type="TextureButton" parent="UI/Pause/Normal"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -64.0
+margin_top = -16.0
+margin_right = 66.0
+margin_bottom = 32.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 10 )
+texture_disabled = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/Pause/Normal/SettingsButton"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 6 )
+text = "SETTINGS"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
 [node name="ExitButton" type="TextureButton" parent="UI/Pause/Normal"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -64.0
-margin_top = -12.0
+margin_top = 44.0
 margin_right = 66.0
-margin_bottom = 36.0
+margin_bottom = 92.0
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 12 )
 texture_hover = ExtResource( 10 )
@@ -301,11 +336,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Settings" type="Control" parent="UI/Pause"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" parent="UI/Pause/Settings" instance=ExtResource( 14 )]
+
 [node name="ExitConfirmation" type="Control" parent="UI/Pause"]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 56.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="UI/Pause/ExitConfirmation"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -56.0
+margin_bottom = -248.0
+custom_fonts/font = SubResource( 5 )
+text = "EXIT GAME"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -328,9 +386,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -64.0
-margin_top = -20.0
+margin_top = -16.0
 margin_right = 66.0
-margin_bottom = 28.0
+margin_bottom = 32.0
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 12 )
 texture_hover = ExtResource( 10 )
@@ -355,9 +413,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -64.0
-margin_top = 40.0
+margin_top = 44.0
 margin_right = 66.0
-margin_bottom = 88.0
+margin_bottom = 92.0
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 12 )
 texture_hover = ExtResource( 10 )
@@ -493,7 +551,9 @@ __meta__ = {
 [connection signal="HealthChanged" from="Player" to="." method="_on_Player_HealthChanged"]
 [connection signal="MoneyChanged" from="Player" to="." method="_on_Player_MoneyChanged"]
 [connection signal="pressed" from="UI/Pause/Normal/ResumeButton" to="UI/Pause" method="_on_ResumeButton_pressed"]
+[connection signal="pressed" from="UI/Pause/Normal/SettingsButton" to="UI/Pause" method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="UI/Pause/Normal/ExitButton" to="UI/Pause" method="_on_ExitButton_pressed"]
+[connection signal="Back" from="UI/Pause/Settings/Settings" to="UI/Pause" method="_on_Settings_Back"]
 [connection signal="pressed" from="UI/Pause/ExitConfirmation/YesButton" to="UI/Pause" method="_on_YesButton_pressed"]
 [connection signal="pressed" from="UI/Pause/ExitConfirmation/NoButton" to="UI/Pause" method="_on_NoButton_pressed"]
 [connection signal="pressed" from="UI/GameOver/GameOverRestart" to="." method="_on_GameOverRestart_pressed"]
