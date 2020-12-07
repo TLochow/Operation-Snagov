@@ -45,12 +45,16 @@ func _process(delta):
 	if boss:
 		BossHealth = boss.Health
 	else:
-		if Global.CurrentLevel != 0:
-			SpawnItem()
-		$CanvasLayer/UI.visible = false
-		$Elevator.Open()
-		emit_signal("Cleared")
-		set_process(false)
+		var remainingEnemies = $Enemies.get_children()
+		if remainingEnemies.size() > 0:
+			Boss = weakref(remainingEnemies[0])
+		else:
+			if Global.CurrentLevel != 0:
+				SpawnItem()
+			$CanvasLayer/UI.visible = false
+			$Elevator.Open()
+			emit_signal("Cleared")
+			set_process(false)
 	BossHealthBar.value = BossHealth
 
 func SpawnItem():
