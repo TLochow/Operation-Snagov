@@ -33,9 +33,9 @@ func LoadDefaults():
 	
 	PlayerImpactDetector = false
 	PlayerGrenadeLauncher = false
-	PlayerFlameThrower = false
+	PlayerFlameThrower = true
 	PlayerBlastShield = false
-	PlayerFlameShield = false
+	PlayerFlameShield = true
 	PlayerShield = false
 	PlayerDrone = false
 	PlayerDefenisveDrones = false

@@ -6,6 +6,7 @@ var Objects = []
 
 func _ready():
 	$AnimationPlayer.play("Burn")
+	FireLimiter.RegisterFire(self)
 
 func _process(delta):
 	SpriteNode.rotation = -rotation
