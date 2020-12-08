@@ -39,10 +39,11 @@ func Shoot(pos):
 	ShootCooldownCounter = Player.ShootCooldown
 	var direction = Vector2(cos(rotation), sin(rotation))
 	var shootPos = pos + (direction * 6.0)
-	var shot = SHOTSCENE.instance()
-	ShotNode.add_child(shot)
-	shot.set_position(shootPos)
-	shot.Shoot(Player.ShotDamage, rotation + rand_range(-Player.ShotSpread, Player.ShotSpread), true)
+	for i in range(Player.ShotAmount):
+		var shot = SHOTSCENE.instance()
+		ShotNode.add_child(shot)
+		shot.set_position(shootPos)
+		shot.Shoot(Player.ShotDamage, rotation + rand_range(-Player.ShotSpread, Player.ShotSpread), true)
 
 func _on_TargetDetection_body_entered(body):
 	Targets.append(body)
