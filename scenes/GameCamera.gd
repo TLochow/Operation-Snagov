@@ -4,6 +4,12 @@ signal ChangedRoom(dir)
 
 onready var Player = get_tree().get_nodes_in_group("Player")[0]
 
+func _input(event):
+	if event.is_action_pressed("scroll_up"):
+		zoom -= Vector2(0.2, 0.2)
+	elif event.is_action_pressed("scroll_down"):
+		zoom += Vector2(0.2, 0.2)
+
 func _process(delta):
 	var pos = get_position()
 	var relativePlayerPos = Player.get_position() - pos

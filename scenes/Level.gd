@@ -8,6 +8,7 @@ var ArmorBefore = 0.0
 func _init():
 	if Global.CurrentLevel == 1:
 		Global.LoadDefaults()
+		LayoutLoader.Layouts = {}
 
 func _input(event):
 	if event.is_action_pressed("restart"):
