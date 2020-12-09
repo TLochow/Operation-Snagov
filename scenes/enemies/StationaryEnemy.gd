@@ -16,9 +16,9 @@ export(float) var ShootDamage = 1.0
 export(float) var ShootSpread = 0.1
 export(float) var RotationSpeed = 0.1
 
-func _ready():
+func Activate():
 	Angle = (Player.get_position() - Position).angle()
-	._ready()
+	.Activate()
 
 func _process(delta):
 	var direction = Player.get_position() - Position
