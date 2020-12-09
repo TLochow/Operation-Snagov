@@ -16,7 +16,8 @@ tile_data = PoolIntArray( -458768, 23, 0, -458767, 23, 0, -458766, 23, 0, -45876
 Health = 25.0
 ShootCooldown = 1.0
 ShootAmount = 8.0
-ShootSpread = 0.2
+ShootSpread = 0.1
+RotationSpeed = 0.02
 
 [node name="Boxes" type="Node2D" parent="." index="6"]
 
