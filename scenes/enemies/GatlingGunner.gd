@@ -51,15 +51,17 @@ func _on_GatlingShield_Destroyed():
 	ShieldDestroyed = true
 
 func Die(forceDirection):
-	var pos = get_global_position()
-	for i in range(24):
-		var angle = TAU * (i / 24.0)
-		Bleed(pos, angle, 0.5)
-	SpawnDebrisForSprite(StandSprite, forceDirection)
-	SpawnDebrisForSprite($Gun, forceDirection)
-	if not ShieldDestroyed:
-		SpawnDebrisForSprite($GatlingShield/Shield, forceDirection)
-	call_deferred("queue_free")
+	if not Dead:
+		Dead = true
+		var pos = get_global_position()
+		for i in range(24):
+			var angle = TAU * (i / 24.0)
+			Bleed(pos, angle, 0.5)
+		SpawnDebrisForSprite(StandSprite, forceDirection)
+		SpawnDebrisForSprite($Gun, forceDirection)
+		if not ShieldDestroyed:
+			SpawnDebrisForSprite($GatlingShield/Shield, forceDirection)
+		call_deferred("queue_free")
 
 func SpawnDebrisForSprite(sprite, forceDirection):
 	DebrisSpawner.SpawnDebris(sprite, rotation, forceDirection, sprite.get_global_position())
