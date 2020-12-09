@@ -5,8 +5,11 @@ signal Back
 var MusicVolume = 0.0
 var SoundEffectsVolume = 0.0
 
+var Loading = true
+
 func _ready():
 	LoadSettings()
+	Loading = false
 
 func LoadSettings():
 	var config = ConfigFile.new()
@@ -36,7 +39,7 @@ func _on_MusicSlider_value_changed(value):
 func _on_EffectsSlider_value_changed(value):
 	SoundEffectsVolume = value
 	SetAudioVolume()
-	if not $Sound/Effects/SoundEffectDemo.playing and visible:
+	if not $Sound/Effects/SoundEffectDemo.playing and not Loading:
 		$Sound/Effects/SoundEffectDemo.play()
 
 func _on_SettingsBack_pressed():
