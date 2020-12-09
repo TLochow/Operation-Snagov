@@ -1,5 +1,7 @@
 extends Node
 
+onready var IsDebug = OS.is_debug_build()
+
 signal Announcement(title, description)
 
 var ROOMSCENE = preload("res://scenes/rooms/Room.tscn")

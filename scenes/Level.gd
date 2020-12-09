@@ -11,7 +11,7 @@ func _init():
 		LayoutLoader.Layouts = {}
 
 func _input(event):
-	if event.is_action_pressed("restart"):
+	if Global.IsDebug and event.is_action_pressed("restart"):
 		SceneChanger.ChangeScene("res://scenes/Level.tscn")
 
 func _ready():
