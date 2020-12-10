@@ -9,6 +9,7 @@ func _init():
 	if Global.CurrentLevel == 1:
 		Global.LoadDefaults()
 		LayoutLoader.Layouts = {}
+		ItemLoader.Items = []
 
 func _input(event):
 	if Global.IsDebug and event.is_action_pressed("restart"):
