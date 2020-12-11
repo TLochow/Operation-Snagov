@@ -6,6 +6,7 @@ var HealthBefore = 0.0
 var ArmorBefore = 0.0
 
 func _init():
+	Engine.time_scale = 1.0
 	if Global.CurrentLevel == 1:
 		Global.LoadDefaults()
 		LayoutLoader.Layouts = {}
@@ -95,11 +96,20 @@ func _on_Player_MoneyChanged(money):
 
 func _on_Player_Died():
 	Global.GameOver = true
-	get_tree().paused = true
+	var tween = $UI/GameOver/GameOverTween
+	tween.interpolate_property(Engine, "time_scale", 1.0, 0.1, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.interpolate_property($UI/GameOver, "modulate", Color(1.0, 1.0, 1.0, 0.0), Color(1.0, 1.0, 1.0, 1.0), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.start()
 	$UI/GameOver/EnemiesKilledLabel.text = str(Global.KillCounter)
 	$UI/GameOver.visible = true
+	
+func _on_GameOverTween_tween_all_completed():
+	get_tree().paused = true
 
 func _on_GameOverRestart_pressed():
+	get_tree().paused = true
+	$UI/GameOver/GameOverTween.stop_all()
+	Engine.time_scale = 1.0
 	var isTutorial = Global.CurrentLevel == 0
 	Global.LoadDefaults()
 	if isTutorial:
@@ -107,4 +117,7 @@ func _on_GameOverRestart_pressed():
 	SceneChanger.ChangeScene("res://scenes/Level.tscn")
 
 func _on_GameOverBack_pressed():
+	get_tree().paused = true
+	$UI/GameOver/GameOverTween.stop_all()
+	Engine.time_scale = 1.0
 	SceneChanger.ChangeScene("res://MainMenu.tscn")

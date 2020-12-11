@@ -6,6 +6,7 @@ func _input(event):
 
 func _ready():
 	get_tree().paused = false
+	Engine.time_scale = 1.0
 	MusicHandler.Stop()
 
 func _on_StartGame_pressed():

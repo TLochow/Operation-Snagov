@@ -185,7 +185,7 @@ func Bleed(pos, direction, damage):
 func HealthSet(health):
 	Health = clamp(stepify(health, 0.01), 0, MaxHealth)
 	emit_signal("HealthChanged", Health, MaxHealth)
-	if Health <= 0.0:
+	if Health <= 0.0 and not Global.GameOver:
 		emit_signal("Died")
 
 func MaxHealthSet(maxHealth):

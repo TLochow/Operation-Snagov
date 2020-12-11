@@ -545,6 +545,8 @@ __meta__ = {
 "_edit_lock_": true,
 "_edit_use_anchors_": false
 }
+
+[node name="GameOverTween" type="Tween" parent="UI/GameOver"]
 [connection signal="ArmorChanged" from="Player" to="." method="_on_Player_ArmorChanged"]
 [connection signal="Died" from="Player" to="." method="_on_Player_Died"]
 [connection signal="GrenadesChanged" from="Player" to="." method="_on_Player_GrenadesChanged"]
@@ -558,3 +560,4 @@ __meta__ = {
 [connection signal="pressed" from="UI/Pause/ExitConfirmation/NoButton" to="UI/Pause" method="_on_NoButton_pressed"]
 [connection signal="pressed" from="UI/GameOver/GameOverRestart" to="." method="_on_GameOverRestart_pressed"]
 [connection signal="pressed" from="UI/GameOver/GameOverBack" to="." method="_on_GameOverBack_pressed"]
+[connection signal="tween_all_completed" from="UI/GameOver/GameOverTween" to="." method="_on_GameOverTween_tween_all_completed"]
