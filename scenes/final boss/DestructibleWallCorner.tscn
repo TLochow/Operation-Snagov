@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/objects/DestructibleObject.gd" type="Script" id=1]
+[ext_resource path="res://graphics/map/destructible wall corner.png" type="Texture" id=2]
+
+[node name="DestructibleWallCorner" type="StaticBody2D"]
+script = ExtResource( 1 )
+BreakingSoundEffect = 2
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -8, -16, 8, -16, 8, -8, 16, -8, 16, 8, 8, 8, 8, 16, -8, 16, -8, 8, -16, 8, -16, -8, -8, -8, -8, -16 )
+
+[node name="Sprite" type="Sprite" parent="."]
+light_mask = 16
+texture = ExtResource( 2 )

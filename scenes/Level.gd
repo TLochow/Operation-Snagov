@@ -1,6 +1,8 @@
 extends Node2D
 
 var ANNOUNCEMENTSCENE = preload("res://scenes/Announcement.tscn")
+var FINALBOSSARENASCENE = preload("res://scenes/final boss/FinalBossArena.tscn")
+var ROOMSCENE = preload("res://scenes/rooms/Room.tscn")
 
 var HealthBefore = 0.0
 var ArmorBefore = 0.0
@@ -21,13 +23,31 @@ func _ready():
 	MusicHandler.Play()
 	Global.TopEffectsNode = $TopEffects
 	Global.DebrisNode = $Debris
+	Global.PickupsNode = $Pickups
 	Global.BloodHandler = $BloodHandler
-	GenerateLevel()
-	$Rooms/StartRoom.OpenDoors()
-	
 	$GameCamera.connect("ChangedRoom", $UI/Game/ViewportContainer/MiniMap, "ChangedRoom")
-	
 	Global.connect("Announcement", self, "Announcement")
+	
+	if Global.CurrentLevel == 3:
+		PrepareFinalBoss()
+	else:
+		GenerateLevel()
+		$Rooms/StartRoom.OpenDoors()
+
+func PrepareFinalBoss():
+	$Rooms/StartRoom.queue_free()
+	$Rooms.add_child(FINALBOSSARENASCENE.instance())
+	var minimap = get_tree().get_nodes_in_group("MiniMap")[0]
+	for x in range(3):
+		for y in range(3):
+			var dummyRoom = ROOMSCENE.instance()
+			dummyRoom.GenerationCoords = Vector2(x - 1.0, y - 1.0)
+			dummyRoom.OpenTop = y > 0.0
+			dummyRoom.OpenBottom = y < 2.0
+			dummyRoom.OpenLeft = x > 0.0
+			dummyRoom.OpenRight = x < 2.0
+			minimap.RegisterRoom(dummyRoom)
+			dummyRoom.call_deferred("emit_signal", "Discovered")
 
 func GenerateLevel():
 	$Rooms/StartRoom.Type = Default.RoomTypes.Start

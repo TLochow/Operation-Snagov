@@ -11,11 +11,12 @@ var CurrentLevel = 1
 
 var TopEffectsNode
 var DebrisNode
+var PickupsNode
 
 var BloodHandler
 
 func LoadDefaults():
-	CurrentLevel = 1
+	CurrentLevel = 3
 	KillCounter = 0
 	GameOver = false
 	
@@ -69,3 +70,22 @@ var PlayerShield
 var PlayerDrone
 var PlayerDefenisveDrones
 var PlayerRevenge
+
+func GetAllFilesFromDirectory(path):
+	var files = []
+	var dir = Directory.new()
+	dir.open(path)
+	dir.list_dir_begin()
+	while true:
+		var file = dir.get_next()
+		if file == "":
+			break
+		elif not dir.current_is_dir():
+			files.append(file)
+	dir.list_dir_end()
+	return files
+
+func ReparentNode(child, newParent):
+	var oldParent = child.get_parent()
+	oldParent.call_deferred("remove_child", child)
+	newParent.call_deferred("add_child", child)

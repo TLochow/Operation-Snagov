@@ -36,24 +36,10 @@ func _on_AudioStreamPlayer_finished():
 
 func LoadSongs():
 	var basePath = "res://sound/music/VoicesOfChristmasPast"
-	var files = GetAllFilesFromDirectory(basePath)
+	var files = Global.GetAllFilesFromDirectory(basePath)
 	for file in files:
 		if file.ends_with(".import"):
 			var song = load(basePath + "/" + file.replace(".import", ""))
 			song.set_loop(false)
 			Songs.append(song)
 	SongCount = Songs.size()
-
-func GetAllFilesFromDirectory(path):
-	var files = []
-	var dir = Directory.new()
-	dir.open(path)
-	dir.list_dir_begin()
-	while true:
-		var file = dir.get_next()
-		if file == "":
-			break
-		elif not dir.current_is_dir():
-			files.append(file)
-	dir.list_dir_end()
-	return files

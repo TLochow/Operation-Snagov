@@ -64,4 +64,4 @@ func SpawnPickup(pos, type):
 	var pickup = PICKUPSCENE.instance()
 	pickup.set_position(pos)
 	pickup.Type = type
-	Global.DebrisNode.call_deferred("add_child", pickup)
+	Global.PickupsNode.call_deferred("add_child", pickup)

@@ -23,12 +23,7 @@ func PrepareBloodSprite(pos):
 	BloodSpritesNode.add_child(bloodSprite)
 
 func RegisterBlood(node):
-	ReparentNode(node, BloodToAdd)
-
-func ReparentNode(child, newParent):
-	var oldParent = child.get_parent()
-	oldParent.remove_child(child)
-	newParent.add_child(child)
+	Global.ReparentNode(node, BloodToAdd)
 
 func _process(delta):
 	var bloodNodes = BloodToAdd.get_children()

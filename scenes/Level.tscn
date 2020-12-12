@@ -77,6 +77,8 @@ OpenRight = true
 
 [node name="Debris" type="Node2D" parent="."]
 
+[node name="Pickups" type="Node2D" parent="."]
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 
 [node name="Shots" type="Node2D" parent="." groups=[
