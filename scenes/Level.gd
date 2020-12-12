@@ -27,6 +27,7 @@ func _ready():
 	Global.BloodHandler = $BloodHandler
 	$GameCamera.connect("ChangedRoom", $UI/Game/ViewportContainer/MiniMap, "ChangedRoom")
 	Global.connect("Announcement", self, "Announcement")
+	Global.connect("Won", self, "Won")
 	
 	if Global.CurrentLevel == 3:
 		PrepareFinalBoss()
@@ -114,15 +115,25 @@ func _on_Player_HealthChanged(health, maxHealth):
 func _on_Player_MoneyChanged(money):
 	$UI/Game/Money.text = str(money)
 
+func Won():
+	Global.GameOver = true
+	StopGame()
+	$UI/GameOver/Label.text = "You Won!"
+	$UI/GameOver/EnemiesKilledLabel.text = str(Global.KillCounter)
+	$UI/GameOver.visible = true
+
 func _on_Player_Died():
 	Global.GameOver = true
+	StopGame()
+	$UI/GameOver/EnemiesKilledLabel.text = str(Global.KillCounter)
+	$UI/GameOver.visible = true
+
+func StopGame():
 	var tween = $UI/GameOver/GameOverTween
 	tween.interpolate_property(Engine, "time_scale", 1.0, 0.1, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.interpolate_property($UI/GameOver, "modulate", Color(1.0, 1.0, 1.0, 0.0), Color(1.0, 1.0, 1.0, 1.0), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
-	$UI/GameOver/EnemiesKilledLabel.text = str(Global.KillCounter)
-	$UI/GameOver.visible = true
-	
+
 func _on_GameOverTween_tween_all_completed():
 	get_tree().paused = true
 

@@ -3,6 +3,7 @@ extends Node
 onready var IsDebug = OS.is_debug_build()
 
 signal Announcement(title, description)
+signal Won
 
 var ROOMSCENE = preload("res://scenes/rooms/Room.tscn")
 var LevelGenBlockedCoords = []
@@ -46,6 +47,7 @@ func LoadDefaults():
 
 var KillCounter
 var GameOver
+var Won
 
 var CloverLeaf
 

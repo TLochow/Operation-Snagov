@@ -9,6 +9,7 @@ onready var Player = get_tree().get_nodes_in_group("Player")[0]
 onready var VerticalCast = $CollsionRays/Vertical
 onready var HorizontalCast = $CollsionRays/Horizontal
 onready var SpriteNode = $Sprite
+onready var PilotSprite = $Pilot
 onready var Ring = $Ring
 onready var PhaseTween = $PhaseTween
 onready var PhaseTimer = $PhaseTimer
@@ -57,6 +58,7 @@ func _ready():
 func Activate():
 	var dirToPlayer = Player.get_position() - get_global_position()
 	SpriteNode.rotation = dirToPlayer.angle()
+	PilotSprite.rotation = SpriteNode.rotation
 	.Activate()
 
 func _physics_process(delta):
@@ -83,6 +85,7 @@ func _physics_process(delta):
 	
 	var dirToPlayer = Player.get_position() - get_global_position()
 	SpriteNode.rotation = lerp_angle(SpriteNode.rotation, dirToPlayer.angle(), 0.1)
+	PilotSprite.rotation = SpriteNode.rotation
 
 func DamageByRays():
 	for ray in DamageRays:

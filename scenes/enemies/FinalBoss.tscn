@@ -739,7 +739,7 @@ tracks/0/keys = {
 
 [node name="FinalBoss" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-Health = 250.0
+Health = 1000.0
 EnemyType = 1
 
 [node name="CollisionShape2D" parent="." index="0"]
@@ -819,10 +819,10 @@ position = Vector2( -18, -18 )
 [node name="Sprite" type="Sprite" parent="." index="2"]
 texture = ExtResource( 4 )
 
-[node name="Pilot" type="Sprite" parent="Sprite" index="0"]
+[node name="Pilot" type="Sprite" parent="." index="3"]
 texture = ExtResource( 5 )
 
-[node name="CollsionRays" type="Node2D" parent="." index="3"]
+[node name="CollsionRays" type="Node2D" parent="." index="4"]
 
 [node name="Vertical" type="RayCast2D" parent="CollsionRays" index="0"]
 enabled = true
@@ -832,14 +832,14 @@ cast_to = Vector2( 0, 0 )
 enabled = true
 cast_to = Vector2( 0, 0 )
 
-[node name="PhaseTween" type="Tween" parent="." index="4"]
+[node name="PhaseTween" type="Tween" parent="." index="5"]
 
-[node name="PhaseTimer" type="Timer" parent="." index="5"]
+[node name="PhaseTimer" type="Timer" parent="." index="6"]
 wait_time = 0.2
 one_shot = true
 autostart = true
 
-[node name="PhaseAnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+[node name="PhaseAnimationPlayer" type="AnimationPlayer" parent="." index="7"]
 anims/Drones = SubResource( 6 )
 anims/Fire = SubResource( 4 )
 anims/Grenades = SubResource( 5 )
