@@ -3,17 +3,23 @@ extends Node2D
 var SPAWNEFFECTSCENE = preload("res://scenes/effects/Spawning.tscn")
 
 onready var Player = get_tree().get_nodes_in_group("Player")[0]
+onready var Boss = $Enemies.get_children()[0]
+
 onready var BurningDebrisNode = $BurningDebris
 onready var WallsNode = $DesctrutibleWalls
 onready var EnemyNode = $Enemies
 onready var FurnitureNode = $Furniture
 onready var BurnTimer = $BurnFurnitureTimer
+onready var HealthBar = $UI/Health
+
 
 var Furniture = []
 var FurnitureSize
 
 func _ready():
 	LoadFurniture()
+	Global.emit_signal("Announcement", "Nicolae Ceausescu", "Time for Payback")
+	HealthBar.max_value = Boss.Health
 
 func LoadFurniture():
 	var basePath = "res://scenes/objects/furniture"
@@ -24,12 +30,19 @@ func LoadFurniture():
 	FurnitureSize = Furniture.size()
 
 func _process(delta):
+	var enemies = EnemyNode.get_children()
+	for enemy in enemies:
+		if not enemy.Active:
+			enemy.Activate()
+	
 	if Global.DebrisNode.get_child_count() > 200:
 		var debris = Global.DebrisNode.get_children()[0]
 		Global.ReparentNode(debris, BurningDebrisNode)
 	var burningDebris = BurningDebrisNode.get_children()
 	for current in burningDebris:
 		current.Burn(1000.0)
+	
+	HealthBar.value = Boss.Health
 
 func _on_SpawnFurnitureTimer_timeout():
 	var blockedPos = []

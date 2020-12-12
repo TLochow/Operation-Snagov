@@ -151,7 +151,7 @@ func ThrowFlames():
 	var fire = FIRESCENE.instance()
 	fire.set_position(pos)
 	fire.linear_velocity = (LookDirection * 500.0).rotated(rand_range(-ShotSpread, ShotSpread))
-	ShotNode.add_child(fire)
+	ShotNode.call_deferred("add_child", fire)
 
 func Damage(damage, hitPoint, direction, collisionNormal):
 	TakeDamage(damage)

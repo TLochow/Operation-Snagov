@@ -1,0 +1,850 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scenes/enemies/_EnemyBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/enemies/FinalBoss.gd" type="Script" id=2]
+[ext_resource path="res://graphics/enemies/final boss ring.png" type="Texture" id=3]
+[ext_resource path="res://graphics/enemies/final boss vessel.png" type="Texture" id=4]
+[ext_resource path="res://graphics/enemies/final boss pilot.png" type="Texture" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 24.0
+
+[sub_resource type="Animation" id=6]
+resource_name = "Drones"
+length = 2.0
+step = 0.2
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ 7 ],
+"method": "Drone"
+}, {
+"args": [ 6 ],
+"method": "Drone"
+}, {
+"args": [ 5 ],
+"method": "Drone"
+}, {
+"args": [ 4 ],
+"method": "Drone"
+}, {
+"args": [ 3 ],
+"method": "Drone"
+}, {
+"args": [ 2 ],
+"method": "Drone"
+}, {
+"args": [ 1 ],
+"method": "Drone"
+}, {
+"args": [ 0 ],
+"method": "Drone"
+} ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Fire"
+length = 4.0
+step = 0.05
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2, 2.05, 2.1, 2.15, 2.2, 2.25, 2.3, 2.35, 2.4, 2.45, 2.5, 2.55, 2.6, 2.65, 2.7, 2.75, 2.8, 2.85, 2.9, 2.95, 3, 3.05, 3.1, 3.15, 3.2, 3.25, 3.3, 3.35, 3.4, 3.45, 3.5, 3.55, 3.6, 3.65, 3.7, 3.75, 3.8, 3.85, 3.9, 3.95 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ 7 ],
+"method": "Fire"
+}, {
+"args": [ 6 ],
+"method": "Fire"
+}, {
+"args": [ 5 ],
+"method": "Fire"
+}, {
+"args": [ 4 ],
+"method": "Fire"
+}, {
+"args": [ 3 ],
+"method": "Fire"
+}, {
+"args": [ 2 ],
+"method": "Fire"
+}, {
+"args": [ 1 ],
+"method": "Fire"
+}, {
+"args": [ 0 ],
+"method": "Fire"
+}, {
+"args": [ 7 ],
+"method": "Fire"
+}, {
+"args": [ 6 ],
+"method": "Fire"
+}, {
+"args": [ 5 ],
+"method": "Fire"
+}, {
+"args": [ 4 ],
+"method": "Fire"
+}, {
+"args": [ 3 ],
+"method": "Fire"
+}, {
+"args": [ 2 ],
+"method": "Fire"
+}, {
+"args": [ 1 ],
+"method": "Fire"
+}, {
+"args": [ 0 ],
+"method": "Fire"
+}, {
+"args": [ 7 ],
+"method": "Fire"
+}, {
+"args": [ 6 ],
+"method": "Fire"
+}, {
+"args": [ 5 ],
+"method": "Fire"
+}, {
+"args": [ 4 ],
+"method": "Fire"
+}, {
+"args": [ 3 ],
+"method": "Fire"
+}, {
+"args": [ 2 ],
+"method": "Fire"
+}, {
+"args": [ 1 ],
+"method": "Fire"
+}, {
+"args": [ 0 ],
+"method": "Fire"
+}, {
+"args": [ 7 ],
+"method": "Fire"
+}, {
+"args": [ 6 ],
+"method": "Fire"
+}, {
+"args": [ 5 ],
+"method": "Fire"
+}, {
+"args": [ 4 ],
+"method": "Fire"
+}, {
+"args": [ 3 ],
+"method": "Fire"
+}, {
+"args": [ 2 ],
+"method": "Fire"
+}, {
+"args": [ 1 ],
+"method": "Fire"
+}, {
+"args": [ 0 ],
+"method": "Fire"
+}, {
+"args": [ 7 ],
+"method": "Fire"
+}, {
+"args": [ 6 ],
+"method": "Fire"
+}, {
+"args": [ 5 ],
+"method": "Fire"
+}, {
+"args": [ 4 ],
+"method": "Fire"
+}, {
+"args": [ 3 ],
+"method": "Fire"
+}, {
+"args": [ 2 ],
+"method": "Fire"
+}, {
+"args": [ 1 ],
+"method": "Fire"
+}, {
+"args": [ 0 ],
+"method": "Fire"
+}, {
+"args": [ 7 ],
+"method": "Fire"
+}, {
+"args": [ 6 ],
+"method": "Fire"
+}, {
+"args": [ 5 ],
+"method": "Fire"
+}, {
+"args": [ 4 ],
+"method": "Fire"
+}, {
+"args": [ 3 ],
+"method": "Fire"
+}, {
+"args": [ 2 ],
+"method": "Fire"
+}, {
+"args": [ 1 ],
+"method": "Fire"
+}, {
+"args": [ 0 ],
+"method": "Fire"
+}, {
+"args": [ 7 ],
+"method": "Fire"
+}, {
+"args": [ 6 ],
+"method": "Fire"
+}, {
+"args": [ 5 ],
+"method": "Fire"
+}, {
+"args": [ 4 ],
+"method": "Fire"
+}, {
+"args": [ 3 ],
+"method": "Fire"
+}, {
+"args": [ 2 ],
+"method": "Fire"
+}, {
+"args": [ 1 ],
+"method": "Fire"
+}, {
+"args": [ 0 ],
+"method": "Fire"
+}, {
+"args": [ 7 ],
+"method": "Fire"
+}, {
+"args": [ 6 ],
+"method": "Fire"
+}, {
+"args": [ 5 ],
+"method": "Fire"
+}, {
+"args": [ 4 ],
+"method": "Fire"
+}, {
+"args": [ 3 ],
+"method": "Fire"
+}, {
+"args": [ 2 ],
+"method": "Fire"
+}, {
+"args": [ 1 ],
+"method": "Fire"
+}, {
+"args": [ 0 ],
+"method": "Fire"
+}, {
+"args": [ 7 ],
+"method": "Fire"
+}, {
+"args": [ 6 ],
+"method": "Fire"
+}, {
+"args": [ 5 ],
+"method": "Fire"
+}, {
+"args": [ 4 ],
+"method": "Fire"
+}, {
+"args": [ 3 ],
+"method": "Fire"
+}, {
+"args": [ 2 ],
+"method": "Fire"
+}, {
+"args": [ 1 ],
+"method": "Fire"
+}, {
+"args": [ 0 ],
+"method": "Fire"
+}, {
+"args": [ 7 ],
+"method": "Fire"
+}, {
+"args": [ 6 ],
+"method": "Fire"
+}, {
+"args": [ 5 ],
+"method": "Fire"
+}, {
+"args": [ 4 ],
+"method": "Fire"
+}, {
+"args": [ 3 ],
+"method": "Fire"
+}, {
+"args": [ 2 ],
+"method": "Fire"
+}, {
+"args": [ 1 ],
+"method": "Fire"
+}, {
+"args": [ 0 ],
+"method": "Fire"
+} ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Grenades"
+length = 4.8
+step = 0.2
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.4, 4.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ 7 ],
+"method": "Grenade"
+}, {
+"args": [ 6 ],
+"method": "Grenade"
+}, {
+"args": [ 5 ],
+"method": "Grenade"
+}, {
+"args": [ 4 ],
+"method": "Grenade"
+}, {
+"args": [ 3 ],
+"method": "Grenade"
+}, {
+"args": [ 2 ],
+"method": "Grenade"
+}, {
+"args": [ 1 ],
+"method": "Grenade"
+}, {
+"args": [ 0 ],
+"method": "Grenade"
+}, {
+"args": [ 7 ],
+"method": "Grenade"
+}, {
+"args": [ 6 ],
+"method": "Grenade"
+}, {
+"args": [ 5 ],
+"method": "Grenade"
+}, {
+"args": [ 4 ],
+"method": "Grenade"
+}, {
+"args": [ 3 ],
+"method": "Grenade"
+}, {
+"args": [ 2 ],
+"method": "Grenade"
+}, {
+"args": [ 1 ],
+"method": "Grenade"
+}, {
+"args": [ 0 ],
+"method": "Grenade"
+}, {
+"args": [ 7 ],
+"method": "Grenade"
+}, {
+"args": [ 6 ],
+"method": "Grenade"
+}, {
+"args": [ 5 ],
+"method": "Grenade"
+}, {
+"args": [ 4 ],
+"method": "Grenade"
+}, {
+"args": [ 3 ],
+"method": "Grenade"
+}, {
+"args": [ 2 ],
+"method": "Grenade"
+}, {
+"args": [ 1 ],
+"method": "Grenade"
+}, {
+"args": [ 0 ],
+"method": "Grenade"
+} ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "SlowMoveShoot"
+length = 4.8
+step = 0.2
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.2, 4.4, 4.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ 7 ],
+"method": "Shoot"
+}, {
+"args": [ 6 ],
+"method": "Shoot"
+}, {
+"args": [ 5 ],
+"method": "Shoot"
+}, {
+"args": [ 4 ],
+"method": "Shoot"
+}, {
+"args": [ 3 ],
+"method": "Shoot"
+}, {
+"args": [ 2 ],
+"method": "Shoot"
+}, {
+"args": [ 1 ],
+"method": "Shoot"
+}, {
+"args": [ 0 ],
+"method": "Shoot"
+}, {
+"args": [ 7 ],
+"method": "Shoot"
+}, {
+"args": [ 6 ],
+"method": "Shoot"
+}, {
+"args": [ 5 ],
+"method": "Shoot"
+}, {
+"args": [ 4 ],
+"method": "Shoot"
+}, {
+"args": [ 3 ],
+"method": "Shoot"
+}, {
+"args": [ 2 ],
+"method": "Shoot"
+}, {
+"args": [ 1 ],
+"method": "Shoot"
+}, {
+"args": [ 0 ],
+"method": "Shoot"
+}, {
+"args": [ 7 ],
+"method": "Shoot"
+}, {
+"args": [ 6 ],
+"method": "Shoot"
+}, {
+"args": [ 5 ],
+"method": "Shoot"
+}, {
+"args": [ 4 ],
+"method": "Shoot"
+}, {
+"args": [ 3 ],
+"method": "Shoot"
+}, {
+"args": [ 2 ],
+"method": "Shoot"
+}, {
+"args": [ 1 ],
+"method": "Shoot"
+}, {
+"args": [ 0 ],
+"method": "Shoot"
+} ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "StandStillShoot"
+length = 4.0
+step = 0.05
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.55, 1.6, 1.65, 1.7, 1.75, 1.8, 1.85, 1.9, 1.95, 2, 2.05, 2.1, 2.15, 2.2, 2.25, 2.3, 2.35, 2.4, 2.45, 2.5, 2.55, 2.6, 2.65, 2.7, 2.75, 2.8, 2.85, 2.9, 2.95, 3, 3.05, 3.1, 3.15, 3.2, 3.25, 3.3, 3.35, 3.4, 3.45, 3.5, 3.55, 3.6, 3.65, 3.7, 3.75, 3.8, 3.85, 3.9, 3.95 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ 7 ],
+"method": "Shoot"
+}, {
+"args": [ 6 ],
+"method": "Shoot"
+}, {
+"args": [ 5 ],
+"method": "Shoot"
+}, {
+"args": [ 4 ],
+"method": "Shoot"
+}, {
+"args": [ 3 ],
+"method": "Shoot"
+}, {
+"args": [ 2 ],
+"method": "Shoot"
+}, {
+"args": [ 1 ],
+"method": "Shoot"
+}, {
+"args": [ 0 ],
+"method": "Shoot"
+}, {
+"args": [ 7 ],
+"method": "Shoot"
+}, {
+"args": [ 6 ],
+"method": "Shoot"
+}, {
+"args": [ 5 ],
+"method": "Shoot"
+}, {
+"args": [ 4 ],
+"method": "Shoot"
+}, {
+"args": [ 3 ],
+"method": "Shoot"
+}, {
+"args": [ 2 ],
+"method": "Shoot"
+}, {
+"args": [ 1 ],
+"method": "Shoot"
+}, {
+"args": [ 0 ],
+"method": "Shoot"
+}, {
+"args": [ 7 ],
+"method": "Shoot"
+}, {
+"args": [ 6 ],
+"method": "Shoot"
+}, {
+"args": [ 5 ],
+"method": "Shoot"
+}, {
+"args": [ 4 ],
+"method": "Shoot"
+}, {
+"args": [ 3 ],
+"method": "Shoot"
+}, {
+"args": [ 2 ],
+"method": "Shoot"
+}, {
+"args": [ 1 ],
+"method": "Shoot"
+}, {
+"args": [ 0 ],
+"method": "Shoot"
+}, {
+"args": [ 7 ],
+"method": "Shoot"
+}, {
+"args": [ 6 ],
+"method": "Shoot"
+}, {
+"args": [ 5 ],
+"method": "Shoot"
+}, {
+"args": [ 4 ],
+"method": "Shoot"
+}, {
+"args": [ 3 ],
+"method": "Shoot"
+}, {
+"args": [ 2 ],
+"method": "Shoot"
+}, {
+"args": [ 1 ],
+"method": "Shoot"
+}, {
+"args": [ 0 ],
+"method": "Shoot"
+}, {
+"args": [ 7 ],
+"method": "Shoot"
+}, {
+"args": [ 6 ],
+"method": "Shoot"
+}, {
+"args": [ 5 ],
+"method": "Shoot"
+}, {
+"args": [ 4 ],
+"method": "Shoot"
+}, {
+"args": [ 3 ],
+"method": "Shoot"
+}, {
+"args": [ 2 ],
+"method": "Shoot"
+}, {
+"args": [ 1 ],
+"method": "Shoot"
+}, {
+"args": [ 0 ],
+"method": "Shoot"
+}, {
+"args": [ 7 ],
+"method": "Shoot"
+}, {
+"args": [ 6 ],
+"method": "Shoot"
+}, {
+"args": [ 5 ],
+"method": "Shoot"
+}, {
+"args": [ 4 ],
+"method": "Shoot"
+}, {
+"args": [ 3 ],
+"method": "Shoot"
+}, {
+"args": [ 2 ],
+"method": "Shoot"
+}, {
+"args": [ 1 ],
+"method": "Shoot"
+}, {
+"args": [ 0 ],
+"method": "Shoot"
+}, {
+"args": [ 7 ],
+"method": "Shoot"
+}, {
+"args": [ 6 ],
+"method": "Shoot"
+}, {
+"args": [ 5 ],
+"method": "Shoot"
+}, {
+"args": [ 4 ],
+"method": "Shoot"
+}, {
+"args": [ 3 ],
+"method": "Shoot"
+}, {
+"args": [ 2 ],
+"method": "Shoot"
+}, {
+"args": [ 1 ],
+"method": "Shoot"
+}, {
+"args": [ 0 ],
+"method": "Shoot"
+}, {
+"args": [ 7 ],
+"method": "Shoot"
+}, {
+"args": [ 6 ],
+"method": "Shoot"
+}, {
+"args": [ 5 ],
+"method": "Shoot"
+}, {
+"args": [ 4 ],
+"method": "Shoot"
+}, {
+"args": [ 3 ],
+"method": "Shoot"
+}, {
+"args": [ 2 ],
+"method": "Shoot"
+}, {
+"args": [ 1 ],
+"method": "Shoot"
+}, {
+"args": [ 0 ],
+"method": "Shoot"
+}, {
+"args": [ 7 ],
+"method": "Shoot"
+}, {
+"args": [ 6 ],
+"method": "Shoot"
+}, {
+"args": [ 5 ],
+"method": "Shoot"
+}, {
+"args": [ 4 ],
+"method": "Shoot"
+}, {
+"args": [ 3 ],
+"method": "Shoot"
+}, {
+"args": [ 2 ],
+"method": "Shoot"
+}, {
+"args": [ 1 ],
+"method": "Shoot"
+}, {
+"args": [ 0 ],
+"method": "Shoot"
+}, {
+"args": [ 7 ],
+"method": "Shoot"
+}, {
+"args": [ 6 ],
+"method": "Shoot"
+}, {
+"args": [ 5 ],
+"method": "Shoot"
+}, {
+"args": [ 4 ],
+"method": "Shoot"
+}, {
+"args": [ 3 ],
+"method": "Shoot"
+}, {
+"args": [ 2 ],
+"method": "Shoot"
+}, {
+"args": [ 1 ],
+"method": "Shoot"
+}, {
+"args": [ 0 ],
+"method": "Shoot"
+} ]
+}
+
+[node name="FinalBoss" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+Health = 250.0
+EnemyType = 1
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource( 1 )
+
+[node name="Ring" type="Sprite" parent="." index="1"]
+texture = ExtResource( 3 )
+
+[node name="DamageRays" type="Node2D" parent="Ring" index="0"]
+
+[node name="DamageRay" type="RayCast2D" parent="Ring/DamageRays" index="0"]
+enabled = true
+cast_to = Vector2( 0, -25 )
+collision_mask = 7
+
+[node name="DamageRay2" type="RayCast2D" parent="Ring/DamageRays" index="1"]
+enabled = true
+cast_to = Vector2( 18, -18 )
+collision_mask = 7
+
+[node name="DamageRay3" type="RayCast2D" parent="Ring/DamageRays" index="2"]
+enabled = true
+cast_to = Vector2( 25, 0 )
+collision_mask = 7
+
+[node name="DamageRay4" type="RayCast2D" parent="Ring/DamageRays" index="3"]
+enabled = true
+cast_to = Vector2( 18, 18 )
+collision_mask = 7
+
+[node name="DamageRay5" type="RayCast2D" parent="Ring/DamageRays" index="4"]
+enabled = true
+cast_to = Vector2( 0, 25 )
+collision_mask = 7
+
+[node name="DamageRay6" type="RayCast2D" parent="Ring/DamageRays" index="5"]
+enabled = true
+cast_to = Vector2( -18, 18 )
+collision_mask = 7
+
+[node name="DamageRay7" type="RayCast2D" parent="Ring/DamageRays" index="6"]
+enabled = true
+cast_to = Vector2( -25, 0 )
+collision_mask = 7
+
+[node name="DamageRay8" type="RayCast2D" parent="Ring/DamageRays" index="7"]
+enabled = true
+cast_to = Vector2( -18, -18 )
+collision_mask = 7
+
+[node name="ShootingPoints" type="Node2D" parent="Ring" index="1"]
+
+[node name="ShootingPoint" type="Position2D" parent="Ring/ShootingPoints" index="0"]
+position = Vector2( 0, -25 )
+
+[node name="ShootingPoint2" type="Position2D" parent="Ring/ShootingPoints" index="1"]
+position = Vector2( 18, -18 )
+
+[node name="ShootingPoint3" type="Position2D" parent="Ring/ShootingPoints" index="2"]
+position = Vector2( 25, 0 )
+
+[node name="ShootingPoint4" type="Position2D" parent="Ring/ShootingPoints" index="3"]
+position = Vector2( 18, 18 )
+
+[node name="ShootingPoint5" type="Position2D" parent="Ring/ShootingPoints" index="4"]
+position = Vector2( 0, 25 )
+
+[node name="ShootingPoint6" type="Position2D" parent="Ring/ShootingPoints" index="5"]
+position = Vector2( -18, 18 )
+
+[node name="ShootingPoint7" type="Position2D" parent="Ring/ShootingPoints" index="6"]
+position = Vector2( -25, 0 )
+
+[node name="ShootingPoint8" type="Position2D" parent="Ring/ShootingPoints" index="7"]
+position = Vector2( -18, -18 )
+
+[node name="Sprite" type="Sprite" parent="." index="2"]
+texture = ExtResource( 4 )
+
+[node name="Pilot" type="Sprite" parent="Sprite" index="0"]
+texture = ExtResource( 5 )
+
+[node name="CollsionRays" type="Node2D" parent="." index="3"]
+
+[node name="Vertical" type="RayCast2D" parent="CollsionRays" index="0"]
+enabled = true
+cast_to = Vector2( 0, 0 )
+
+[node name="Horizontal" type="RayCast2D" parent="CollsionRays" index="1"]
+enabled = true
+cast_to = Vector2( 0, 0 )
+
+[node name="PhaseTween" type="Tween" parent="." index="4"]
+
+[node name="PhaseTimer" type="Timer" parent="." index="5"]
+wait_time = 0.2
+one_shot = true
+autostart = true
+
+[node name="PhaseAnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+anims/Drones = SubResource( 6 )
+anims/Fire = SubResource( 4 )
+anims/Grenades = SubResource( 5 )
+anims/SlowMoveShoot = SubResource( 3 )
+anims/StandStillShoot = SubResource( 2 )
+[connection signal="tween_all_completed" from="PhaseTween" to="." method="PhaseStep"]
+[connection signal="timeout" from="PhaseTimer" to="." method="PhaseStep"]
+[connection signal="animation_finished" from="PhaseAnimationPlayer" to="." method="_on_PhaseAnimationPlayer_animation_finished"]

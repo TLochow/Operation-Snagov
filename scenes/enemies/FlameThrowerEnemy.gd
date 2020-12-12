@@ -35,4 +35,4 @@ func ThrowFlames(direction):
 	var fire = FIRESCENE.instance()
 	fire.set_position(Position + (direction * 14.0))
 	fire.linear_velocity = (direction * 500.0).rotated(rand_range(-ShootSpread, ShootSpread))
-	ShotNode.add_child(fire)
+	ShotNode.call_deferred("add_child", fire)
