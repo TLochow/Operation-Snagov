@@ -11,6 +11,7 @@ onready var EnemyNode = $Enemies
 onready var FurnitureNode = $Furniture
 onready var BurnTimer = $BurnFurnitureTimer
 onready var HealthBar = $UI/Health
+onready var BossIndicator = $BossIndicator
 
 var Furniture = []
 var FurnitureSize
@@ -44,6 +45,11 @@ func _process(delta):
 	var boss = Boss.get_ref()
 	if boss:
 		HealthBar.value = boss.Health
+		var playerPos = Player.get_position()
+		var dirToBoss = boss.get_position() - playerPos
+		BossIndicator.set_position(playerPos)
+		BossIndicator.rotation = dirToBoss.angle()
+		BossIndicator.modulate = Color(1.0, 1.0, 1.0, clamp(dirToBoss.length() - Default.RoomSize.y, 0.0, Default.RoomSize.y) / Default.RoomSize.y)
 	else:
 		HealthBar.value = 0.0
 		if not Global.GameOver:

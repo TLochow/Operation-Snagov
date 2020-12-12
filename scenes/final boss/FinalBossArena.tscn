@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/TileMap.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/final boss/DestructibleWall.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://graphics/UI/HealthBarBorder.png" type="Texture" id=7]
 [ext_resource path="res://graphics/UI/HealthBarBack.png" type="Texture" id=8]
 [ext_resource path="res://graphics/homespun.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://graphics/boss indicator.png" type="Texture" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 outline_size = 3
@@ -954,6 +955,9 @@ one_shot = true
 
 [node name="FinalBoss" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 144, 0 )
+
+[node name="BossIndicator" type="Sprite" parent="."]
+texture = ExtResource( 10 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 

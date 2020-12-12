@@ -17,7 +17,7 @@ var PickupsNode
 var BloodHandler
 
 func LoadDefaults():
-	CurrentLevel = 3
+	CurrentLevel = 1
 	KillCounter = 0
 	GameOver = false
 	

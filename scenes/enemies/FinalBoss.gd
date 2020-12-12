@@ -22,12 +22,15 @@ var ShootingPoints
 
 var MovingUp
 var MovingLeft
+var MoveToPlayer = false
 
 var RotationSpeed = 0.0
 var MoveSpeed = 0.0
 var PhasePart = PhaseParts.Startup
 var CurrentPhase = Phases.Startup
 onready var NumberOfPhases = Phases.values().size() - 2
+
+var PlayerDistance = 0.0
 
 enum PhaseParts {
 	Startup,
@@ -62,15 +65,23 @@ func Activate():
 	.Activate()
 
 func _physics_process(delta):
+	var dirToPlayer = Player.get_position() - get_global_position()
+	SpriteNode.rotation = lerp_angle(SpriteNode.rotation, dirToPlayer.angle(), 0.1)
+	PilotSprite.rotation = SpriteNode.rotation
+	PlayerDistance += dirToPlayer.length() * delta
+	
 	var dir = Default.DirCenter
-	if MovingLeft:
-		dir += Default.DirLeft
+	if MoveToPlayer:
+		dir = dirToPlayer
 	else:
-		dir += Default.DirRight
-	if MovingUp:
-		dir += Default.DirUp
-	else:
-		dir += Default.DirDown
+		if MovingLeft:
+			dir += Default.DirLeft
+		else:
+			dir += Default.DirRight
+		if MovingUp:
+			dir += Default.DirUp
+		else:
+			dir += Default.DirDown
 	move_and_slide(dir.normalized() * MoveSpeed)
 	
 	if HorizontalCast.is_colliding():
@@ -82,10 +93,6 @@ func _physics_process(delta):
 	
 	Ring.rotation = wrapf(Ring.rotation + (delta * RotationSpeed), -PI, PI)
 	DamageByRays()
-	
-	var dirToPlayer = Player.get_position() - get_global_position()
-	SpriteNode.rotation = lerp_angle(SpriteNode.rotation, dirToPlayer.angle(), 0.1)
-	PilotSprite.rotation = SpriteNode.rotation
 
 func DamageByRays():
 	for ray in DamageRays:
@@ -189,6 +196,18 @@ func PhaseStep():
 				PhaseParts.WindDown:
 					PhaseTween.interpolate_property(self, "MoveSpeed", MoveSpeed, 50.0, 4.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 					PhaseTween.start()
+		Phases.MoveToPlayer:
+			match PhasePart:
+				PhaseParts.Startup:
+					PhaseTween.interpolate_property(self, "MoveSpeed", MoveSpeed, 75.0, 4.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+					PhaseTween.start()
+				PhaseParts.Execution:
+					PhaseTimer.wait_time = 5.0
+					PhaseTimer.start()
+				PhaseParts.WindDown:
+					MoveToPlayer = false
+					PhaseTween.interpolate_property(self, "MoveSpeed", MoveSpeed, 50.0, 4.0, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+					PhaseTween.start()
 	if PhasePart == PhaseParts.FreeMove:
 		RandomNextPhase()
 		PhaseTimer.wait_time = rand_range(5.0, 10.0)
@@ -199,11 +218,16 @@ func _on_PhaseAnimationPlayer_animation_finished(anim_name):
 	PhaseStep()
 
 func RandomNextPhase():
-	var before = CurrentPhase
-	var new = before
-	while new == before:
-		new = (randi() % NumberOfPhases) + 1
-	CurrentPhase = new
+	if PlayerDistance > 20000.0:
+		PlayerDistance = 0.0
+		CurrentPhase = Phases.MoveToPlayer
+		MoveToPlayer = true
+	else:
+		var before = CurrentPhase
+		var new = before
+		while new == before:
+			new = (randi() % NumberOfPhases) + 1
+		CurrentPhase = new
 
 func Shoot(number):
 	var pos = ShootingPoints[number].get_global_position()
