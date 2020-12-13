@@ -2,6 +2,11 @@ extends Node
 
 onready var IsDebug = OS.is_debug_build()
 
+var MusicVolume = 0.0
+var SoundEffectsVolume = 0.0
+
+var Fullscreen = true
+
 signal Announcement(title, description)
 signal Won
 
@@ -15,6 +20,9 @@ var DebrisNode
 var PickupsNode
 
 var BloodHandler
+
+func _ready():
+	LoadSettings()
 
 func LoadDefaults():
 	CurrentLevel = 1
@@ -91,3 +99,25 @@ func ReparentNode(child, newParent):
 	var oldParent = child.get_parent()
 	oldParent.call_deferred("remove_child", child)
 	newParent.call_deferred("add_child", child)
+
+func LoadSettings():
+	var config = ConfigFile.new()
+	var result = config.load("user://settings.cfg")
+	if result == OK:
+		MusicVolume = config.get_value("settings", "music_volume", 0.0)
+		SoundEffectsVolume = config.get_value("settings", "sound_effects_volume", 0.0)
+		Fullscreen = config.get_value("settings", "fullscreen", true)
+	SetAudioVolume()
+	OS.window_fullscreen = Fullscreen
+
+func SaveSettings():
+	var config = ConfigFile.new()
+	var result = config.load("user://settings.cfg")
+	config.set_value("settings", "music_volume", MusicVolume)
+	config.set_value("settings", "sound_effects_volume", SoundEffectsVolume)
+	config.set_value("settings", "fullscreen", Fullscreen)
+	config.save("user://settings.cfg")
+
+func SetAudioVolume():
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), MusicVolume)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Effects"), SoundEffectsVolume)
