@@ -130,7 +130,7 @@ func _on_Player_Died():
 
 func StopGame():
 	var tween = $UI/GameOver/GameOverTween
-	tween.interpolate_property(Engine, "time_scale", 1.0, 0.1, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	tween.interpolate_property(Engine, "time_scale", 0.5, 0.1, 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.interpolate_property($UI/GameOver, "modulate", Color(1.0, 1.0, 1.0, 0.0), Color(1.0, 1.0, 1.0, 1.0), 0.5, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
 

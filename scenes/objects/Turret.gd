@@ -21,7 +21,8 @@ func _process(delta):
 		ShootCooldownCounter -= delta
 		if ShootCooldownCounter <= 0.0:
 			ShootCooldownCounter = ShootCooldown
-			LookDirection = Vector2(cos(rotation), sin(rotation)) * 10.0
+			var rot = get_global_transform().get_rotation()
+			LookDirection = Vector2(cos(rot), sin(rot)) * 10.0
 			ShotPos = get_global_position() + LookDirection
 			if ShootingFire:
 				for i in range(ShootAmount):
@@ -34,7 +35,7 @@ func Shoot():
 	var shot = SHOTSCENE.instance()
 	ShotNode.add_child(shot)
 	shot.set_position(ShotPos)
-	var angle = rotation + rand_range(-ShootSpread, ShootSpread)
+	var angle = get_global_transform().get_rotation() + rand_range(-ShootSpread, ShootSpread)
 	shot.Shoot(ShootDamage, angle)
 
 func ThrowFlames():
