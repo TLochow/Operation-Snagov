@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/rooms/layouts/LayoutBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/enemies/RandomMoveEnemy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/objects/furniture/PottedPlant.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/objects/furniture/Bench.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/objects/furniture/LargePlants.tscn" type="PackedScene" id=5]
 
 [node name="EdgeEnemies" instance=ExtResource( 1 )]
@@ -65,29 +64,14 @@ rotation = 1.5708
 position = Vector2( -136, -80 )
 rotation = 1.5708
 
-[node name="Bench" parent="Furniture" index="8" instance=ExtResource( 4 )]
-position = Vector2( 0, 80 )
-rotation = 1.5708
-
-[node name="Bench2" parent="Furniture" index="9" instance=ExtResource( 4 )]
-position = Vector2( 0, -80 )
-rotation = -1.5708
-
-[node name="Bench3" parent="Furniture" index="10" instance=ExtResource( 4 )]
-position = Vector2( 208, 0 )
-
-[node name="Bench4" parent="Furniture" index="11" instance=ExtResource( 4 )]
-position = Vector2( -208, 0 )
-rotation = 3.14159
-
-[node name="PottedPlant" parent="Furniture" index="12" instance=ExtResource( 3 )]
+[node name="PottedPlant" parent="Furniture" index="8" instance=ExtResource( 3 )]
 position = Vector2( -240, 32 )
 
-[node name="PottedPlant2" parent="Furniture" index="13" instance=ExtResource( 3 )]
+[node name="PottedPlant2" parent="Furniture" index="9" instance=ExtResource( 3 )]
 position = Vector2( -240, -32 )
 
-[node name="PottedPlant3" parent="Furniture" index="14" instance=ExtResource( 3 )]
+[node name="PottedPlant3" parent="Furniture" index="10" instance=ExtResource( 3 )]
 position = Vector2( 240, -32 )
 
-[node name="PottedPlant4" parent="Furniture" index="15" instance=ExtResource( 3 )]
+[node name="PottedPlant4" parent="Furniture" index="11" instance=ExtResource( 3 )]
 position = Vector2( 240, 32 )
