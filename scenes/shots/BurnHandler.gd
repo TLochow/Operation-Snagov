@@ -3,6 +3,8 @@ extends Node2D
 onready var Parent = get_parent()
 
 func _ready():
+	Parent.set_process(false)
+	Parent.set_physics_process(false)
 	var tween = $BlackTween
 	tween.interpolate_property(Parent, "modulate", Color(1.0, 1.0, 1.0, 1.0), Color(0.0, 0.0, 0.0, 1.0), 0.5, Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	tween.start()
