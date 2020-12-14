@@ -22,6 +22,7 @@ var PickupsNode
 var BloodHandler
 
 func _ready():
+	randomize()
 	LoadSettings()
 
 func LoadDefaults():

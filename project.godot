@@ -16,7 +16,9 @@ _global_script_class_icons={
 [application]
 
 config/name="Operation Snagov"
-run/main_scene="res://MainMenu.tscn"
+run/main_scene="res://SplashScreen.tscn"
+boot_splash/image="res://graphics/splashscreen.png"
+boot_splash/bg_color=Color( 0.254902, 0.254902, 0.254902, 1 )
 config/icon="res://icon.png"
 
 [autoload]
@@ -141,4 +143,5 @@ mouse_middle={
 [rendering]
 
 quality/2d/use_pixel_snap=true
+environment/default_clear_color=Color( 0.254902, 0.254902, 0.254902, 1 )
 environment/default_environment="res://default_env.tres"
