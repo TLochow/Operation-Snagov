@@ -20,17 +20,19 @@ onready var ShotNode = get_tree().get_nodes_in_group("ShotsNode")[0]
 onready var AnimPlayer = $AnimationPlayer
 var PlayingWalkAnimation = true
 onready var PlayerSprite = $Sprite
+onready var GrenadeCooldownTimer = $GrenadesCooldown
 onready var ShieldNode = $Shield
 
 var LookDirection = Vector2(0.0, 0.0)
 var MoveDirection = Vector2(0.0, 0.0)
-
 
 var Health = 10 setget HealthSet
 var MaxHealth setget MaxHealthSet
 var Grenades setget GrenadesSet
 var Armor setget ArmorSet
 var Money setget MoneySet
+
+var CanThrowGrenade = true
 
 var ShootCooldown
 var ShootCooldownCounter = 0.0
@@ -80,9 +82,14 @@ func LoadPlayerValues():
 	Revenge = Global.PlayerRevenge
 
 func _input(event):
-	if event.is_action_pressed("mouse_right") and Grenades > 0:
+	if event.is_action_pressed("mouse_right") and Grenades > 0 and CanThrowGrenade:
+		CanThrowGrenade = false
+		GrenadeCooldownTimer.start()
 		GrenadesSet(Grenades - 1)
 		ThrowGrenade(ImpactDetector, false)
+
+func _on_GrenadesCooldown_timeout():
+	CanThrowGrenade = true
 
 func _physics_process(delta):
 	MoveDirection = Default.DirCenter

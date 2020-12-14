@@ -37,9 +37,12 @@ shape = SubResource( 1 )
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 4
-frame = 3
 
 [node name="Shield" type="Node2D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Walk = SubResource( 2 )
+
+[node name="GrenadesCooldown" type="Timer" parent="."]
+wait_time = 0.1
+[connection signal="timeout" from="GrenadesCooldown" to="." method="_on_GrenadesCooldown_timeout"]
