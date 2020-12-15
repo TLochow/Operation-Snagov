@@ -2,8 +2,8 @@ extends Node
 
 onready var IsDebug = OS.is_debug_build()
 
-var MusicVolume = 0.0
-var SoundEffectsVolume = 0.0
+var MusicVolume = -8.0
+var SoundEffectsVolume = -8.0
 
 var Fullscreen = true
 
@@ -105,8 +105,8 @@ func LoadSettings():
 	var config = ConfigFile.new()
 	var result = config.load("user://settings.cfg")
 	if result == OK:
-		MusicVolume = config.get_value("settings", "music_volume", 0.0)
-		SoundEffectsVolume = config.get_value("settings", "sound_effects_volume", 0.0)
+		MusicVolume = config.get_value("settings", "music_volume", -8.0)
+		SoundEffectsVolume = config.get_value("settings", "sound_effects_volume", -8.0)
 		Fullscreen = config.get_value("settings", "fullscreen", true)
 	SetAudioVolume()
 	OS.window_fullscreen = Fullscreen
