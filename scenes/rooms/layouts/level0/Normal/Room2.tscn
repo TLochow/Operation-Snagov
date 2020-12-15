@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/rooms/layouts/LayoutBase.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/objects/furniture/LargePlants.tscn" type="PackedScene" id=2]
@@ -8,10 +8,11 @@
 [ext_resource path="res://scenes/objects/furniture/Cabinet.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/objects/furniture/PottedPlant.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/objects/furniture/Toilet.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenes/objects/furniture/Bench.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/objects/furniture/WasteBucket.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/objects/furniture/SmallCrate.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/Pickup.tscn" type="PackedScene" id=11]
 [ext_resource path="res://graphics/homespun.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://scenes/objects/furniture/Lamp.tscn" type="PackedScene" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 outline_size = 2
@@ -29,54 +30,83 @@ tile_data = PoolIntArray( -458768, 2, 0, -458767, 2, 0, -458766, 2, 0, -458765, 
 
 [node name="LargeCrate" parent="Furniture" index="0" instance=ExtResource( 3 )]
 position = Vector2( -4, -104 )
+HealthChance = 1.0
+GrenadeChance = 1.0
+ArmorChance = 1.0
 
 [node name="LargePlants" parent="Furniture" index="1" instance=ExtResource( 2 )]
 position = Vector2( 4, -24 )
+GrenadeChance = 1.0
+MoneyChance = 1.0
 
 [node name="Desk" parent="Furniture" index="2" instance=ExtResource( 4 )]
 position = Vector2( 8, -72 )
 rotation = 3.14159
+HealthChance = 1.0
+GrenadeChance = 1.0
+ArmorChance = 1.0
+MoneyChance = 1.0
 
 [node name="FilingCabinet" parent="Furniture" index="3" instance=ExtResource( 5 )]
 rotation = 3.14159
+HealthChance = 1.0
+GrenadeChance = 1.0
+ArmorChance = 1.0
+MoneyChance = 1.0
 
 [node name="Cabinet" parent="Furniture" index="4" instance=ExtResource( 6 )]
 position = Vector2( 4, 32 )
 rotation = 3.14159
+HealthChance = 1.0
+ArmorChance = 1.0
+MoneyChance = 1.0
 
 [node name="PottedPlant" parent="Furniture" index="5" instance=ExtResource( 7 )]
 position = Vector2( 0, -48 )
+GrenadeChance = 1.0
+ArmorChance = 1.0
+MoneyChance = 1.0
 
 [node name="Toilet" parent="Furniture" index="6" instance=ExtResource( 8 )]
 position = Vector2( 0, 64 )
 rotation = 1.5708
+HealthChance = 1.0
 
 [node name="SmallCrate" parent="Furniture" index="7" instance=ExtResource( 10 )]
 position = Vector2( 4, 80 )
+HealthChance = 1.0
+GrenadeChance = 1.0
+ArmorChance = 1.0
 
-[node name="Bench" parent="Furniture" index="8" instance=ExtResource( 9 )]
-position = Vector2( 0, 104 )
-rotation = 3.14159
+[node name="WasteBucket" parent="Furniture" index="8" instance=ExtResource( 9 )]
+position = Vector2( -4, 96 )
+HealthChance = 1.0
+GrenadeChance = 1.0
+
+[node name="Lamp" parent="Furniture" index="9" instance=ExtResource( 13 )]
+position = Vector2( 0, 112 )
+MoneyChance = 1.0
 
 [node name="Labels" type="Node2D" parent="." index="4"]
 
 [node name="Label" type="Label" parent="Labels" index="0"]
 margin_left = -248.0
-margin_top = -108.0
-margin_right = -18.0
-margin_bottom = 89.0
+margin_top = -120.0
+margin_right = -20.0
+margin_bottom = 117.0
 custom_fonts/font = SubResource( 1 )
 text = "You get Pickups by destroying
 the environment.
 
-Different Objects have
-different Drop Rates.
+These objects all have a
+chance to spawn pickups.
+Destroy each object to see
+what it can spawn.
 
-Some Objects will never
-drop a pickup.
-
-Try to figure out which
-objects are worth destroying."
+During the game spawn rates
+are way lower and not all
+objects have the same rate
+for every pickup."
 align = 1
 valign = 1
 __meta__ = {
