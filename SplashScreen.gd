@@ -11,4 +11,4 @@ func _ready():
 func _on_Timer_timeout():
 	if not Redirected:
 		Redirected = true
-		SceneChanger.ChangeScene("res://MainMenu.tscn")
+		SceneChanger.ChangeScene("res://Intro.tscn")

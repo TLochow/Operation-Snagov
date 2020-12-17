@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/disclaimer.ogg-b93e2313a56f694d61205a4b10ce25fc.oggstr"
+
+[deps]
+
+source_file="res://sound/intro/disclaimer.ogg"
+dest_files=[ "res://.import/disclaimer.ogg-b93e2313a56f694d61205a4b10ce25fc.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

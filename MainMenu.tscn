@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://graphics/UI/romania flag.png" type="Texture" id=1]
 [ext_resource path="res://graphics/homespun.ttf" type="DynamicFontData" id=2]
@@ -37,13 +37,19 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
-size = 10
+[sub_resource type="DynamicFont" id=7]
+size = 12
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=6]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 10
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
@@ -244,6 +250,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Intro" type="TextureButton" parent="Main/Buttons"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -248.0
+margin_top = 192.0
+margin_right = -118.0
+margin_bottom = 240.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 4 )
+texture_hover = ExtResource( 3 )
+texture_disabled = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Main/Buttons/Intro"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 4 )
+text = "INTRO"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
 [node name="Settings" parent="." instance=ExtResource( 8 )]
 visible = false
 
@@ -269,22 +304,20 @@ __meta__ = {
 [node name="Label" type="Label" parent="Credits"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_top = 56.0
+margin_top = 48.0
 margin_bottom = -36.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 text = "Game Design, Coding, Graphics
 Charlie Gray - https://charliegray.itch.io/
-
+Intro Narration
+ExoPrism - https://exoprism.itch.io/
 Romanian Flag
 Wikipedia - https://en.wikipedia.org/wiki/Flag_of_Romania
-
 Font
 \"Homespun\" - https://www.1001freefonts.com/homespun.font
-
 Music
 \"Voices of Christmas Past\" by Dawn Of Sound - 
 http://www.dawnofsound.com/2008/12/voices-of-christmas-past-2/
-
 Sound Effects
 All Sounds - http://www.theallsounds.com/"
 align = 1
@@ -427,6 +460,7 @@ bus = "Music"
 [connection signal="pressed" from="Main/Buttons/Tutorial" to="." method="_on_Tutorial_pressed"]
 [connection signal="pressed" from="Main/Buttons/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="Main/Buttons/Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="Main/Buttons/Intro" to="." method="_on_Intro_pressed"]
 [connection signal="Back" from="Settings" to="." method="_on_Settings_Back"]
 [connection signal="pressed" from="Credits/CreditsBack" to="." method="_on_CreditsBack_pressed"]
 [connection signal="pressed" from="Credits/FullMusicList" to="." method="_on_FullMusicList_pressed"]

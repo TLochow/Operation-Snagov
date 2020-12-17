@@ -47,3 +47,6 @@ func _on_FullMusicList_pressed():
 func _on_MusicListBack_pressed():
 	$FullMusicList.visible = false
 	$Credits.visible = true
+
+func _on_Intro_pressed():
+	SceneChanger.ChangeScene("res://Intro.tscn")

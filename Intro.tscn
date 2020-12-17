@@ -1,0 +1,701 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://sound/intro/intro music.ogg" type="AudioStream" id=1]
+[ext_resource path="res://sound/intro/disclaimer.ogg" type="AudioStream" id=2]
+[ext_resource path="res://sound/intro/intro.ogg" type="AudioStream" id=3]
+[ext_resource path="res://Intro.gd" type="Script" id=4]
+[ext_resource path="res://graphics/homespun.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://graphics/UI/Button.png" type="Texture" id=6]
+[ext_resource path="res://graphics/UI/Button Hover.png" type="Texture" id=7]
+[ext_resource path="res://graphics/UI/Button Disabled.png" type="Texture" id=8]
+[ext_resource path="res://graphics/UI/Button Clicked.png" type="Texture" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Intro"
+length = 175.0
+step = 0.25
+tracks/0/type = "audio"
+tracks/0/path = NodePath("Sound/Disclaimer")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 2 )
+} ],
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "audio"
+tracks/1/path = NodePath("Sound/Intro")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"clips": [ {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource( 3 )
+} ],
+"times": PoolRealArray( 23.5 )
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1.5, 21, 23.5, 27, 28, 39, 39.75, 42, 43, 46.5, 47.25, 51, 52.75, 54.25, 54.75, 61, 62.25, 64.5, 65.5, 71.5, 73.25, 77.5, 78.25, 86.5, 87.75, 91.25, 92.25, 96.5, 97.25, 101.5, 102.75, 104.5, 105.25, 109, 110.25, 113.25, 114, 117.25, 118.5, 121.75, 122.75, 127.5, 128.5, 132, 134, 135, 136, 140.5, 142.5, 147.75, 148.5, 152.5, 153.25, 157.5, 158.75, 165.25, 166, 170, 170.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "AdvanceText"
+}, {
+"args": [  ],
+"method": "EndMusic"
+} ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[node name="Intro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Intro = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Sound" type="Node" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource( 1 )
+volume_db = 5.0
+autoplay = true
+bus = "Music"
+
+[node name="Disclaimer" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource( 2 )
+volume_db = 20.0
+bus = "Effects"
+
+[node name="Intro" type="AudioStreamPlayer" parent="Sound"]
+stream = ExtResource( 3 )
+volume_db = 20.0
+bus = "Effects"
+
+[node name="Labels" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 24.0
+margin_right = -24.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Disclaimer
+
+This game is not historically accurate. It’s story is an abbreviated, simplified and altered version of historical events. To get the full picture of what transpired in Romania in 1989 please inform yourself about the Romanian Revolution."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Nicolae and his wife ruled alone over a country by the black sea."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Nicolae liked to rule, electing family members as officials and striking down everyone who opposed him, as his nation watched along, not being able to do anything about it."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Life was simple,
+and they were both happy."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "That was, until the day Nicolae heard the news from outside..."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "\"There is an uprising in Timisoara!
+The people are planning a revolution!\""
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "\"We will do our best to stop this,
+my Lord,\""
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label8" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Nicolae’s police force proclaimed, rushing into Timisoara, trying to get the situation under control."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label9" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Again, news came to Nicolae..."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label10" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "\"The police failed to contain the protestors! We need to send in the military to show the people their place.\""
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label11" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "\"We will follow your instructions, Lord.
+We will end this disgrace.\""
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label12" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "The military replied, as they, too, made their way to Timisoara, eager to end this streak of bravery."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label13" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "One last time, Nicolae heard the news from his officials..."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label14" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "\"We have done everything we could, but the protestors still question your rule.\""
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label15" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "\"To prove them wrong, you need to show them that you are loved by the rest of your country.\""
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label16" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "So Nicolae prepared a speech."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label17" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "A speech to get the people of his country on his side, he believed."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label18" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "He ordered busloads of workers to his Palace."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label19" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "To listen to his words and support him in his cause."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label20" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "But the people did not listen,
+and they did not support him."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label21" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "They booed and jeered.
+Shouting their support for the protests in Timisoara."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label22" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "The jeers and whistles soon erupted into a riot."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label23" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "“I need to get out of here!\""
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label24" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Nicolae thought, preparing to flee first thing in the morning."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label25" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "The National Salvation Front, watching all this unfold, trembled with anger."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label26" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Trying to get a raiding party ready to arrest Nicolae before he could flee,"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label27" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "they managed to smuggle a single soldier into the Central Committee Building."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label28" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "Without hesitation, this soldier burst out from his hiding place among the crates to make his way to Nicolae."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label29" type="Label" parent="Labels"]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "And stop him before he could start his flight to Snagov."
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SkipButton" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -72.0
+margin_top = -32.0
+margin_right = 58.0
+margin_bottom = 16.0
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 7 )
+texture_disabled = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="SkipButton"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 2 )
+text = "SKIP"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="SkipButton" to="." method="_on_SkipButton_pressed"]
