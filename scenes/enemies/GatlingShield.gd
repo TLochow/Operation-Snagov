@@ -4,7 +4,7 @@ signal Destroyed
 
 var WALLHITSCENE = preload("res://scenes/effects/WallHit.tscn")
 
-var Health = 10.0
+var Health = 4.0
 var Destroyed = false
 
 func Damage(damage, hitPoint, direction, collisionNormal):
