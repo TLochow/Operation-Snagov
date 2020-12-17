@@ -18,7 +18,7 @@ _global_script_class_icons={
 config/name="Operation Snagov"
 run/main_scene="res://SplashScreen.tscn"
 boot_splash/image="res://graphics/splashscreen.png"
-boot_splash/bg_color=Color( 0.254902, 0.254902, 0.254902, 1 )
+boot_splash/bg_color=Color( 0.811765, 0.47451, 0, 1 )
 config/icon="res://icon.png"
 
 [autoload]
