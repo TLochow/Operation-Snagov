@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://graphics/UI/romania flag.png" type="Texture" id=1]
 [ext_resource path="res://graphics/homespun.ttf" type="DynamicFontData" id=2]
@@ -37,18 +37,24 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=7]
-size = 12
+[sub_resource type="DynamicFont" id=5]
+size = 14
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=6]
+size = 12
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=7]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
 size = 10
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -279,6 +285,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="WinStreakLabel" type="Label" parent="Main"]
+visible = false
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 336.0
+margin_top = 72.0
+margin_right = -8.0
+margin_bottom = -168.0
+custom_fonts/font = SubResource( 5 )
+text = "Win Streak: 0"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Settings" parent="." instance=ExtResource( 8 )]
 visible = false
 
@@ -306,7 +328,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 margin_top = 48.0
 margin_bottom = -36.0
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 text = "Game Design, Coding, Graphics
 Charlie Gray - https://charliegray.itch.io/
 Intro Narration
@@ -376,7 +398,7 @@ show_behind_parent = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = -2.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
 text = "Full Music List"
 align = 1
 valign = 1
@@ -426,7 +448,7 @@ __meta__ = {
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = -36.0
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 8 )
 text = "Prince's Orchestra - On A Christmas Morning [1911]
 Edison Male Quartette - Sleigh Ride Party, Jingle Bells [1898]
 Victor Mixed Chorus - Messiah - And the Glory of the Lord [1915]

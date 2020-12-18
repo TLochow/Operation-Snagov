@@ -8,6 +8,7 @@ func _ready():
 	get_tree().paused = false
 	Engine.time_scale = 1.0
 	MusicHandler.Stop()
+	SetWinStreak()
 
 func _on_StartGame_pressed():
 	Global.LoadDefaults()
@@ -50,3 +51,8 @@ func _on_MusicListBack_pressed():
 
 func _on_Intro_pressed():
 	SceneChanger.ChangeScene("res://Intro.tscn")
+
+func SetWinStreak():
+	if Global.WinStreak > 0:
+		$Main/WinStreakLabel.text = "Win Streak: " + str(Global.WinStreak)
+		$Main/WinStreakLabel.visible = true

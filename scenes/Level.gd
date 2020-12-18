@@ -117,6 +117,7 @@ func _on_Player_MoneyChanged(money):
 
 func Won():
 	Global.GameOver = true
+	Global.WinStreak += 1
 	StopGame()
 	$UI/GameOver/Label.text = "You Won!"
 	$UI/GameOver/EnemiesKilledLabel.text = str(Global.KillCounter)
@@ -124,6 +125,7 @@ func Won():
 
 func _on_Player_Died():
 	Global.GameOver = true
+	Global.WinStreak = 0
 	StopGame()
 	$UI/GameOver/EnemiesKilledLabel.text = str(Global.KillCounter)
 	$UI/GameOver.visible = true

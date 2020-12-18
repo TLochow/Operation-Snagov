@@ -10,6 +10,8 @@ var Fullscreen = true
 signal Announcement(title, description)
 signal Won
 
+var WinStreak = 0 setget SetWinStreak
+
 var ROOMSCENE = preload("res://scenes/rooms/Room.tscn")
 var LevelGenBlockedCoords = []
 
@@ -24,6 +26,7 @@ var BloodHandler
 func _ready():
 	randomize()
 	LoadSettings()
+	LoadGameState()
 
 func LoadDefaults():
 	CurrentLevel = 1
@@ -122,3 +125,19 @@ func SaveSettings():
 func SetAudioVolume():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), MusicVolume)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Effects"), SoundEffectsVolume)
+
+func LoadGameState():
+	var config = ConfigFile.new()
+	var result = config.load("user://state.cfg")
+	if result == OK:
+		WinStreak = config.get_value("state", "win_streak", 0)
+
+func SaveGameState():
+	var config = ConfigFile.new()
+	var result = config.load("user://state.cfg")
+	config.set_value("state", "win_streak", WinStreak)
+	config.save("user://state.cfg")
+
+func SetWinStreak(value):
+	WinStreak = value
+	SaveGameState()
