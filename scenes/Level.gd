@@ -120,6 +120,7 @@ func Won():
 	Global.WinStreak += 1
 	StopGame()
 	$UI/GameOver/Label.text = "You Won!"
+	$UI/GameOver/SubLabel.text = "Romania will be free again!"
 	$UI/GameOver/EnemiesKilledLabel.text = str(Global.KillCounter)
 	$UI/GameOver.visible = true
 
@@ -128,7 +129,33 @@ func _on_Player_Died():
 	Global.WinStreak = 0
 	StopGame()
 	$UI/GameOver/EnemiesKilledLabel.text = str(Global.KillCounter)
+	$UI/GameOver/SubLabel.text = RandomEndText()
 	$UI/GameOver.visible = true
+
+func RandomEndText():
+	var text = ""
+	match randi() % 10:
+		0:
+			text = "Oof!"
+		1:
+			text = "Try again, maybe?"
+		2:
+			text = "Too bad!"
+		3:
+			text = "That didn't work..."
+		4:
+			text = "You can do it!"
+		5:
+			text = "I still believe in you."
+		6:
+			text = "Why would you do that?"
+		7:
+			text = "You can do better."
+		8:
+			text = "Stay determined!"
+		9:
+			text = "HA HA!"
+	return text
 
 func StopGame():
 	var tween = $UI/GameOver/GameOverTween

@@ -9,9 +9,10 @@ export(bool) var OneTimePress = false
 
 func _on_Button_body_entered(body):
 	Count += 1
+	if not OneTimePress or not Pressed:
+		emit_signal("Pressed")
+		$Sprite.frame = 1
 	Pressed = Count > 0
-	emit_signal("Pressed")
-	$Sprite.frame = 1
 
 func _on_Button_body_exited(body):
 	Count -= 1

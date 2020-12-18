@@ -18,7 +18,7 @@ var FurnitureSize
 
 func _ready():
 	LoadFurniture()
-	Global.emit_signal("Announcement", "Nicolae Ceausescu", "Time for Payback")
+	Global.emit_signal("Announcement", "Nicolae Ceausescu", "Time for Justice!")
 	HealthBar.max_value = Boss.get_ref().Health
 
 func LoadFurniture():
