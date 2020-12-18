@@ -17,9 +17,9 @@ tile_data = PoolIntArray( -458768, 23, 0, -458767, 23, 0, -458766, 23, 0, -45876
 
 [node name="Label" type="Label" parent="Labels" index="0"]
 margin_left = -168.0
-margin_top = -44.0
+margin_top = -60.0
 margin_right = -83.0
-margin_bottom = 53.0
+margin_bottom = 37.0
 custom_fonts/font = SubResource( 1 )
 text = "Move:
 WASD or
@@ -33,14 +33,14 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="Labels" index="1"]
-margin_left = -64.0
-margin_top = 24.0
-margin_right = 242.0
-margin_bottom = 121.0
+margin_left = -132.0
+margin_top = 28.0
+margin_right = 246.0
+margin_bottom = 125.0
 custom_fonts/font = SubResource( 1 )
-text = "Aim with mouse.
-Shoot with left mouse button.
-Throw Grenade with right mouse button."
+text = "Aim with your mouse.
+Shoot with left mouse button (press and/or hold).
+Throw Grenades with right mouse button."
 align = 1
 valign = 1
 __meta__ = {
@@ -48,12 +48,25 @@ __meta__ = {
 }
 
 [node name="Label3" type="Label" parent="Labels" index="2"]
-margin_left = -248.0
+margin_left = -244.0
 margin_top = -120.0
-margin_right = 248.0
+margin_right = 100.0
 margin_bottom = -96.0
 custom_fonts/font = SubResource( 1 )
-text = "Mini Map                    Health    Armor   Money & Grenades"
+text = "Mini Map                    Health     Armor"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="Labels" index="3"]
+margin_left = 184.0
+margin_top = -120.0
+margin_right = 248.0
+margin_bottom = -83.0
+custom_fonts/font = SubResource( 1 )
+text = "Money &
+Grenades"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
