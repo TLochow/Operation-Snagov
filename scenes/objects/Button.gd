@@ -4,16 +4,19 @@ signal Pressed
 signal Released
 
 var Pressed = false
+var Count = 0
 export(bool) var OneTimePress = false
 
 func _on_Button_body_entered(body):
-	if not Pressed:
-		Pressed = true
-		emit_signal("Pressed")
-		$Sprite.frame = 1
+	Count += 1
+	Pressed = Count > 0
+	emit_signal("Pressed")
+	$Sprite.frame = 1
 
 func _on_Button_body_exited(body):
-	if Pressed and not OneTimePress:
-		Pressed = false
-		emit_signal("Released")
-		$Sprite.frame = 0
+	Count -= 1
+	if not OneTimePress:
+		Pressed = Count > 0
+		if not Pressed:
+			emit_signal("Released")
+			$Sprite.frame = 0
