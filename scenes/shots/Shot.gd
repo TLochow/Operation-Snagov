@@ -17,6 +17,8 @@ func Shoot(damage, angle, ignorePlayer = false):
 	var raycast = $RayCast2D
 	if ignorePlayer:
 		raycast.set_collision_mask_bit(1, false)
+	else:
+		raycast.set_collision_mask_bit(5, true)
 	raycast.cast_to = direction * 1000.0
 	raycast.force_raycast_update()
 	if raycast.is_colliding():

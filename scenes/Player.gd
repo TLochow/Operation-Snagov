@@ -140,7 +140,7 @@ func SingleShot(pos, angle):
 	var shot = SHOTSCENE.instance()
 	ShotNode.add_child(shot)
 	shot.set_position(pos)
-	shot.Shoot(ShotDamage, angle)
+	shot.Shoot(ShotDamage, angle, true)
 
 func ThrowGrenade(explodeOnContact, applySpread):
 	var pos = get_position() + (LookDirection * 10.0)
