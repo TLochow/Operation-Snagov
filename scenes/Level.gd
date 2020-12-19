@@ -15,8 +15,12 @@ func _init():
 		ItemLoader.Items = []
 
 func _input(event):
-	if Global.IsDebug and event.is_action_pressed("restart"):
-		SceneChanger.ChangeScene("res://scenes/Level.tscn")
+	if Global.IsDebug:
+		if event.is_action_pressed("restart"):
+			SceneChanger.ChangeScene("res://scenes/Level.tscn")
+		elif event.is_action_pressed("debug_next_level"):
+			Global.CurrentLevel += 1
+			SceneChanger.ChangeScene("res://scenes/Level.tscn")
 
 func _ready():
 	get_tree().paused = false
